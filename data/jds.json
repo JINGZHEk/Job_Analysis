@@ -1,0 +1,3686 @@
+[
+  {
+    "job_id": "jd-0000",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·参与需求分析与技术选型\n·跟进前沿论文并复现\n·负责深度学习模型的规划与训练\n·配合算法落地与性能改进\n·搭建模型推理服务\n任职要求：\n1. 掌握 Machine Learning、Docker、Deep Learning、PyTorch、Python\n2. 加分项：熟悉 Linux、Model Serving 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "PyTorch"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0000",
+      "publisher": "某物联网公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.213870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "PyTorch",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "Linux",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0001",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·建设数据质量监控体系\n·保障 ETL 数据管道\n·优化 Spark 作业性能\n·负责数据仓库建模与研发\n任职要求：\n1. 熟练使用 ETL、Python、Spark、SQL、Docker\n2. 加分项：熟悉 Hadoop、Hive、Flink 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0001",
+      "publisher": "某互联网公司",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.213870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker",
+      "ETL"
+    ],
+    "gold_preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Flink"
+    ]
+  },
+  {
+    "job_id": "jd-0002",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·编写单元测试\n·负责后端服务设计开发\n·对接数据库与消息中间件\n任职要求：\n1. 精通 Linux、Docker、Spring、SQL、Java\n2. 加分项：熟悉 Git、Kafka、Data Warehouse 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0002",
+      "publisher": "某物联网公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.213870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Docker",
+      "Spring"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kafka",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0003",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·落地 RAG 应用\n·构建文本分类/信息抽取系统\n·提升大模型微调与推理\n·沉淀技术方案与最佳实践\n任职要求：\n1. 精通 NLP、Deep Learning、Python、Linux、Transformer\n2. 加分项：熟悉 PyTorch、Machine Learning、Vector Database 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Linux"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0003",
+      "publisher": "某智能制造企业",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Linux",
+      "Transformer"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0004",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·沉淀技术方案与最佳实践\n·搭建评测体系\n·改进推理性能与成本\n·构建 RAG 与 Agent 应用\n·负责大语言模型微调与对齐\n任职要求：\n1. 熟悉 TensorRT、LLM、Python、PyTorch、强化学习\n2. 加分项：熟悉 Deep Learning、Transformer、MLOps 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "强化学习"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0004",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "强化学习",
+      "TensorRT"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0005",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·提升模型精度与推理速度\n·部署模型到边缘设备\n·训练目标检测/图像分割模型\n·承担计算机视觉算法研发\n任职要求：\n1. 精通 Computer Vision、Linux、Deep Learning、Python、TensorFlow\n2. 加分项：熟悉 PyTorch、多模态 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorFlow"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0005",
+      "publisher": "某互联网公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorFlow",
+      "Linux"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0006",
+    "title": "推荐算法工程师",
+    "description": "岗位职责：\n·搭建实时推荐链路\n·改进特征工程与模型效果\n·负责推荐系统召回与排序\n·设计 A/B 实验\n任职要求：\n1. 深入理解 Python、Recommendation System、Machine Learning、Data Warehouse、Spark\n2. 加分项：熟悉 SQL、Hive 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0006",
+      "publisher": "某科技公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark",
+      "Data Warehouse"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "Hive"
+    ]
+  },
+  {
+    "job_id": "jd-0007",
+    "title": "知识图谱工程师",
+    "description": "岗位职责：\n·设计本体与实体对齐\n·支撑智能问答应用\n·结合大模型做知识抽取\n·负责知识图谱构建与推理\n任职要求：\n1. 熟练使用 RAG、Knowledge Graph、Deep Learning、Python、NLP\n2. 加分项：熟悉 SQL、LLM、Vector Database、Docker 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0007",
+      "publisher": "某物联网公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "RAG"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "LLM",
+      "Vector Database",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0008",
+    "title": "物联网嵌入式工程师",
+    "description": "岗位职责：\n·主导嵌入式固件实现\n·提升低功耗与实时性\n·设计设备通信与数据采集\n·指导初级工程师成长\n任职要求：\n1. 精通 Linux、Deep Learning、TensorRT、C++、Embedded Systems\n2. 加分项：熟悉 MQTT、IoT、Kubernetes、Python 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "TensorRT"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0008",
+      "publisher": "某互联网公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "TensorRT",
+      "Deep Learning"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Python"
+    ]
+  },
+  {
+    "job_id": "jd-0009",
+    "title": "边缘计算工程师",
+    "description": "岗位职责：\n·优化边缘推理性能\n·建设设备管理平台\n·部署模型到边缘设备\n·主导边缘计算平台研发\n·沉淀技术方案与最佳实践\n任职要求：\n1. 熟练使用 Linux、Edge Computing、IoT、Docker、C++\n2. 加分项：熟悉 Python、ROS 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0009",
+      "publisher": "某AI实验室",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "C++"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "ROS"
+    ]
+  },
+  {
+    "job_id": "jd-0010",
+    "title": "机器人算法工程师",
+    "description": "岗位职责：\n·集成传感器与执行器\n·改进实时控制性能\n·主导机器人感知与规划算法\n·开发 SLAM 与导航\n任职要求：\n1. 深入理解 Linux、SLAM、ONNX、ROS、C++\n2. 加分项：熟悉 Python、Computer Vision、Embedded Systems、Deep Learning 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "SLAM"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0010",
+      "publisher": "某物联网公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "SLAM",
+      "ONNX"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "Embedded Systems",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0011",
+    "title": "MLOps 工程师",
+    "description": "岗位职责：\n·搭建 CI/CD 与监控\n·承担模型训练与部署流水线\n·改进模型服务性能\n·管理实验与版本\n任职要求：\n1. 熟悉 Linux、MLOps、Python、Docker、Deep Learning\n2. 加分项：熟悉 Kubernetes、CI/CD、Spark 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Linux"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0011",
+      "publisher": "某AI实验室",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Linux",
+      "Deep Learning"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "Spark"
+    ]
+  },
+  {
+    "job_id": "jd-0012",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·参与算法落地与性能优化\n·跟进前沿论文并复现\n·建设模型推理服务\n·承担深度学习模型的规划与训练\n任职要求：\n1. 精通 TensorRT、Deep Learning、Python、强化学习、Machine Learning\n2. 加分项：熟悉 PyTorch、Linux、Distributed Training 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "TensorRT"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0012",
+      "publisher": "某AI实验室",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "TensorRT",
+      "强化学习"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "Distributed Training"
+    ]
+  },
+  {
+    "job_id": "jd-0013",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·构建数据质量监控体系\n·优化 Spark 作业性能\n·承担数据仓库建模与开发\n·参与需求分析与技术选型\n·维护 ETL 数据管道\n任职要求：\n1. 精通 Flink、Kubernetes、SQL、Spark、Python\n2. 加分项：熟悉 Hadoop、Hive、ClickHouse、Go 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0013",
+      "publisher": "某大数据公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes",
+      "Flink"
+    ],
+    "gold_preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "ClickHouse",
+      "Go"
+    ]
+  },
+  {
+    "job_id": "jd-0014",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·编写单元测试\n·承担后端服务设计实现\n·协助系统架构优化\n·对接数据库与消息中间件\n任职要求：\n1. 深入理解 SQL、Java、Kafka、Linux、CI/CD\n2. 加分项：熟悉 Git、Kubernetes 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "CI/CD"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0014",
+      "publisher": "某AI实验室",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "CI/CD",
+      "Kafka"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0015",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·提升大模型微调与推理\n·参与需求分析与技术选型\n·负责自然语言处理模型研发\n·落地 RAG 应用\n任职要求：\n1. 熟练使用 Deep Learning、NLP、Embedding、Python、TensorFlow\n2. 加分项：熟悉 PyTorch、Machine Learning、Prompt Engineering、Linux 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Embedding"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0015",
+      "publisher": "某科技公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Embedding",
+      "TensorFlow"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Prompt Engineering",
+      "Linux"
+    ]
+  },
+  {
+    "job_id": "jd-0016",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·构建评测体系\n·主导大语言模型微调与对齐\n·优化推理性能与成本\n·构建 RAG 与 Agent 应用\n任职要求：\n1. 掌握 Fine-tuning、多模态、LLM、PyTorch、Python\n2. 加分项：熟悉 Deep Learning、Transformer、Linux 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "多模态"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0016",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "多模态",
+      "Fine-tuning"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Linux"
+    ]
+  },
+  {
+    "job_id": "jd-0017",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·训练目标检测/图像分割模型\n·指导初级工程师成长\n·部署模型到边缘设备\n·主导计算机视觉算法研发\n·优化模型精度与推理速度\n任职要求：\n1. 深入理解 Python、Computer Vision、TensorRT、Edge Computing、Deep Learning\n2. 加分项：熟悉 PyTorch、TensorFlow、NLP 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0017",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing",
+      "TensorRT"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "NLP"
+    ]
+  },
+  {
+    "job_id": "jd-0018",
+    "title": "推荐算法工程师",
+    "description": "岗位职责：\n·负责线上问题排查与修复\n·承担推荐系统召回与排序\n·建设实时推荐链路\n·规划 A/B 实验\n·优化特征工程与模型效果\n任职要求：\n1. 掌握 Recommendation System、Machine Learning、Python、Deep Learning、Data Warehouse\n2. 加分项：熟悉 Spark、SQL、Kafka、Flink 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Data Warehouse"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0018",
+      "publisher": "某AI实验室",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Data Warehouse",
+      "Deep Learning"
+    ],
+    "gold_preferred_skills": [
+      "Spark",
+      "SQL",
+      "Kafka",
+      "Flink"
+    ]
+  },
+  {
+    "job_id": "jd-0019",
+    "title": "知识图谱工程师",
+    "description": "岗位职责：\n·沉淀技术方案与最佳实践\n·结合大模型做知识抽取\n·承担知识图谱构建与推理\n·支撑智能问答应用\n任职要求：\n1. 精通 Knowledge Graph、Python、NLP、Deep Learning、SQL\n2. 加分项：熟悉 LLM、RAG 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "SQL"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0019",
+      "publisher": "某物联网公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "SQL",
+      "Deep Learning"
+    ],
+    "gold_preferred_skills": [
+      "LLM",
+      "RAG"
+    ]
+  },
+  {
+    "job_id": "jd-0020",
+    "title": "物联网嵌入式工程师",
+    "description": "岗位职责：\n·对接云平台\n·优化低功耗与实时性\n·与产品、测试团队协作交付\n·负责嵌入式固件开发\n·制定设备通信与数据采集\n任职要求：\n1. 熟练使用 Linux、Computer Vision、C++、Embedded Systems\n2. 加分项：熟悉 MQTT、IoT、Kubernetes、Edge Computing 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Computer Vision"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0020",
+      "publisher": "某物联网公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Computer Vision"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Edge Computing",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0021",
+    "title": "边缘计算工程师",
+    "description": "岗位职责：\n·建设设备管理平台\n·承担边缘计算平台研发\n·改进边缘推理性能\n·部署模型到边缘设备\n任职要求：\n1. 深入理解 MQTT、Linux、IoT、Docker、Edge Computing\n2. 加分项：熟悉 Python、C++、AWS 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "MQTT"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0021",
+      "publisher": "某科技公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "MQTT",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "C++",
+      "AWS",
+      "Kubernetes",
+      "Docker",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0022",
+    "title": "机器人算法工程师",
+    "description": "岗位职责：\n·编写技术文档与设计评审\n·开发 SLAM 与导航\n·改进实时控制性能\n·负责机器人感知与规划算法\n·集成传感器与执行器\n任职要求：\n1. 掌握 Deep Learning、ROS、Linux、C++、TensorRT\n2. 加分项：熟悉 Python、Computer Vision、ONNX、SLAM 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Deep Learning"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0022",
+      "publisher": "某大数据公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Deep Learning",
+      "TensorRT"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "ONNX",
+      "SLAM",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0023",
+    "title": "MLOps 工程师",
+    "description": "岗位职责：\n·搭建 CI/CD 与监控\n·沉淀技术方案与最佳实践\n·负责模型训练与部署流水线\n·优化模型服务性能\n·管理实验与版本\n任职要求：\n1. 熟练使用 MLOps、Distributed Training、Python、PyTorch、Docker\n2. 加分项：熟悉 Kubernetes、CI/CD、TensorRT、Spark 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "PyTorch"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0023",
+      "publisher": "某物联网公司",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "PyTorch",
+      "Distributed Training"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "TensorRT",
+      "Spark",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0024",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·配合算法落地与性能提升\n·跟进前沿论文并复现\n·搭建模型推理服务\n任职要求：\n1. 熟悉 Machine Learning、Python、Deep Learning、TensorFlow、Computer Vision\n2. 加分项：熟悉 PyTorch、Linux、A/B Testing、Feature Engineering 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Computer Vision"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0024",
+      "publisher": "某AI实验室",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Computer Vision",
+      "TensorFlow"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "A/B Testing",
+      "Feature Engineering",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0025",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·维护 ETL 数据管道\n·负责线上问题排查与修复\n·建设数据质量监控体系\n·优化 Spark 作业性能\n任职要求：\n1. 深入理解 ETL、Python、Spark、Hadoop、SQL\n2. 加分项：熟悉 Hive、Kafka、Kubernetes 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Hadoop"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0025",
+      "publisher": "某物联网公司",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Hadoop",
+      "ETL"
+    ],
+    "gold_preferred_skills": [
+      "Hive",
+      "Kafka",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0026",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·编写单元测试\n·协助系统架构提升\n·负责后端服务设计研发\n任职要求：\n1. 掌握 Redis、Linux、Model Serving、Java、SQL\n2. 加分项：熟悉 Git、Kafka、CI/CD 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Model Serving"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0026",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Model Serving",
+      "Redis"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kafka",
+      "CI/CD",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0027",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·承担自然语言处理模型研发\n·落地 RAG 应用\n·构建文本分类/信息抽取系统\n·改进大模型微调与推理\n任职要求：\n1. 掌握 多模态、Deep Learning、NLP、TensorFlow、Python\n2. 加分项：熟悉 PyTorch、Machine Learning、Prompt Engineering 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "TensorFlow"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0027",
+      "publisher": "某物联网公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "TensorFlow",
+      "多模态"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Prompt Engineering",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0028",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·搭建评测体系\n·提升推理性能与成本\n·负责大语言模型微调与对齐\n·构建 RAG 与 Agent 应用\n任职要求：\n1. 精通 PyTorch、LLM、Deep Learning、MLOps、Python\n2. 加分项：熟悉 Transformer、强化学习 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Deep Learning"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0028",
+      "publisher": "某大数据公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Deep Learning",
+      "MLOps"
+    ],
+    "gold_preferred_skills": [
+      "Transformer",
+      "强化学习",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0029",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·训练目标检测/图像分割模型\n·提升模型精度与推理速度\n·主导计算机视觉算法研发\n·沉淀技术方案与最佳实践\n·部署模型到边缘设备\n任职要求：\n1. 精通 Python、Computer Vision、Deep Learning、Linux、多模态\n2. 加分项：熟悉 PyTorch、TensorFlow、ONNX、Model Serving 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验\n4. 熟悉 Kubernetes、Docker、AWS、MLOps、Data Warehouse、TensorRT、ONNX 者优先",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "多模态"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0029",
+      "publisher": "某物联网公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "多模态",
+      "Linux"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "ONNX",
+      "Model Serving",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0030",
+    "title": "推荐算法工程师",
+    "description": "岗位职责：\n·提升特征工程与模型效果\n·设计 A/B 实验\n·负责线上问题排查与修复\n·建设实时推荐链路\n·主导推荐系统召回与排序\n任职要求：\n1. 深入理解 Recommendation System、Python、Embedding、Machine Learning、Kafka\n2. 加分项：熟悉 Spark、SQL、Hive、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Embedding"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0030",
+      "publisher": "某物联网公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Embedding",
+      "Kafka"
+    ],
+    "gold_preferred_skills": [
+      "Spark",
+      "SQL",
+      "Hive",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0031",
+    "title": "知识图谱工程师",
+    "description": "岗位职责：\n·结合大模型做知识抽取\n·设计本体与实体对齐\n·支撑智能问答应用\n任职要求：\n1. 精通 Knowledge Graph、RAG、NLP、Deep Learning、Python\n2. 加分项：熟悉 SQL、LLM、Java 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0031",
+      "publisher": "某互联网公司",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "RAG"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "LLM",
+      "Java"
+    ]
+  },
+  {
+    "job_id": "jd-0032",
+    "title": "物联网嵌入式工程师",
+    "description": "岗位职责：\n·提升低功耗与实时性\n·与产品、测试团队协作交付\n·设计设备通信与数据采集\n·对接云平台\n·负责嵌入式固件实现\n任职要求：\n1. 掌握 Linux、C++、ROS、Embedded Systems、Kubernetes\n2. 加分项：熟悉 MQTT、IoT、Edge Computing 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ROS"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0032",
+      "publisher": "某大数据公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ROS",
+      "Kubernetes"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Edge Computing"
+    ]
+  },
+  {
+    "job_id": "jd-0033",
+    "title": "边缘计算工程师",
+    "description": "岗位职责：\n·承担边缘计算平台研发\n·部署模型到边缘设备\n·构建设备管理平台\n任职要求：\n1. 精通 Linux、IoT、Edge Computing、MQTT、Docker\n2. 加分项：熟悉 Python、ROS、Computer Vision 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0033",
+      "publisher": "某互联网公司",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "MQTT"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "ROS",
+      "Computer Vision"
+    ]
+  },
+  {
+    "job_id": "jd-0034",
+    "title": "机器人算法工程师",
+    "description": "岗位职责：\n·优化实时控制性能\n·集成传感器与执行器\n·开发 SLAM 与导航\n·承担机器人感知与规划算法\n任职要求：\n1. 熟练使用 MQTT、ROS、TensorRT、Linux、C++\n2. 加分项：熟悉 Python、Computer Vision、Deep Learning、ONNX 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "MQTT"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0034",
+      "publisher": "某互联网公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "MQTT",
+      "TensorRT"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "ONNX"
+    ]
+  },
+  {
+    "job_id": "jd-0035",
+    "title": "MLOps 工程师",
+    "description": "岗位职责：\n·搭建 CI/CD 与监控\n·负责模型训练与部署流水线\n·管理实验与版本\n·指导初级工程师成长\n·改进模型服务性能\n任职要求：\n1. 熟悉 Docker、Python、SQL、Distributed Training、MLOps\n2. 加分项：熟悉 Kubernetes、CI/CD、AWS、Model Serving 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "SQL"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0035",
+      "publisher": "某物联网公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "SQL",
+      "Distributed Training"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "AWS",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0036",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·参与算法落地与性能优化\n·负责深度学习模型的设计与训练\n·跟进前沿论文并复现\n·搭建模型推理服务\n任职要求：\n1. 熟练使用 Machine Learning、Python、NLP、Deep Learning、Model Serving\n2. 加分项：熟悉 PyTorch、Linux、Computer Vision、Docker 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Model Serving"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0036",
+      "publisher": "某AI实验室",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Model Serving",
+      "NLP"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "Computer Vision",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0037",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·构建数据质量监控体系\n·支撑 ETL 数据管道\n·优化 Spark 作业性能\n·负责数据仓库建模与开发\n任职要求：\n1. 熟练使用 Spark、AWS、Python、SQL、OLAP\n2. 加分项：熟悉 Hadoop、Hive、Data Warehouse、Kubernetes 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "OLAP"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0037",
+      "publisher": "某物联网公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.215951",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "OLAP",
+      "AWS"
+    ],
+    "gold_preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Data Warehouse",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0038",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·主导后端服务制定开发\n·与产品、测试团队协作交付\n·参与系统架构优化\n·对接数据库与消息中间件\n任职要求：\n1. 熟练使用 Docker、SQL、Linux、Nginx、Java\n2. 加分项：熟悉 Git、Kafka、Kubernetes、CI/CD 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Nginx"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0038",
+      "publisher": "某AI实验室",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Nginx",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kafka",
+      "Kubernetes",
+      "CI/CD"
+    ]
+  },
+  {
+    "job_id": "jd-0039",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·构建文本分类/信息抽取系统\n·主导自然语言处理模型研发\n·沉淀技术方案与最佳实践\n·落地 RAG 应用\n任职要求：\n1. 熟练使用 Deep Learning、Machine Learning、NLP、Embedding、Python\n2. 加分项：熟悉 PyTorch、Linux 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Machine Learning"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0039",
+      "publisher": "某智能制造企业",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Machine Learning",
+      "Embedding"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux"
+    ]
+  },
+  {
+    "job_id": "jd-0040",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·构建 RAG 与 Agent 应用\n·改进推理性能与成本\n·承担大语言模型微调与对齐\n任职要求：\n1. 熟练使用 Vector Database、Python、PyTorch、Transformer、LLM\n2. 加分项：熟悉 Deep Learning、TensorRT、RAG 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Vector Database"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0040",
+      "publisher": "某互联网公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Vector Database",
+      "Transformer"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "TensorRT",
+      "RAG"
+    ]
+  },
+  {
+    "job_id": "jd-0041",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·负责计算机视觉算法研发\n·训练目标检测/图像分割模型\n·部署模型到边缘设备\n·优化模型精度与推理速度\n任职要求：\n1. 掌握 Embedded Systems、Python、多模态、Computer Vision、Deep Learning\n2. 加分项：熟悉 PyTorch、TensorFlow、Edge Computing、C++ 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Embedded Systems"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0041",
+      "publisher": "某大数据公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Embedded Systems",
+      "多模态"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Edge Computing",
+      "C++"
+    ]
+  },
+  {
+    "job_id": "jd-0042",
+    "title": "推荐算法工程师",
+    "description": "岗位职责：\n·优化特征工程与模型效果\n·制定 A/B 实验\n·负责推荐系统召回与排序\n任职要求：\n1. 熟练使用 Python、Machine Learning、Flink、Recommendation System、Spark\n2. 加分项：熟悉 SQL、Data Warehouse、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0042",
+      "publisher": "某科技公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark",
+      "Flink"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "Data Warehouse",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0043",
+    "title": "知识图谱工程师",
+    "description": "岗位职责：\n·规划本体与实体对齐\n·承担知识图谱构建与推理\n·结合大模型做知识抽取\n·指导初级工程师成长\n·支撑智能问答应用\n任职要求：\n1. 掌握 NLP、Python、Deep Learning、Docker、Knowledge Graph\n2. 加分项：熟悉 SQL、LLM、Vector Database、Machine Learning 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0043",
+      "publisher": "某物联网公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "LLM",
+      "Vector Database",
+      "Machine Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0044",
+    "title": "物联网嵌入式工程师",
+    "description": "岗位职责：\n·承担嵌入式固件开发\n·设计设备通信与数据采集\n·对接云平台\n·优化低功耗与实时性\n任职要求：\n1. 精通 Embedded Systems、ROS、C++、Linux、Computer Vision\n2. 加分项：熟悉 MQTT、IoT、Python 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ROS"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0044",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ROS",
+      "Computer Vision"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Python"
+    ]
+  },
+  {
+    "job_id": "jd-0045",
+    "title": "边缘计算工程师",
+    "description": "岗位职责：\n·改进边缘推理性能\n·部署模型到边缘设备\n·编写技术文档与设计评审\n·建设设备管理平台\n任职要求：\n1. 熟悉 Edge Computing、Linux、ROS、IoT\n2. 加分项：熟悉 Python、Docker、AWS 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "ROS"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0045",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "ROS"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Docker",
+      "AWS"
+    ]
+  },
+  {
+    "job_id": "jd-0046",
+    "title": "机器人算法工程师",
+    "description": "岗位职责：\n·集成传感器与执行器\n·优化实时控制性能\n·实现 SLAM 与导航\n任职要求：\n1. 熟练使用 Deep Learning、Linux、C++、Computer Vision、ROS\n2. 加分项：熟悉 Python、IoT、Embedded Systems 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Computer Vision"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0046",
+      "publisher": "某AI实验室",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Computer Vision",
+      "Deep Learning"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "IoT",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "job_id": "jd-0047",
+    "title": "MLOps 工程师",
+    "description": "岗位职责：\n·管理实验与版本\n·提升模型服务性能\n·构建 CI/CD 与监控\n·负责线上问题排查与修复\n·主导模型训练与部署流水线\n任职要求：\n1. 掌握 Python、Docker、MLOps、SQL、CI/CD\n2. 加分项：熟悉 Kubernetes、Distributed Training 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "CI/CD"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0047",
+      "publisher": "某物联网公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "CI/CD",
+      "SQL"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "Distributed Training"
+    ]
+  },
+  {
+    "job_id": "jd-0048",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·构建模型推理服务\n·负责深度学习模型的制定与训练\n·跟进前沿论文并复现\n·配合算法落地与性能改进\n·沉淀技术方案与最佳实践\n任职要求：\n1. 熟悉 TensorFlow、Computer Vision、Deep Learning、Machine Learning、Python\n2. 加分项：熟悉 PyTorch、Linux、强化学习 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Computer Vision"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0048",
+      "publisher": "某AI实验室",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Computer Vision",
+      "TensorFlow"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "强化学习"
+    ]
+  },
+  {
+    "job_id": "jd-0049",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·主导数据仓库建模与开发\n·构建数据质量监控体系\n·优化 Spark 作业性能\n·支撑 ETL 数据管道\n·负责线上问题排查与修复\n任职要求：\n1. 熟练使用 Spark、Docker、SQL、CI/CD、Python\n2. 加分项：熟悉 Hadoop、Hive、ClickHouse、Data Warehouse 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0049",
+      "publisher": "某AI实验室",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker",
+      "CI/CD"
+    ],
+    "gold_preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "ClickHouse",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0050",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·对接数据库与消息中间件\n·参与需求分析与技术选型\n·协助系统架构提升\n·编写单元测试\n·主导后端服务规划开发\n任职要求：\n1. 熟悉 SQL、Linux、Java、Kubernetes、Redis\n2. 加分项：熟悉 Git、Kafka、Go、CI/CD 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Kubernetes"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0050",
+      "publisher": "某大数据公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Kubernetes",
+      "Redis"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kafka",
+      "Go",
+      "CI/CD"
+    ]
+  },
+  {
+    "job_id": "jd-0051",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·承担自然语言处理模型研发\n·落地 RAG 应用\n·构建文本分类/信息抽取系统\n任职要求：\n1. 熟练使用 Python、TensorFlow、NLP、Fine-tuning、Deep Learning\n2. 加分项：熟悉 PyTorch、Machine Learning、Vector Database、Prompt Engineering 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Fine-tuning"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0051",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Fine-tuning",
+      "TensorFlow"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Vector Database",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "job_id": "jd-0052",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·负责大语言模型微调与对齐\n·提升推理性能与成本\n·参与需求分析与技术选型\n·构建 RAG 与 Agent 应用\n任职要求：\n1. 精通 多模态、PyTorch、LLM、Fine-tuning、Python\n2. 加分项：熟悉 Deep Learning、Transformer、Distributed Training 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "多模态"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0052",
+      "publisher": "某科技公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "多模态",
+      "Fine-tuning"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Distributed Training"
+    ]
+  },
+  {
+    "job_id": "jd-0053",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·训练目标检测/图像分割模型\n·提升模型精度与推理速度\n·指导初级工程师成长\n·负责计算机视觉算法研发\n·部署模型到边缘设备\n任职要求：\n1. 熟悉 Deep Learning、NLP、Embedded Systems、Python、Computer Vision\n2. 加分项：熟悉 PyTorch、TensorFlow、Edge Computing、多模态 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "NLP"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0053",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "NLP",
+      "Embedded Systems"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Edge Computing",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0054",
+    "title": "推荐算法工程师",
+    "description": "岗位职责：\n·规划 A/B 实验\n·搭建实时推荐链路\n·负责推荐系统召回与排序\n·指导初级工程师成长\n·提升特征工程与模型效果\n任职要求：\n1. 精通 Python、Recommendation System、Data Warehouse、Feature Engineering、Machine Learning\n2. 加分项：熟悉 Spark、SQL、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Data Warehouse"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0054",
+      "publisher": "某AI实验室",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Data Warehouse",
+      "Feature Engineering"
+    ],
+    "gold_preferred_skills": [
+      "Spark",
+      "SQL",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0055",
+    "title": "知识图谱工程师",
+    "description": "岗位职责：\n·支撑智能问答应用\n·编写技术文档与设计评审\n·制定本体与实体对齐\n·负责知识图谱构建与推理\n·结合大模型做知识抽取\n任职要求：\n1. 精通 Knowledge Graph、Neo4j、NLP、PyTorch、Python\n2. 加分项：熟悉 SQL、LLM、Embedding 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Neo4j"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0055",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Neo4j",
+      "PyTorch"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "LLM",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0056",
+    "title": "物联网嵌入式工程师",
+    "description": "岗位职责：\n·规划设备通信与数据采集\n·对接云平台\n·改进低功耗与实时性\n任职要求：\n1. 熟悉 Linux、ONNX、C++、Computer Vision、Embedded Systems\n2. 加分项：熟悉 MQTT、IoT、Kubernetes 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ONNX"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0056",
+      "publisher": "某AI实验室",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ONNX",
+      "Computer Vision"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0057",
+    "title": "边缘计算工程师",
+    "description": "岗位职责：\n·部署模型到边缘设备\n·负责线上问题排查与修复\n·优化边缘推理性能\n·承担边缘计算平台研发\n·搭建设备管理平台\n任职要求：\n1. 掌握 Linux、Kubernetes、MQTT、IoT、Edge Computing\n2. 加分项：熟悉 Python、Docker、Embedded Systems 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "MQTT"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0057",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "MQTT",
+      "Kubernetes"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Docker",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "job_id": "jd-0058",
+    "title": "机器人算法工程师",
+    "description": "岗位职责：\n·负责机器人感知与规划算法\n·开发 SLAM 与导航\n·与产品、测试团队协作交付\n·改进实时控制性能\n·集成传感器与执行器\n任职要求：\n1. 精通 ROS、Linux、PyTorch、C++、ONNX\n2. 加分项：熟悉 Python、Computer Vision、MQTT、SLAM 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "PyTorch"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0058",
+      "publisher": "某互联网公司",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.216870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "PyTorch",
+      "ONNX"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "MQTT",
+      "SLAM"
+    ]
+  },
+  {
+    "job_id": "jd-0059",
+    "title": "MLOps 工程师",
+    "description": "岗位职责：\n·管理实验与版本\n·改进模型服务性能\n·搭建 CI/CD 与监控\n·承担模型训练与部署流水线\n任职要求：\n1. 深入理解 Spark、Model Serving、MLOps、Docker、Python\n2. 加分项：熟悉 Kubernetes、CI/CD、ONNX、TensorRT 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Spark"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0059",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Spark",
+      "Model Serving"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "ONNX",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0060",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·搭建模型推理服务\n·承担深度学习模型的设计与训练\n·跟进前沿论文并复现\n·编写技术文档与设计评审\n·参与算法落地与性能改进\n任职要求：\n1. 精通 Deep Learning、Model Serving、Machine Learning、Feature Engineering、Python\n2. 加分项：熟悉 PyTorch、Linux、ONNX 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Model Serving"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0060",
+      "publisher": "某物联网公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Model Serving",
+      "Feature Engineering"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "ONNX"
+    ]
+  },
+  {
+    "job_id": "jd-0061",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·支撑 ETL 数据管道\n·搭建数据质量监控体系\n·改进 Spark 作业性能\n·参与需求分析与技术选型\n·承担数据仓库建模与研发\n任职要求：\n1. 精通 Kubernetes、Python、SQL、ClickHouse、Spark\n2. 加分项：熟悉 Hadoop、Hive、Kafka 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0061",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes",
+      "ClickHouse"
+    ],
+    "gold_preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Kafka"
+    ]
+  },
+  {
+    "job_id": "jd-0062",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·编写单元测试\n·编写技术文档与设计评审\n·对接数据库与消息中间件\n·负责后端服务设计开发\n·配合系统架构提升\n任职要求：\n1. 熟悉 Data Warehouse、Java、SQL、Linux、Nginx\n2. 加分项：熟悉 Git、Kafka、Redis、CI/CD 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Data Warehouse"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0062",
+      "publisher": "某物联网公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Data Warehouse",
+      "Nginx"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kafka",
+      "Redis",
+      "CI/CD"
+    ]
+  },
+  {
+    "job_id": "jd-0063",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·优化大模型微调与推理\n·指导初级工程师成长\n·落地 RAG 应用\n·构建文本分类/信息抽取系统\n任职要求：\n1. 熟练使用 Deep Learning、RAG、Fine-tuning、NLP、Python\n2. 加分项：熟悉 PyTorch、Machine Learning、TensorFlow 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Fine-tuning"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0063",
+      "publisher": "某互联网公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Fine-tuning",
+      "RAG"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "TensorFlow"
+    ]
+  },
+  {
+    "job_id": "jd-0064",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·提升推理性能与成本\n·搭建评测体系\n·承担大语言模型微调与对齐\n·与产品、测试团队协作交付\n·构建 RAG 与 Agent 应用\n任职要求：\n1. 深入理解 Python、Distributed Training、PyTorch、强化学习、LLM\n2. 加分项：熟悉 Deep Learning、Transformer、Fine-tuning、Vector Database 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Distributed Training"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0064",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Distributed Training",
+      "强化学习"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Fine-tuning",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0065",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·训练目标检测/图像分割模型\n·沉淀技术方案与最佳实践\n·主导计算机视觉算法研发\n·部署模型到边缘设备\n·优化模型精度与推理速度\n任职要求：\n1. 熟悉 Deep Learning、Edge Computing、Model Serving、Python、Computer Vision\n2. 加分项：熟悉 PyTorch、TensorFlow、Embedded Systems 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0065",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing",
+      "Model Serving"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "job_id": "jd-0066",
+    "title": "推荐算法工程师",
+    "description": "岗位职责：\n·构建实时推荐链路\n·主导推荐系统召回与排序\n·规划 A/B 实验\n·优化特征工程与模型效果\n任职要求：\n1. 精通 Recommendation System、SQL、Spark、Machine Learning、Python\n2. 加分项：熟悉 A/B Testing、Data Warehouse 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "SQL"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0066",
+      "publisher": "某大数据公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "SQL",
+      "Spark"
+    ],
+    "gold_preferred_skills": [
+      "A/B Testing",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0067",
+    "title": "知识图谱工程师",
+    "description": "岗位职责：\n·设计本体与实体对齐\n·支撑智能问答应用\n·主导知识图谱构建与推理\n·结合大模型做知识抽取\n·沉淀技术方案与最佳实践\n任职要求：\n1. 深入理解 Python、Knowledge Graph、NLP、LLM、Deep Learning\n2. 加分项：熟悉 SQL、RAG 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0067",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "LLM"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "RAG"
+    ]
+  },
+  {
+    "job_id": "jd-0068",
+    "title": "物联网嵌入式工程师",
+    "description": "岗位职责：\n·制定设备通信与数据采集\n·对接云平台\n·承担嵌入式固件实现\n·改进低功耗与实时性\n·指导初级工程师成长\n任职要求：\n1. 掌握 Python、Docker、C++、Linux、Embedded Systems\n2. 加分项：熟悉 MQTT、IoT、Kubernetes、Computer Vision 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Python"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0068",
+      "publisher": "某互联网公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Python",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Computer Vision"
+    ]
+  },
+  {
+    "job_id": "jd-0069",
+    "title": "边缘计算工程师",
+    "description": "岗位职责：\n·负责边缘计算平台研发\n·部署模型到边缘设备\n·优化边缘推理性能\n·沉淀技术方案与最佳实践\n·搭建设备管理平台\n任职要求：\n1. 深入理解 Linux、IoT、Edge Computing、Computer Vision、Docker\n2. 加分项：熟悉 Python、ROS、C++ 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0069",
+      "publisher": "某AI实验室",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "Computer Vision"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "ROS",
+      "C++"
+    ]
+  },
+  {
+    "job_id": "jd-0070",
+    "title": "机器人算法工程师",
+    "description": "岗位职责：\n·负责机器人感知与规划算法\n·集成传感器与执行器\n·改进实时控制性能\n任职要求：\n1. 熟练使用 ROS、Edge Computing、TensorRT、C++、Linux\n2. 加分项：熟悉 Python、Computer Vision、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Edge Computing"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0070",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Edge Computing",
+      "TensorRT"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0071",
+    "title": "MLOps 工程师",
+    "description": "岗位职责：\n·构建 CI/CD 与监控\n·管理实验与版本\n·承担模型训练与部署流水线\n·优化模型服务性能\n任职要求：\n1. 掌握 ONNX、TensorRT、Docker、MLOps、Python\n2. 加分项：熟悉 Kubernetes、CI/CD、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "TensorRT"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0071",
+      "publisher": "某互联网公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "TensorRT",
+      "ONNX"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0072",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·指导初级工程师成长\n·建设模型推理服务\n·承担深度学习模型的设计与训练\n·跟进前沿论文并复现\n·配合算法落地与性能改进\n任职要求：\n1. 深入理解 Machine Learning、强化学习、Deep Learning、Docker、Python\n2. 加分项：熟悉 PyTorch、Linux、Model Serving 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0072",
+      "publisher": "某物联网公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Docker",
+      "强化学习"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0073",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·支撑 ETL 数据管道\n·建设数据质量监控体系\n·改进 Spark 作业性能\n·编写技术文档与设计评审\n任职要求：\n1. 掌握 Python、Spark、SQL、Go、Hadoop\n2. 加分项：熟悉 Hive、ETL、Kafka 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Hadoop"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0073",
+      "publisher": "某科技公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Hadoop",
+      "Go"
+    ],
+    "gold_preferred_skills": [
+      "Hive",
+      "ETL",
+      "Kafka"
+    ]
+  },
+  {
+    "job_id": "jd-0074",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·对接数据库与消息中间件\n·负责后端服务规划开发\n·参与系统架构改进\n·编写单元测试\n任职要求：\n1. 深入理解 Data Warehouse、Kafka、SQL、Java、Linux\n2. 加分项：熟悉 Git、微服务、Docker 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Kafka"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0074",
+      "publisher": "某科技公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Kafka",
+      "Data Warehouse"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "微服务",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0075",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·主导自然语言处理模型研发\n·构建文本分类/信息抽取系统\n·提升大模型微调与推理\n·落地 RAG 应用\n任职要求：\n1. 精通 NLP、Fine-tuning、Python、Deep Learning、PyTorch\n2. 加分项：熟悉 Machine Learning、Embedding 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "PyTorch"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0075",
+      "publisher": "某AI实验室",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "PyTorch",
+      "Fine-tuning"
+    ],
+    "gold_preferred_skills": [
+      "Machine Learning",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0076",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·搭建评测体系\n·负责线上问题排查与修复\n·构建 RAG 与 Agent 应用\n·改进推理性能与成本\n·主导大语言模型微调与对齐\n任职要求：\n1. 深入理解 LLM、PyTorch、多模态、Python、Distributed Training\n2. 加分项：熟悉 Deep Learning、Transformer、Embedding 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Distributed Training"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0076",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Distributed Training",
+      "多模态"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0077",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·训练目标检测/图像分割模型\n·主导计算机视觉算法研发\n·优化模型精度与推理速度\n任职要求：\n1. 深入理解 NLP、Edge Computing、Python、Computer Vision、Deep Learning\n2. 加分项：熟悉 PyTorch、TensorFlow、Linux、TensorRT 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0077",
+      "publisher": "某智能制造企业",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing",
+      "NLP"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Linux",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0078",
+    "title": "推荐算法工程师",
+    "description": "岗位职责：\n·提升特征工程与模型效果\n·负责推荐系统召回与排序\n·规划 A/B 实验\n·建设实时推荐链路\n任职要求：\n1. 熟悉 Feature Engineering、Machine Learning、A/B Testing、Recommendation System、Python\n2. 加分项：熟悉 Spark、SQL、PyTorch、Deep Learning 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "A/B Testing"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0078",
+      "publisher": "某大数据公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.217996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "A/B Testing",
+      "Feature Engineering"
+    ],
+    "gold_preferred_skills": [
+      "Spark",
+      "SQL",
+      "PyTorch",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0079",
+    "title": "知识图谱工程师",
+    "description": "岗位职责：\n·设计本体与实体对齐\n·支撑智能问答应用\n·指导初级工程师成长\n·结合大模型做知识抽取\n·主导知识图谱构建与推理\n任职要求：\n1. 掌握 Docker、NLP、Neo4j、Knowledge Graph、Python\n2. 加分项：熟悉 SQL、LLM、Deep Learning、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Neo4j"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0079",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Neo4j",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "LLM",
+      "Deep Learning",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0080",
+    "title": "物联网嵌入式工程师",
+    "description": "岗位职责：\n·与产品、测试团队协作交付\n·承担嵌入式固件开发\n·改进低功耗与实时性\n·设计设备通信与数据采集\n任职要求：\n1. 深入理解 C++、Linux、Embedded Systems、ONNX、Docker\n2. 加分项：熟悉 MQTT、IoT、Edge Computing 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ONNX"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0080",
+      "publisher": "某AI实验室",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ONNX",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Edge Computing"
+    ]
+  },
+  {
+    "job_id": "jd-0081",
+    "title": "边缘计算工程师",
+    "description": "岗位职责：\n·建设设备管理平台\n·提升边缘推理性能\n·部署模型到边缘设备\n·主导边缘计算平台研发\n·负责线上问题排查与修复\n任职要求：\n1. 熟悉 IoT、Docker、Edge Computing、Linux、Computer Vision\n2. 加分项：熟悉 Python、Kubernetes 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Computer Vision"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0081",
+      "publisher": "某大数据公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Computer Vision",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0082",
+    "title": "机器人算法工程师",
+    "description": "岗位职责：\n·集成传感器与执行器\n·优化实时控制性能\n·主导机器人感知与规划算法\n·开发 SLAM 与导航\n任职要求：\n1. 深入理解 C++、ROS、ONNX、Linux、PyTorch\n2. 加分项：熟悉 Python、Computer Vision、TensorRT 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "PyTorch"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0082",
+      "publisher": "某科技公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "PyTorch",
+      "ONNX"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0083",
+    "title": "MLOps 工程师",
+    "description": "岗位职责：\n·提升模型服务性能\n·构建 CI/CD 与监控\n·参与需求分析与技术选型\n·管理实验与版本\n·主导模型训练与部署流水线\n任职要求：\n1. 掌握 SQL、PyTorch、Python、MLOps、Docker\n2. 加分项：熟悉 Kubernetes、CI/CD、AWS 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "SQL"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0083",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "SQL",
+      "PyTorch"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "AWS"
+    ]
+  },
+  {
+    "job_id": "jd-0084",
+    "title": "人工智能算法工程师",
+    "description": "岗位职责：\n·负责深度学习模型的制定与训练\n·参与算法落地与性能优化\n·跟进前沿论文并复现\n·搭建模型推理服务\n任职要求：\n1. 掌握 Python、ONNX、NLP、Machine Learning、Deep Learning\n2. 加分项：熟悉 PyTorch、Linux、TensorRT 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "ONNX"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0084",
+      "publisher": "某互联网公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "ONNX",
+      "NLP"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0085",
+    "title": "大数据开发工程师",
+    "description": "岗位职责：\n·承担数据仓库建模与开发\n·维护 ETL 数据管道\n·改进 Spark 作业性能\n·构建数据质量监控体系\n任职要求：\n1. 精通 Data Warehouse、Python、Spark、Kubernetes、SQL\n2. 加分项：熟悉 Hadoop、Hive、OLAP 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0085",
+      "publisher": "某互联网公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes",
+      "Data Warehouse"
+    ],
+    "gold_preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "OLAP"
+    ]
+  },
+  {
+    "job_id": "jd-0086",
+    "title": "Java 开发工程师",
+    "description": "岗位职责：\n·配合系统架构提升\n·对接数据库与消息中间件\n·编写单元测试\n任职要求：\n1. 熟练使用 SQL、Java、Model Serving、Linux、Docker\n2. 加分项：熟悉 Git、Kafka、Redis、微服务 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Model Serving"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0086",
+      "publisher": "某AI实验室",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Model Serving",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kafka",
+      "Redis",
+      "微服务"
+    ]
+  },
+  {
+    "job_id": "jd-0087",
+    "title": "NLP 算法工程师",
+    "description": "岗位职责：\n·负责自然语言处理模型研发\n·构建文本分类/信息抽取系统\n·落地 RAG 应用\n任职要求：\n1. 精通 Python、Deep Learning、NLP、Transformer、Linux\n2. 加分项：熟悉 PyTorch、Machine Learning、TensorFlow、语音识别 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Transformer"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0087",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Transformer",
+      "Linux"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "TensorFlow",
+      "语音识别"
+    ]
+  },
+  {
+    "job_id": "jd-0088",
+    "title": "大模型算法工程师",
+    "description": "岗位职责：\n·建设评测体系\n·优化推理性能与成本\n·负责大语言模型微调与对齐\n·构建 RAG 与 Agent 应用\n任职要求：\n1. 精通 Agent、PyTorch、Vector Database、Python、LLM\n2. 加分项：熟悉 Deep Learning、Transformer、Linux、MLOps 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Agent"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0088",
+      "publisher": "某科技公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Agent",
+      "Vector Database"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Linux",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0089",
+    "title": "CV 算法工程师",
+    "description": "岗位职责：\n·编写技术文档与设计评审\n·训练目标检测/图像分割模型\n·承担计算机视觉算法研发\n·改进模型精度与推理速度\n任职要求：\n1. 精通 Python、Deep Learning、Computer Vision、NLP、强化学习\n2. 加分项：熟悉 PyTorch、TensorFlow、Embedded Systems、ONNX 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "NLP"
+    ],
+    "source": {
+      "source_type": "行业报告",
+      "url": "https://example.com/job/jd-0089",
+      "publisher": "某科技公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "NLP",
+      "强化学习"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Embedded Systems",
+      "ONNX"
+    ]
+  },
+  {
+    "job_id": "jd-0090",
+    "title": "大模型应用开发工程师",
+    "description": "岗位职责：\n·负责大模型应用层实现\n·提升 Prompt 与评测\n·构建 Agent 工作流\n·集成 RAG 与工具调用\n任职要求：\n1. 熟悉 Python、LLM、PyTorch、Embedding、RAG\n2. 加分项：熟悉 Agent、Prompt Engineering、Vector Database 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Embedding"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0090",
+      "publisher": "某互联网公司",
+      "published_at": "2026-08-16T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Embedding",
+      "PyTorch"
+    ],
+    "gold_preferred_skills": [
+      "Agent",
+      "Prompt Engineering",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0091",
+    "title": "大模型应用开发工程师",
+    "description": "岗位职责：\n·负责大模型应用层开发\n·集成 RAG 与工具调用\n·构建 Agent 工作流\n·改进 Prompt 与评测\n任职要求：\n1. 精通 Python、RAG、Prompt Engineering、LLM、Agent\n2. 加分项：熟悉 Fine-tuning、Deep Learning 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Agent"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0091",
+      "publisher": "某大数据公司",
+      "published_at": "2026-08-16T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Agent",
+      "Prompt Engineering"
+    ],
+    "gold_preferred_skills": [
+      "Fine-tuning",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0092",
+    "title": "大模型应用开发工程师",
+    "description": "岗位职责：\n·构建 Agent 工作流\n·集成 RAG 与工具调用\n·承担大模型应用层实现\n任职要求：\n1. 熟练使用 Docker、LLM、Vector Database、Python、RAG\n2. 加分项：熟悉 Agent、Prompt Engineering、MLOps、Deep Learning 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0092",
+      "publisher": "某大数据公司",
+      "published_at": "2026-08-06T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Docker",
+      "Vector Database"
+    ],
+    "gold_preferred_skills": [
+      "Agent",
+      "Prompt Engineering",
+      "MLOps",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0093",
+    "title": "大模型应用开发工程师",
+    "description": "岗位职责：\n·参与需求分析与技术选型\n·构建 Agent 工作流\n·优化 Prompt 与评测\n·集成 RAG 与工具调用\n任职要求：\n1. 精通 RAG、Python、LLM、多模态、Prompt Engineering\n2. 加分项：熟悉 Agent、Vector Database 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "RAG",
+      "多模态"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0093",
+      "publisher": "某大数据公司",
+      "published_at": "2026-08-16T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "多模态",
+      "Prompt Engineering"
+    ],
+    "gold_preferred_skills": [
+      "Agent",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0094",
+    "title": "AI Agent 工程师",
+    "description": "岗位职责：\n·负责智能体架构设计\n·构建评测与安全机制\n·开发多智能体协作\n·集成工具调用与记忆\n任职要求：\n1. 精通 Python、Agent、Knowledge Graph、LangChain、LLM\n2. 加分项：熟悉 Prompt Engineering、RAG、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Agent",
+      "LLM",
+      "LangChain"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0094",
+      "publisher": "某互联网公司",
+      "published_at": "2026-08-16T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "LangChain",
+      "Knowledge Graph"
+    ],
+    "gold_preferred_skills": [
+      "Prompt Engineering",
+      "RAG",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0095",
+    "title": "AI Agent 工程师",
+    "description": "岗位职责：\n·集成工具调用与记忆\n·开发多智能体协作\n·构建评测与安全机制\n任职要求：\n1. 熟练使用 Python、Agent、Docker、LLM、LangChain\n2. 加分项：熟悉 Prompt Engineering、RAG、PyTorch 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Agent",
+      "LLM",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "企业官网",
+      "url": "https://example.com/job/jd-0095",
+      "publisher": "某科技公司",
+      "published_at": "2026-08-06T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "Docker",
+      "LangChain"
+    ],
+    "gold_preferred_skills": [
+      "Prompt Engineering",
+      "RAG",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0096",
+    "title": "AI Agent 工程师",
+    "description": "岗位职责：\n·集成工具调用与记忆\n·研发多智能体协作\n·构建评测与安全机制\n·承担智能体架构设计\n任职要求：\n1. 深入理解 Knowledge Graph、LLM、Python、LangChain、Agent\n2. 加分项：熟悉 Prompt Engineering、RAG、多模态、Embedding 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Agent",
+      "LLM",
+      "Knowledge Graph"
+    ],
+    "source": {
+      "source_type": "技术社区",
+      "url": "https://example.com/job/jd-0096",
+      "publisher": "某AI实验室",
+      "published_at": "2026-08-06T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "Knowledge Graph",
+      "LangChain"
+    ],
+    "gold_preferred_skills": [
+      "Prompt Engineering",
+      "RAG",
+      "多模态",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0097",
+    "title": "AI Agent 工程师",
+    "description": "岗位职责：\n·构建评测与安全机制\n·开发多智能体协作\n·集成工具调用与记忆\n·编写技术文档与设计评审\n·主导智能体架构设计\n任职要求：\n1. 深入理解 LangChain、LLM、Agent、Python、RAG\n2. 加分项：熟悉 Prompt Engineering、多模态 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Agent",
+      "LLM",
+      "RAG"
+    ],
+    "source": {
+      "source_type": "课程与认证",
+      "url": "https://example.com/job/jd-0097",
+      "publisher": "某AI实验室",
+      "published_at": "2026-08-06T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.218996",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "RAG",
+      "LangChain"
+    ],
+    "gold_preferred_skills": [
+      "Prompt Engineering",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0098",
+    "title": "人工智能算法工程师",
+    "description": "工作内容：\n·参与需求分析与技术选型\n·跟进前沿论文并复现\n·负责深度学习模型的规划与训练\n·配合算法落地与性能改进\n·搭建模型推理服务\n职位要求：\n1. 掌握 Machine Learning、Docker、Deep Learning、PyTorch、Python\n2. 加分项：熟悉 Linux、Model Serving 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "PyTorch"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0098",
+      "publisher": "某外包公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.213870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "PyTorch",
+      "Docker"
+    ],
+    "gold_preferred_skills": [
+      "Linux",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0099",
+    "title": "大数据开发工程师",
+    "description": "工作内容：\n·建设数据质量监控体系\n·保障 ETL 数据管道\n·优化 Spark 作业性能\n·负责数据仓库建模与研发\n职位要求：\n1. 熟练使用 ETL、Python、Spark、SQL、Docker\n2. 加分项：熟悉 Hadoop、Hive、Flink 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "中级",
+    "tech_stack": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0099",
+      "publisher": "某外包公司",
+      "published_at": "2026-05-28T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.213870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker",
+      "ETL"
+    ],
+    "gold_preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Flink"
+    ]
+  },
+  {
+    "job_id": "jd-0100",
+    "title": "Java 开发工程师",
+    "description": "工作内容：\n·编写单元测试\n·负责后端服务设计开发\n·对接数据库与消息中间件\n职位要求：\n1. 精通 Linux、Docker、Spring、SQL、Java\n2. 加分项：熟悉 Git、Kafka、Data Warehouse 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "中级",
+    "tech_stack": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0100",
+      "publisher": "某外包公司",
+      "published_at": "2026-07-12T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.213870",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Docker",
+      "Spring"
+    ],
+    "gold_preferred_skills": [
+      "Git",
+      "Kafka",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0101",
+    "title": "NLP 算法工程师",
+    "description": "工作内容：\n·落地 RAG 应用\n·构建文本分类/信息抽取系统\n·提升大模型微调与推理\n·沉淀技术方案与最佳实践\n职位要求：\n1. 精通 NLP、Deep Learning、Python、Linux、Transformer\n2. 加分项：熟悉 PyTorch、Machine Learning、Vector Database 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Linux"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0101",
+      "publisher": "某外包公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Linux",
+      "Transformer"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0102",
+    "title": "大模型算法工程师",
+    "description": "工作内容：\n·沉淀技术方案与最佳实践\n·搭建评测体系\n·改进推理性能与成本\n·构建 RAG 与 Agent 应用\n·负责大语言模型微调与对齐\n职位要求：\n1. 熟悉 TensorRT、LLM、Python、PyTorch、强化学习\n2. 加分项：熟悉 Deep Learning、Transformer、MLOps 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "强化学习"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0102",
+      "publisher": "某外包公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "强化学习",
+      "TensorRT"
+    ],
+    "gold_preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0103",
+    "title": "CV 算法工程师",
+    "description": "工作内容：\n·提升模型精度与推理速度\n·部署模型到边缘设备\n·训练目标检测/图像分割模型\n·承担计算机视觉算法研发\n职位要求：\n1. 精通 Computer Vision、Linux、Deep Learning、Python、TensorFlow\n2. 加分项：熟悉 PyTorch、多模态 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorFlow"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0103",
+      "publisher": "某外包公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorFlow",
+      "Linux"
+    ],
+    "gold_preferred_skills": [
+      "PyTorch",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0104",
+    "title": "推荐算法工程师",
+    "description": "工作内容：\n·搭建实时推荐链路\n·改进特征工程与模型效果\n·负责推荐系统召回与排序\n·设计 A/B 实验\n职位要求：\n1. 深入理解 Python、Recommendation System、Machine Learning、Data Warehouse、Spark\n2. 加分项：熟悉 SQL、Hive 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "大数据",
+    "level": "高级",
+    "tech_stack": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0104",
+      "publisher": "某外包公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark",
+      "Data Warehouse"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "Hive"
+    ]
+  },
+  {
+    "job_id": "jd-0105",
+    "title": "知识图谱工程师",
+    "description": "工作内容：\n·设计本体与实体对齐\n·支撑智能问答应用\n·结合大模型做知识抽取\n·负责知识图谱构建与推理\n职位要求：\n1. 熟练使用 RAG、Knowledge Graph、Deep Learning、Python、NLP\n2. 加分项：熟悉 SQL、LLM、Vector Database、Docker 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "人工智能",
+    "level": "中级",
+    "tech_stack": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0105",
+      "publisher": "某外包公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "RAG"
+    ],
+    "gold_preferred_skills": [
+      "SQL",
+      "LLM",
+      "Vector Database",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0106",
+    "title": "物联网嵌入式工程师",
+    "description": "工作内容：\n·主导嵌入式固件实现\n·提升低功耗与实时性\n·设计设备通信与数据采集\n·指导初级工程师成长\n职位要求：\n1. 精通 Linux、Deep Learning、TensorRT、C++、Embedded Systems\n2. 加分项：熟悉 MQTT、IoT、Kubernetes、Python 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "TensorRT"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0106",
+      "publisher": "某外包公司",
+      "published_at": "2025-07-22T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "TensorRT",
+      "Deep Learning"
+    ],
+    "gold_preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Python"
+    ]
+  },
+  {
+    "job_id": "jd-0107",
+    "title": "边缘计算工程师",
+    "description": "工作内容：\n·优化边缘推理性能\n·建设设备管理平台\n·部署模型到边缘设备\n·主导边缘计算平台研发\n·沉淀技术方案与最佳实践\n职位要求：\n1. 熟练使用 Linux、Edge Computing、IoT、Docker、C++\n2. 加分项：熟悉 Python、ROS 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "物联网",
+    "level": "中级",
+    "tech_stack": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0107",
+      "publisher": "某外包公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "C++"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "ROS"
+    ]
+  },
+  {
+    "job_id": "jd-0108",
+    "title": "机器人算法工程师",
+    "description": "工作内容：\n·集成传感器与执行器\n·改进实时控制性能\n·主导机器人感知与规划算法\n·开发 SLAM 与导航\n职位要求：\n1. 深入理解 Linux、SLAM、ONNX、ROS、C++\n2. 加分项：熟悉 Python、Computer Vision、Embedded Systems、Deep Learning 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "ROS",
+      "C++",
+      "Linux",
+      "SLAM"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0108",
+      "publisher": "某外包公司",
+      "published_at": "2026-08-11T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "SLAM",
+      "ONNX"
+    ],
+    "gold_preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "Embedded Systems",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0109",
+    "title": "MLOps 工程师",
+    "description": "工作内容：\n·搭建 CI/CD 与监控\n·承担模型训练与部署流水线\n·改进模型服务性能\n·管理实验与版本\n职位要求：\n1. 熟悉 Linux、MLOps、Python、Docker、Deep Learning\n2. 加分项：熟悉 Kubernetes、CI/CD、Spark 者优先\n3. 计算机相关专业本科及以上学历，3 年以上工作经验",
+    "industry": "智能系统",
+    "level": "高级",
+    "tech_stack": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Linux"
+    ],
+    "source": {
+      "source_type": "招聘平台",
+      "url": "https://example.com/job/jd-0109",
+      "publisher": "某外包公司",
+      "published_at": "2026-02-07T23:09:59.213870",
+      "collected_at": "2026-08-26T23:09:59.214957",
+      "language": "zh"
+    },
+    "gold_required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Linux",
+      "Deep Learning"
+    ],
+    "gold_preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "Spark"
+    ]
+  }
+]

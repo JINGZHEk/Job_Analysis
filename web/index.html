@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>岗位能力图谱系统</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f7fa; color: #1f2933; }
+header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: #fff; padding: 20px 32px; }
+header h1 { font-size: 22px; font-weight: 600; }
+header p { font-size: 13px; opacity: .85; margin-top: 6px; }
+.tabs { display: flex; gap: 4px; padding: 12px 24px; background: #fff; border-bottom: 1px solid #e4e7eb; flex-wrap: wrap; }
+.tab { padding: 8px 18px; border-radius: 8px; cursor: pointer; font-size: 14px; color: #52606d; border: none; background: transparent; }
+.tab.active { background: #1e3a8a; color: #fff; }
+.tab:hover:not(.active) { background: #eef2f7; }
+main { padding: 20px 24px; max-width: 1280px; margin: 0 auto; }
+.panel { display: none; }
+.panel.active { display: block; }
+.card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.card h2 { font-size: 16px; margin-bottom: 14px; color: #1e3a8a; }
+.filters { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+select, input[type=text], textarea { padding: 8px 12px; border: 1px solid #cbd2d9; border-radius: 8px; font-size: 14px; }
+select:focus, input:focus, textarea:focus { outline: none; border-color: #3b82f6; }
+textarea { width: 100%; min-height: 140px; resize: vertical; font-family: inherit; }
+button { padding: 9px 18px; border-radius: 8px; border: none; background: #2563eb; color: #fff; font-size: 14px; cursor: pointer; }
+button:hover { background: #1d4ed8; }
+button.secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd2d9; }
+#graphCanvas { width: 100%; height: 560px; border: 1px solid #e4e7eb; border-radius: 10px; cursor: grab; }
+#graphCanvas:active { cursor: grabbing; }
+.legend { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: #52606d; }
+.legend .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+#matchResult .score-big { font-size: 42px; font-weight: 700; color: #2563eb; }
+#matchResult .dim { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+#matchResult .dim span { background: #eef2f7; padding: 6px 12px; border-radius: 20px; font-size: 13px; }
+.tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; margin: 2px; }
+.tag.matched { background: #dcfce7; color: #166534; }
+.tag.missing { background: #fee2e2; color: #991b1b; }
+.tag.info { background: #dbeafe; color: #1e40af; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eef2f7; vertical-align: top; }
+th { color: #52606d; font-weight: 600; }
+.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+.metric { background: #f8fafc; border-radius: 10px; padding: 16px; text-align: center; }
+.metric .v { font-size: 28px; font-weight: 700; color: #1e3a8a; }
+.metric .k { font-size: 13px; color: #52606d; margin-top: 4px; }
+.metric.good .v { color: #16a34a; }
+.metric.bad .v { color: #dc2626; }
+.role-card { border: 1px solid #e4e7eb; border-radius: 10px; padding: 14px; margin-bottom: 10px; }
+.role-card h3 { font-size: 15px; margin-bottom: 6px; }
+.role-card .row { margin-top: 5px; font-size: 13px; }
+.loading { text-align: center; color: #52606d; padding: 30px; }
+.hidden { display: none; }
+h3.section { margin: 14px 0 8px; font-size: 14px; color: #334155; }
+</style>
+</head>
+<body>
+<header>
+  <h1>岗位能力图谱系统</h1>
+  <p>多源异构数据驱动 · 新岗位发现 · 能力动态演化 · 人岗匹配 · 学习路径</p>
+</header>
+
+<div class="tabs">
+  <button class="tab active" data-panel="graph">全景图谱</button>
+  <button class="tab" data-panel="discover">新岗位发现</button>
+  <button class="tab" data-panel="timeline">岗位演化</button>
+  <button class="tab" data-panel="match">人岗匹配</button>
+  <button class="tab" data-panel="eval">评测指标</button>
+</div>
+
+<main>
+  <div class="panel active" id="graph">
+    <div class="card">
+      <h2>岗位—技能全景图谱（力导向布局，蓝=岗位，青=技能）</h2>
+      <div class="filters">
+        <select id="gIndustry"><option value="">全部行业</option></select>
+        <select id="gLevel"><option value="">全部级别</option></select>
+        <button class="secondary" onclick="renderGraph()">刷新布局</button>
+      </div>
+      <canvas id="graphCanvas"></canvas>
+      <div class="legend">
+        <span><span class="dot" style="background:#2563eb"></span>岗位</span>
+        <span><span class="dot" style="background:#93c5fd"></span>技能</span>
+        <span><span class="dot" style="background:#fbbf24"></span>新增/增长技能</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" id="discover">
+    <div class="card">
+      <h2>新岗位发现与定义</h2>
+      <div id="discoverResult" class="loading">加载中...</div>
+    </div>
+  </div>
+
+  <div class="panel" id="timeline">
+    <div class="card">
+      <h2>既有岗位能力动态更新</h2>
+      <div class="filters">
+        <select id="tRole"></select>
+        <input type="text" id="tWinA" value="2025-01-01" style="width:120px">
+        <input type="text" id="tWinB" value="2026-01-01" style="width:120px">
+        <button onclick="loadTimeline()">对比窗口</button>
+      </div>
+      <div id="timelineResult"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="match">
+    <div class="card">
+      <h2>人岗匹配诊断与差距分析</h2>
+      <div class="filters">
+        <span>目标岗位：</span>
+        <select id="mRole"></select>
+        <button onclick="fillSample()" class="secondary">填入示例简历</button>
+      </div>
+      <textarea id="mResume" placeholder="粘贴简历文本，例如：技能：Python、PyTorch、Deep Learning。项目经验：负责大模型微调..."></textarea>
+      <div style="margin-top:12px"><button onclick="doMatch()">诊断匹配</button></div>
+      <div id="matchResult" class="hidden"></div>
+    </div>
+  </div>
+
+  <div class="panel" id="eval">
+    <div class="card">
+      <h2>评测指标（自动对照金标准）</h2>
+      <div id="evalMetrics" class="loading">加载中...</div>
+    </div>
+  </div>
+</main>
+
+<script>
+const API = '';
+async function getJSON(url, opts) {
+  const r = await fetch(API + url, opts);
+  return r.json();
+}
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+// ---------- Tab 切换 ----------
+document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
+  t.classList.add('active');
+  document.getElementById(t.dataset.panel).classList.add('active');
+  const p = t.dataset.panel;
+  if (p === 'graph') renderGraph();
+  if (p === 'discover') loadDiscover();
+  if (p === 'eval') loadEval();
+}));
+
+// ---------- 力导向图谱 ----------
+let graphState = null;
+async function renderGraph() {
+  const industry = document.getElementById('gIndustry').value;
+  const level = document.getElementById('gLevel').value;
+  const data = await getJSON(`/api/v1/graph/panorama?industry=${encodeURIComponent(industry)}&level=${encodeURIComponent(level)}`);
+  graphState = layout(data);
+  drawGraph();
+}
+function layout(data) {
+  const nodes = data.nodes, edges = data.edges;
+  const byId = {};
+  nodes.forEach(n => byId[n.id] = n);
+  const pos = {}, role = new Set(), skill = new Set();
+  nodes.forEach(n => { pos[n.id] = [Math.random()*2-1, Math.random()*2-1]; (n.type==='Role'?role:skill).add(n.id); });
+  const adj = {};
+  edges.forEach(e => { (adj[e.source] ||= []).push(e.target); (adj[e.target] ||= []).push(e.source); });
+  const N = nodes.length || 1;
+  // 简单力模拟
+  for (let it = 0; it < 180; it++) {
+    const force = {};
+    nodes.forEach(n => force[n.id] = [0,0]);
+    // 斥力
+    for (let i = 0; i < N; i++) for (let j = i+1; j < N; j++) {
+      const a = nodes[i].id, b = nodes[j].id;
+      let dx = pos[a][0]-pos[b][0], dy = pos[a][1]-pos[b][1];
+      let d2 = dx*dx+dy*dy; if (d2 < 1e-4) { dx = Math.random()-0.5; dy = Math.random()-0.5; d2 = dx*dx+dy*dy; }
+      const d = Math.sqrt(d2), f = 1.0/d2;
+      const fx = f*dx/d, fy = f*dy/d;
+      force[a][0]+=fx; force[a][1]+=fy; force[b][0]-=fx; force[b][1]-=fy;
+    }
+    // 边引力（技能向岗位聚集）
+    edges.forEach(e => {
+      const a = e.source, b = e.target; if (!(a in pos) || !(b in pos)) return;
+      const dx = pos[b][0]-pos[a][0], dy = pos[b][1]-pos[a][1];
+      const d = Math.sqrt(dx*dx+dy*dy) || 0.01;
+      const f = 0.03 * d * (e.is_required ? 1.3 : 0.7);
+      const fx = f*dx/d, fy = f*dy/d;
+      force[a][0]+=fx; force[a][1]+=fy; force[b][0]-=fx; force[b][1]-=fy;
+    });
+    // 应用 + 中心引力
+    nodes.forEach(n => {
+      const id = n.id;
+      pos[id][0] += force[id][0]*0.05 - pos[id][0]*0.02;
+      pos[id][1] += force[id][1]*0.05 - pos[id][1]*0.02;
+    });
+  }
+  // 归一化到画布
+  let minx=1e9,maxx=-1e9,miny=1e9,maxy=-1e9;
+  nodes.forEach(n => { minx=Math.min(minx,pos[n.id][0]); maxx=Math.max(maxx,pos[n.id][0]); miny=Math.min(miny,pos[n.id][1]); maxy=Math.max(maxy,pos[n.id][1]); });
+  const spanx = (maxx-minx)||1, spany = (maxy-miny)||1;
+  nodes.forEach(n => { pos[n.id][0] = (pos[n.id][0]-minx)/spanx; pos[n.id][1] = (pos[n.id][1]-miny)/spany; });
+  return { nodes, edges, pos, byId };
+}
+function drawGraph() {
+  const s = graphState; if (!s) return;
+  const canvas = document.getElementById('graphCanvas');
+  const W = canvas.width = canvas.clientWidth * devicePixelRatio;
+  const H = canvas.height = canvas.clientHeight * devicePixelRatio;
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  const cw = canvas.clientWidth, ch = canvas.clientHeight;
+  ctx.clearRect(0,0,cw,ch);
+  const P = (n) => [20 + s.pos[n.id][0]*(cw-40), 20 + s.pos[n.id][1]*(ch-40)];
+  // 边
+  s.edges.forEach(e => {
+    const a = P(e.source), b = P(e.target);
+    ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]);
+    ctx.strokeStyle = e.is_required ? 'rgba(37,99,235,.30)' : 'rgba(148,163,184,.22)';
+    ctx.lineWidth = e.is_required ? 1.4 : 1;
+    ctx.stroke();
+  });
+  // 技能节点
+  s.nodes.filter(n=>n.type==='Skill').forEach(n => {
+    const p = P(n);
+    const growth = n.trend_state && (n.trend_state==='增长'||n.trend_state==='萌芽');
+    ctx.beginPath(); ctx.arc(p[0],p[1], 4.5, 0, 2*Math.PI);
+    ctx.fillStyle = growth ? '#fbbf24' : '#93c5fd'; ctx.fill();
+    ctx.fillStyle = '#1e3a8a'; ctx.font = '11px sans-serif';
+    ctx.fillText(n.label, p[0]+7, p[1]+3);
+  });
+  // 岗位节点
+  s.nodes.filter(n=>n.type==='Role').forEach(n => {
+    const p = P(n);
+    ctx.beginPath(); ctx.arc(p[0],p[1], 10, 0, 2*Math.PI);
+    ctx.fillStyle = '#2563eb'; ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+    ctx.fillStyle = '#0f172a'; ctx.font = 'bold 12px sans-serif';
+    ctx.fillText(n.label, p[0]+14, p[1]+4);
+  });
+}
+window.addEventListener('resize', () => { if (document.getElementById('graph').classList.contains('active')) drawGraph(); });
+document.getElementById('gIndustry').addEventListener('change', renderGraph);
+document.getElementById('gLevel').addEventListener('change', renderGraph);
+
+// ---------- 岗位列表 + 行业筛选 ----------
+async function loadRoles() {
+  const data = await getJSON('/api/v1/roles');
+  const mRole = document.getElementById('mRole');
+  const tRole = document.getElementById('tRole');
+  data.roles.forEach(r => {
+    const o1 = document.createElement('option'); o1.value = r; o1.textContent = r;
+    const o2 = document.createElement('option'); o2.value = r; o2.textContent = r;
+    mRole.appendChild(o1); tRole.appendChild(o2);
+  });
+  const pan = await getJSON('/api/v1/graph/panorama');
+  const inds = new Set(pan.nodes.filter(n => n.type==='Role').map(n => n.industry).filter(Boolean));
+  const gi = document.getElementById('gIndustry');
+  inds.forEach(x => { const o = document.createElement('option'); o.value = x; o.textContent = x; gi.appendChild(o); });
+}
+
+// ---------- 新岗位发现 ----------
+async function loadDiscover() {
+  const el = document.getElementById('discoverResult');
+  el.innerHTML = '<div class="loading">分析中...</div>';
+  const data = await getJSON('/api/v1/roles/discover', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({known_roles: []}) });
+  if (!data.candidates.length) { el.innerHTML = '<p>暂无候选新岗位（可调整阈值或扩充数据）</p>'; return; }
+  el.innerHTML = data.candidates.map(c => `
+    <div class="role-card">
+      <h3>${esc(c.name)}
+        <span class="tag info">萌芽度 ${(c.emergence_score*100).toFixed(0)}%</span>
+        <span class="tag info">${esc(c.lifecycle)}</span>
+        <span class="tag info">${esc(c.industry)}</span>
+      </h3>
+      <div class="row"><b>核心职责：</b>${(c.core_responsibilities||[]).slice(0,3).map(esc).join('；')}</div>
+      <div class="row"><b>必备技能：</b>${(c.required_skills||[]).map(s=>`<span class="tag matched">${esc(s)}</span>`).join('')}</div>
+      <div class="row"><b>加分技能：</b>${(c.preferred_skills||[]).map(s=>`<span class="tag">${esc(s)}</span>`).join('')}</div>
+      <div class="row"><b>典型场景：</b>${(c.typical_scenarios||[]).map(esc).join('、')}</div>
+    </div>`).join('');
+}
+
+// ---------- 岗位演化 ----------
+async function loadTimeline() {
+  const role = document.getElementById('tRole').value;
+  const a = document.getElementById('tWinA').value;
+  const b = document.getElementById('tWinB').value;
+  const data = await getJSON(`/api/v1/roles/${encodeURIComponent(role)}/timeline?window_a=${a}&window_b=${b}`);
+  const el = document.getElementById('timelineResult');
+  el.innerHTML = `
+    <p style="margin-bottom:12px;font-weight:600">${esc(data.summary)}</p>
+    <h3 class="section">新增能力</h3>
+    <div>${(data.added||[]).map(s=>`<span class="tag matched">${esc(s.skill)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
+    <h3 class="section">删除能力</h3>
+    <div>${(data.removed||[]).map(s=>`<span class="tag missing">${esc(s.skill)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
+    <h3 class="section">修改能力</h3>
+    <div>${(data.modified||[]).map(s=>`<span class="tag">${esc(s.skill)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>`;
+}
+
+// ---------- 人岗匹配 ----------
+function fillSample() {
+  const samples = {
+    '大模型算法工程师': '技能：Python、PyTorch、Deep Learning、Machine Learning、NLP、LLM、RAG、Fine-tuning\n项目经验：负责大模型微调与对齐，构建 RAG 应用\n工作年限：4 年\n学历：硕士',
+    'Java 开发工程师': '技能：Java、SQL、Linux、Git、Kafka、Docker\n项目经验：负责后端服务设计与开发，对接消息中间件\n工作年限：3 年\n学历：本科',
+    '知识图谱工程师': '技能：Python、Knowledge Graph、NLP、SQL、LLM、RAG\n项目经验：负责知识图谱构建，结合 LLM 做知识抽取\n工作年限：3 年\n学历：硕士',
+  };
+  const role = document.getElementById('mRole').value;
+  document.getElementById('mResume').value = samples[role] || '技能：Python、PyTorch、Deep Learning、Machine Learning、NLP、LLM、RAG\n项目经验：负责大模型微调与 RAG 应用\n工作年限：4 年\n学历：硕士';
+}
+async function doMatch() {
+  const role = document.getElementById('mRole').value;
+  const text = document.getElementById('mResume').value.trim();
+  if (!text) { alert('请先输入简历文本'); return; }
+  const data = await getJSON('/api/v1/matching/diagnose', {
+    method: 'POST', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({resume_text: text, role_name: role})
+  });
+  const m = data.match;
+  const el = document.getElementById('matchResult');
+  el.classList.remove('hidden');
+  const pct = v => (v*100).toFixed(0)+'%';
+  el.innerHTML = `
+    <div class="score-big">${(m.total_score*100).toFixed(0)}<span style="font-size:16px;color:#52606d">分 / 100</span></div>
+    <div class="dim">
+      <span>技能匹配 ${pct(m.dimensions.skill_match)}</span>
+      <span>经验 ${pct(m.dimensions.experience)}</span>
+      <span>项目证据 ${pct(m.dimensions.project_evidence)}</span>
+      <span>技能新鲜度 ${pct(m.dimensions.skill_freshness)}</span>
+      <span>迁移能力 ${pct(m.dimensions.transfer_ability)}</span>
+    </div>
+    <div><b>硬门槛：</b>${m.hard_gate_pass ? '<span class="tag matched">通过</span>' : '<span class="tag missing">未通过</span>'}</div>
+    <h3 class="section">已满足技能</h3>
+    <div>${m.matched_skills.map(s=>`<span class="tag matched">${esc(s)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
+    <h3 class="section">缺失技能</h3>
+    <div>${m.missing_skills.map(s=>`<span class="tag missing">${esc(s)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
+    <h3 class="section">诊断解释</h3>
+    <ul style="padding-left:20px">${m.explanations.map(e=>`<li>${esc(e)}</li>`).join('')}</ul>
+    <h3 class="section">推荐学习路径（按技能先修 DAG 拓扑排序）</h3>
+    <table><tr><th>顺序</th><th>技能</th><th>先修于</th><th>预计时长</th><th>资源</th></tr>
+    ${data.learning_path.map(s=>`<tr><td>${s.step}</td><td>${esc(s.skill)}</td><td>${(s.prerequisite_of||[]).map(esc).join('、')}</td><td>${s.estimated_hours}h</td><td>${(s.resources||[]).slice(0,2).map(esc).join('、')}</td></tr>`).join('')}
+    </table>`;
+}
+
+// ---------- 评测 ----------
+async function loadEval() {
+  const el = document.getElementById('evalMetrics');
+  try {
+    const data = await getJSON('/api/v1/metrics/evaluation');
+    if (data.message) { el.innerHTML = `<p>${esc(data.message)}</p>`; return; }
+    const metric = (label, val, good) => `<div class="metric ${good?'good':'bad'}"><div class="v">${val}</div><div class="k">${label}</div></div>`;
+    el.innerHTML = `<div class="metrics">
+      ${metric('JD 解析 F1', (data.jd_parsing.f1*100).toFixed(1)+'%', data.jd_parsing.f1>=0.9)}
+      ${metric('简历提取 F1', (data.resume_extraction.f1*100).toFixed(1)+'%', data.resume_extraction.f1>=0.9)}
+      ${metric('匹配准确率', (data.matching.accuracy*100).toFixed(1)+'%', data.matching.accuracy>=0.9)}
+      ${metric('重复识别 F1', (data.duplication.f1*100).toFixed(1)+'%', data.duplication.f1>=0.9)}
+      ${metric('证据覆盖率', (data.evidence_coverage*100).toFixed(0)+'%', data.evidence_coverage>=0.9)}
+      ${metric('幻觉率', (data.hallucination_rate*100).toFixed(1)+'%', data.hallucination_rate<=0.05)}
+    </div>`;
+  } catch(e) { el.innerHTML = '<p>评测报告未生成，请运行 scripts/evaluate.py</p>'; }
+}
+
+// ---------- 初始化 ----------
+(async function init() {
+  await loadRoles();
+  renderGraph();
+})();
+</script>
+</body>
+</html>

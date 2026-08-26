@@ -1,0 +1,68 @@
+{
+  "app": {
+    "name": "job-ability-graph",
+    "version": "0.1.0",
+    "data_dir": "data",
+    "domains": ["人工智能", "大数据", "智能系统", "物联网"]
+  },
+  "trust": {
+    "weights": {
+      "source_authority": 0.25,
+      "freshness": 0.20,
+      "cross_source_agreement": 0.20,
+      "extraction_quality": 0.20,
+      "duplication_risk": 0.075,
+      "hallucination_risk": 0.075
+    },
+    "thresholds": {
+      "publish": 0.75,
+      "review": 0.45,
+      "reject": 0.45
+    },
+    "freshness_half_life_days": 365
+  },
+  "sources": {
+    "authority": {
+      "企业官网": 0.95,
+      "招聘平台": 0.70,
+      "技术社区": 0.60,
+      "课程与认证": 0.80,
+      "行业报告": 0.85,
+      "简历": 0.45
+    }
+  },
+  "llm": {
+    "provider": "mock",
+    "spark": {
+      "api_url": "https://spark-api-open.xf-yun.com/v1/chat/completions",
+      "api_key_env": "SPARK_API_KEY",
+      "model": "spark-lite",
+      "temperature": 0.1
+    }
+  },
+  "dedup": {
+    "simhash": {
+      "num_blocks": 64,
+      "hamming_threshold": 3
+    },
+    "minhash": {
+      "num_perm": 128,
+      "jaccard_threshold": 0.82
+    }
+  },
+  "matching": {
+    "weights": {
+      "hard_gate_pass": 0.0,
+      "skill_match": 0.45,
+      "experience": 0.15,
+      "project_evidence": 0.15,
+      "skill_freshness": 0.10,
+      "transfer_ability": 0.15
+    }
+  },
+  "trend": {
+    "window_days": 180,
+    "emergence_growth_rate": 1.5,
+    "decline_growth_rate": 0.5
+  }
+}

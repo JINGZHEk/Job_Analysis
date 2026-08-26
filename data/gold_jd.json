@@ -1,0 +1,1816 @@
+[
+  {
+    "job_id": "jd-0000",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "PyTorch",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Linux",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0001",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker",
+      "ETL"
+    ],
+    "preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Flink"
+    ]
+  },
+  {
+    "job_id": "jd-0002",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Docker",
+      "Spring"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kafka",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0003",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Linux",
+      "Transformer"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0004",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "强化学习",
+      "TensorRT"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0005",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorFlow",
+      "Linux"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0006",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark",
+      "Data Warehouse"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Hive"
+    ]
+  },
+  {
+    "job_id": "jd-0007",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "RAG"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "LLM",
+      "Vector Database",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0008",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "TensorRT",
+      "Deep Learning"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Python"
+    ]
+  },
+  {
+    "job_id": "jd-0009",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "C++"
+    ],
+    "preferred_skills": [
+      "Python",
+      "ROS"
+    ]
+  },
+  {
+    "job_id": "jd-0010",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "SLAM",
+      "ONNX"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "Embedded Systems",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0011",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Linux",
+      "Deep Learning"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "Spark"
+    ]
+  },
+  {
+    "job_id": "jd-0012",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "TensorRT",
+      "强化学习"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "Distributed Training"
+    ]
+  },
+  {
+    "job_id": "jd-0013",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes",
+      "Flink"
+    ],
+    "preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "ClickHouse",
+      "Go"
+    ]
+  },
+  {
+    "job_id": "jd-0014",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "CI/CD",
+      "Kafka"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0015",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Embedding",
+      "TensorFlow"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Prompt Engineering",
+      "Linux"
+    ]
+  },
+  {
+    "job_id": "jd-0016",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "多模态",
+      "Fine-tuning"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Linux"
+    ]
+  },
+  {
+    "job_id": "jd-0017",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing",
+      "TensorRT"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "NLP"
+    ]
+  },
+  {
+    "job_id": "jd-0018",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Data Warehouse",
+      "Deep Learning"
+    ],
+    "preferred_skills": [
+      "Spark",
+      "SQL",
+      "Kafka",
+      "Flink"
+    ]
+  },
+  {
+    "job_id": "jd-0019",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "SQL",
+      "Deep Learning"
+    ],
+    "preferred_skills": [
+      "LLM",
+      "RAG"
+    ]
+  },
+  {
+    "job_id": "jd-0020",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Computer Vision"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Edge Computing",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0021",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "MQTT",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Python",
+      "C++",
+      "AWS",
+      "Kubernetes",
+      "Docker",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0022",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Deep Learning",
+      "TensorRT"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "ONNX",
+      "SLAM",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0023",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "PyTorch",
+      "Distributed Training"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "TensorRT",
+      "Spark",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0024",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Computer Vision",
+      "TensorFlow"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "A/B Testing",
+      "Feature Engineering",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0025",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Hadoop",
+      "ETL"
+    ],
+    "preferred_skills": [
+      "Hive",
+      "Kafka",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0026",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Model Serving",
+      "Redis"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kafka",
+      "CI/CD",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0027",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "TensorFlow",
+      "多模态"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Prompt Engineering",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0028",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Deep Learning",
+      "MLOps"
+    ],
+    "preferred_skills": [
+      "Transformer",
+      "强化学习",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0029",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "多模态",
+      "Linux"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "ONNX",
+      "Model Serving",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0030",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Embedding",
+      "Kafka"
+    ],
+    "preferred_skills": [
+      "Spark",
+      "SQL",
+      "Hive",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0031",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "RAG"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "LLM",
+      "Java"
+    ]
+  },
+  {
+    "job_id": "jd-0032",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ROS",
+      "Kubernetes"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Edge Computing"
+    ]
+  },
+  {
+    "job_id": "jd-0033",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "MQTT"
+    ],
+    "preferred_skills": [
+      "Python",
+      "ROS",
+      "Computer Vision"
+    ]
+  },
+  {
+    "job_id": "jd-0034",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "MQTT",
+      "TensorRT"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "ONNX"
+    ]
+  },
+  {
+    "job_id": "jd-0035",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "SQL",
+      "Distributed Training"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "AWS",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0036",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Model Serving",
+      "NLP"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "Computer Vision",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0037",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "OLAP",
+      "AWS"
+    ],
+    "preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Data Warehouse",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0038",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Nginx",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kafka",
+      "Kubernetes",
+      "CI/CD"
+    ]
+  },
+  {
+    "job_id": "jd-0039",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Machine Learning",
+      "Embedding"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux"
+    ]
+  },
+  {
+    "job_id": "jd-0040",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Vector Database",
+      "Transformer"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "TensorRT",
+      "RAG"
+    ]
+  },
+  {
+    "job_id": "jd-0041",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Embedded Systems",
+      "多模态"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Edge Computing",
+      "C++"
+    ]
+  },
+  {
+    "job_id": "jd-0042",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark",
+      "Flink"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Data Warehouse",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0043",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "LLM",
+      "Vector Database",
+      "Machine Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0044",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ROS",
+      "Computer Vision"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Python"
+    ]
+  },
+  {
+    "job_id": "jd-0045",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "ROS"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Docker",
+      "AWS"
+    ]
+  },
+  {
+    "job_id": "jd-0046",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Computer Vision",
+      "Deep Learning"
+    ],
+    "preferred_skills": [
+      "Python",
+      "IoT",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "job_id": "jd-0047",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "CI/CD",
+      "SQL"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "Distributed Training"
+    ]
+  },
+  {
+    "job_id": "jd-0048",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Computer Vision",
+      "TensorFlow"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "强化学习"
+    ]
+  },
+  {
+    "job_id": "jd-0049",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker",
+      "CI/CD"
+    ],
+    "preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "ClickHouse",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0050",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Kubernetes",
+      "Redis"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kafka",
+      "Go",
+      "CI/CD"
+    ]
+  },
+  {
+    "job_id": "jd-0051",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Fine-tuning",
+      "TensorFlow"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Vector Database",
+      "Prompt Engineering"
+    ]
+  },
+  {
+    "job_id": "jd-0052",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "多模态",
+      "Fine-tuning"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Distributed Training"
+    ]
+  },
+  {
+    "job_id": "jd-0053",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "NLP",
+      "Embedded Systems"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Edge Computing",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0054",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Data Warehouse",
+      "Feature Engineering"
+    ],
+    "preferred_skills": [
+      "Spark",
+      "SQL",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0055",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Neo4j",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "LLM",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0056",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ONNX",
+      "Computer Vision"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0057",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "MQTT",
+      "Kubernetes"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Docker",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "job_id": "jd-0058",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "PyTorch",
+      "ONNX"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "MQTT",
+      "SLAM"
+    ]
+  },
+  {
+    "job_id": "jd-0059",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Spark",
+      "Model Serving"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "ONNX",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0060",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Model Serving",
+      "Feature Engineering"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "ONNX"
+    ]
+  },
+  {
+    "job_id": "jd-0061",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes",
+      "ClickHouse"
+    ],
+    "preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Kafka"
+    ]
+  },
+  {
+    "job_id": "jd-0062",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Data Warehouse",
+      "Nginx"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kafka",
+      "Redis",
+      "CI/CD"
+    ]
+  },
+  {
+    "job_id": "jd-0063",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Fine-tuning",
+      "RAG"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "TensorFlow"
+    ]
+  },
+  {
+    "job_id": "jd-0064",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Distributed Training",
+      "强化学习"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Fine-tuning",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0065",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing",
+      "Model Serving"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Embedded Systems"
+    ]
+  },
+  {
+    "job_id": "jd-0066",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "SQL",
+      "Spark"
+    ],
+    "preferred_skills": [
+      "A/B Testing",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0067",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "LLM"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "RAG"
+    ]
+  },
+  {
+    "job_id": "jd-0068",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "Python",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Computer Vision"
+    ]
+  },
+  {
+    "job_id": "jd-0069",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "Computer Vision"
+    ],
+    "preferred_skills": [
+      "Python",
+      "ROS",
+      "C++"
+    ]
+  },
+  {
+    "job_id": "jd-0070",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "Edge Computing",
+      "TensorRT"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0071",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "TensorRT",
+      "ONNX"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0072",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "Docker",
+      "强化学习"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0073",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Hadoop",
+      "Go"
+    ],
+    "preferred_skills": [
+      "Hive",
+      "ETL",
+      "Kafka"
+    ]
+  },
+  {
+    "job_id": "jd-0074",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Kafka",
+      "Data Warehouse"
+    ],
+    "preferred_skills": [
+      "Git",
+      "微服务",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0075",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "PyTorch",
+      "Fine-tuning"
+    ],
+    "preferred_skills": [
+      "Machine Learning",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0076",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Distributed Training",
+      "多模态"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0077",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "Edge Computing",
+      "NLP"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Linux",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0078",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "A/B Testing",
+      "Feature Engineering"
+    ],
+    "preferred_skills": [
+      "Spark",
+      "SQL",
+      "PyTorch",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0079",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Neo4j",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "LLM",
+      "Deep Learning",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0080",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "ONNX",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Edge Computing"
+    ]
+  },
+  {
+    "job_id": "jd-0081",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Computer Vision",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Kubernetes"
+    ]
+  },
+  {
+    "job_id": "jd-0082",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "PyTorch",
+      "ONNX"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0083",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "SQL",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "AWS"
+    ]
+  },
+  {
+    "job_id": "jd-0084",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "ONNX",
+      "NLP"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Linux",
+      "TensorRT"
+    ]
+  },
+  {
+    "job_id": "jd-0085",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Kubernetes",
+      "Data Warehouse"
+    ],
+    "preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "OLAP"
+    ]
+  },
+  {
+    "job_id": "jd-0086",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Model Serving",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kafka",
+      "Redis",
+      "微服务"
+    ]
+  },
+  {
+    "job_id": "jd-0087",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Transformer",
+      "Linux"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "TensorFlow",
+      "语音识别"
+    ]
+  },
+  {
+    "job_id": "jd-0088",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "Agent",
+      "Vector Database"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "Linux",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0089",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "NLP",
+      "强化学习"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "TensorFlow",
+      "Embedded Systems",
+      "ONNX"
+    ]
+  },
+  {
+    "job_id": "jd-0090",
+    "title": "大模型应用开发工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Embedding",
+      "PyTorch"
+    ],
+    "preferred_skills": [
+      "Agent",
+      "Prompt Engineering",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0091",
+    "title": "大模型应用开发工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Agent",
+      "Prompt Engineering"
+    ],
+    "preferred_skills": [
+      "Fine-tuning",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0092",
+    "title": "大模型应用开发工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "Docker",
+      "Vector Database"
+    ],
+    "preferred_skills": [
+      "Agent",
+      "Prompt Engineering",
+      "MLOps",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0093",
+    "title": "大模型应用开发工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "RAG",
+      "多模态",
+      "Prompt Engineering"
+    ],
+    "preferred_skills": [
+      "Agent",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0094",
+    "title": "AI Agent 工程师",
+    "required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "LangChain",
+      "Knowledge Graph"
+    ],
+    "preferred_skills": [
+      "Prompt Engineering",
+      "RAG",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0095",
+    "title": "AI Agent 工程师",
+    "required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "Docker",
+      "LangChain"
+    ],
+    "preferred_skills": [
+      "Prompt Engineering",
+      "RAG",
+      "PyTorch"
+    ]
+  },
+  {
+    "job_id": "jd-0096",
+    "title": "AI Agent 工程师",
+    "required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "Knowledge Graph",
+      "LangChain"
+    ],
+    "preferred_skills": [
+      "Prompt Engineering",
+      "RAG",
+      "多模态",
+      "Embedding"
+    ]
+  },
+  {
+    "job_id": "jd-0097",
+    "title": "AI Agent 工程师",
+    "required_skills": [
+      "Python",
+      "Agent",
+      "LLM",
+      "RAG",
+      "LangChain"
+    ],
+    "preferred_skills": [
+      "Prompt Engineering",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0098",
+    "title": "人工智能算法工程师",
+    "required_skills": [
+      "Python",
+      "Deep Learning",
+      "Machine Learning",
+      "PyTorch",
+      "Docker"
+    ],
+    "preferred_skills": [
+      "Linux",
+      "Model Serving"
+    ]
+  },
+  {
+    "job_id": "jd-0099",
+    "title": "大数据开发工程师",
+    "required_skills": [
+      "SQL",
+      "Spark",
+      "Python",
+      "Docker",
+      "ETL"
+    ],
+    "preferred_skills": [
+      "Hadoop",
+      "Hive",
+      "Flink"
+    ]
+  },
+  {
+    "job_id": "jd-0100",
+    "title": "Java 开发工程师",
+    "required_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Docker",
+      "Spring"
+    ],
+    "preferred_skills": [
+      "Git",
+      "Kafka",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "job_id": "jd-0101",
+    "title": "NLP 算法工程师",
+    "required_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Linux",
+      "Transformer"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "Machine Learning",
+      "Vector Database"
+    ]
+  },
+  {
+    "job_id": "jd-0102",
+    "title": "大模型算法工程师",
+    "required_skills": [
+      "Python",
+      "LLM",
+      "PyTorch",
+      "强化学习",
+      "TensorRT"
+    ],
+    "preferred_skills": [
+      "Deep Learning",
+      "Transformer",
+      "MLOps"
+    ]
+  },
+  {
+    "job_id": "jd-0103",
+    "title": "CV 算法工程师",
+    "required_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorFlow",
+      "Linux"
+    ],
+    "preferred_skills": [
+      "PyTorch",
+      "多模态"
+    ]
+  },
+  {
+    "job_id": "jd-0104",
+    "title": "推荐算法工程师",
+    "required_skills": [
+      "Python",
+      "Recommendation System",
+      "Machine Learning",
+      "Spark",
+      "Data Warehouse"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "Hive"
+    ]
+  },
+  {
+    "job_id": "jd-0105",
+    "title": "知识图谱工程师",
+    "required_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "Deep Learning",
+      "RAG"
+    ],
+    "preferred_skills": [
+      "SQL",
+      "LLM",
+      "Vector Database",
+      "Docker"
+    ]
+  },
+  {
+    "job_id": "jd-0106",
+    "title": "物联网嵌入式工程师",
+    "required_skills": [
+      "Embedded Systems",
+      "C++",
+      "Linux",
+      "TensorRT",
+      "Deep Learning"
+    ],
+    "preferred_skills": [
+      "MQTT",
+      "IoT",
+      "Kubernetes",
+      "Python"
+    ]
+  },
+  {
+    "job_id": "jd-0107",
+    "title": "边缘计算工程师",
+    "required_skills": [
+      "Edge Computing",
+      "IoT",
+      "Linux",
+      "Docker",
+      "C++"
+    ],
+    "preferred_skills": [
+      "Python",
+      "ROS"
+    ]
+  },
+  {
+    "job_id": "jd-0108",
+    "title": "机器人算法工程师",
+    "required_skills": [
+      "ROS",
+      "C++",
+      "Linux",
+      "SLAM",
+      "ONNX"
+    ],
+    "preferred_skills": [
+      "Python",
+      "Computer Vision",
+      "Embedded Systems",
+      "Deep Learning"
+    ]
+  },
+  {
+    "job_id": "jd-0109",
+    "title": "MLOps 工程师",
+    "required_skills": [
+      "MLOps",
+      "Docker",
+      "Python",
+      "Linux",
+      "Deep Learning"
+    ],
+    "preferred_skills": [
+      "Kubernetes",
+      "CI/CD",
+      "Spark"
+    ]
+  }
+]

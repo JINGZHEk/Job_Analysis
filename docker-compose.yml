@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  job-ability-graph:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - JOB_GRAPH_LLM_PROVIDER=${JOB_GRAPH_LLM_PROVIDER:-mock}
+      - SPARK_API_KEY=${SPARK_API_KEY:-}
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

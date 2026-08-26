@@ -1,0 +1,205 @@
+[
+  {
+    "resume_id": "resume-01",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Deep Learning",
+      "Machine Learning",
+      "NLP",
+      "LLM",
+      "RAG"
+    ]
+  },
+  {
+    "resume_id": "resume-02",
+    "skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Git",
+      "Kafka",
+      "Docker"
+    ]
+  },
+  {
+    "resume_id": "resume-03",
+    "skills": [
+      "Python",
+      "SQL",
+      "Spark",
+      "Hadoop",
+      "Hive"
+    ]
+  },
+  {
+    "resume_id": "resume-04",
+    "skills": [
+      "Python",
+      "PyTorch",
+      "Computer Vision",
+      "Deep Learning"
+    ]
+  },
+  {
+    "resume_id": "resume-05",
+    "skills": [
+      "C++",
+      "Linux",
+      "Embedded Systems",
+      "MQTT"
+    ]
+  },
+  {
+    "resume_id": "resume-06",
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "Recommendation System",
+      "SQL",
+      "Spark"
+    ]
+  },
+  {
+    "resume_id": "resume-07",
+    "skills": [
+      "Python",
+      "LLM",
+      "Agent",
+      "Prompt Engineering",
+      "RAG"
+    ]
+  },
+  {
+    "resume_id": "resume-08",
+    "skills": [
+      "Python",
+      "Deep Learning",
+      "NLP",
+      "Fine-tuning",
+      "Transformer"
+    ]
+  },
+  {
+    "resume_id": "resume-09",
+    "skills": [
+      "Java",
+      "Go",
+      "SQL",
+      "Linux",
+      "Kubernetes",
+      "CI/CD"
+    ]
+  },
+  {
+    "resume_id": "resume-10",
+    "skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorRT",
+      "ONNX"
+    ]
+  },
+  {
+    "resume_id": "resume-11",
+    "skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "SQL",
+      "LLM"
+    ]
+  },
+  {
+    "resume_id": "resume-12",
+    "skills": [
+      "Python",
+      "Spark",
+      "Flink",
+      "Kafka",
+      "Data Warehouse"
+    ]
+  },
+  {
+    "resume_id": "resume-13",
+    "skills": [
+      "ROS",
+      "C++",
+      "Python",
+      "Linux",
+      "Computer Vision"
+    ]
+  },
+  {
+    "resume_id": "resume-14",
+    "skills": [
+      "Python",
+      "MLOps",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Model Serving"
+    ]
+  },
+  {
+    "resume_id": "resume-15",
+    "skills": [
+      "Python",
+      "Machine Learning",
+      "Feature Engineering",
+      "A/B Testing",
+      "Spark"
+    ]
+  },
+  {
+    "resume_id": "resume-16",
+    "skills": [
+      "Python",
+      "LLM",
+      "Fine-tuning",
+      "PyTorch",
+      "Distributed Training"
+    ]
+  },
+  {
+    "resume_id": "resume-17",
+    "skills": [
+      "C++",
+      "Linux",
+      "Embedded Systems",
+      "IoT",
+      "Edge Computing"
+    ]
+  },
+  {
+    "resume_id": "resume-18",
+    "skills": [
+      "Python",
+      "Deep Learning",
+      "PyTorch",
+      "强化学习",
+      "ROS"
+    ]
+  },
+  {
+    "resume_id": "resume-19",
+    "skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Machine Learning",
+      "Embedding",
+      "Vector Database"
+    ]
+  },
+  {
+    "resume_id": "resume-20",
+    "skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Git"
+    ]
+  }
+]

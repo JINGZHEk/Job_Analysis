@@ -1,0 +1,245 @@
+[
+  {
+    "resume_id": "resume-01",
+    "text": "姓名：候选人1\n工作年限：4 年\n技能：Python、PyTorch、Deep Learning、Machine Learning、NLP、LLM、RAG\n项目经验：3 年 AI 算法经验，负责大模型微调与 RAG 应用，参与 NLP 项目，熟练 PyTorch\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "PyTorch",
+      "Deep Learning",
+      "Machine Learning",
+      "NLP",
+      "LLM",
+      "RAG"
+    ],
+    "years": 4
+  },
+  {
+    "resume_id": "resume-02",
+    "text": "姓名：候选人2\n工作年限：3 年\n技能：Java、SQL、Linux、Git、Kafka、Docker\n项目经验：Java 后端开发 3 年，负责分布式系统，熟悉 Kafka 与 Docker\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Git",
+      "Kafka",
+      "Docker"
+    ],
+    "years": 3
+  },
+  {
+    "resume_id": "resume-03",
+    "text": "姓名：候选人3\n工作年限：2 年\n技能：Python、SQL、Spark、Hadoop、Hive\n项目经验：大数据开发 2 年，负责 Spark 离线数仓，熟练 Hive SQL\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "SQL",
+      "Spark",
+      "Hadoop",
+      "Hive"
+    ],
+    "years": 2
+  },
+  {
+    "resume_id": "resume-04",
+    "text": "姓名：候选人4\n工作年限：2 年\n技能：Python、PyTorch、Computer Vision、Deep Learning\n项目经验：CV 算法工程师，负责目标检测，熟练 PyTorch\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "PyTorch",
+      "Computer Vision",
+      "Deep Learning"
+    ],
+    "years": 2
+  },
+  {
+    "resume_id": "resume-05",
+    "text": "姓名：候选人5\n工作年限：3 年\n技能：C++、Linux、Embedded Systems、MQTT\n项目经验：嵌入式开发 3 年，负责 STM32 固件与 MQTT 通信\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "C++",
+      "Linux",
+      "Embedded Systems",
+      "MQTT"
+    ],
+    "years": 3
+  },
+  {
+    "resume_id": "resume-06",
+    "text": "姓名：候选人6\n工作年限：5 年\n技能：Python、Machine Learning、Recommendation System、SQL、Spark\n项目经验：推荐系统 5 年，负责召回排序，熟悉 Spark\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "Machine Learning",
+      "Recommendation System",
+      "SQL",
+      "Spark"
+    ],
+    "years": 5
+  },
+  {
+    "resume_id": "resume-07",
+    "text": "姓名：候选人7\n工作年限：2 年\n技能：Python、LLM、Agent、Prompt Engineering、RAG\n项目经验：大模型应用开发，构建 Agent 工作流与 RAG\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "LLM",
+      "Agent",
+      "Prompt Engineering",
+      "RAG"
+    ],
+    "years": 2
+  },
+  {
+    "resume_id": "resume-08",
+    "text": "姓名：候选人8\n工作年限：4 年\n技能：Python、Deep Learning、NLP、Fine-tuning、Transformer\n项目经验：NLP 算法 4 年，负责大模型微调\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "Deep Learning",
+      "NLP",
+      "Fine-tuning",
+      "Transformer"
+    ],
+    "years": 4
+  },
+  {
+    "resume_id": "resume-09",
+    "text": "姓名：候选人9\n工作年限：4 年\n技能：Java、Go、SQL、Linux、Kubernetes、CI/CD\n项目经验：后端与云原生开发，熟悉 Kubernetes\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Java",
+      "Go",
+      "SQL",
+      "Linux",
+      "Kubernetes",
+      "CI/CD"
+    ],
+    "years": 4
+  },
+  {
+    "resume_id": "resume-10",
+    "text": "姓名：候选人10\n工作年限：3 年\n技能：Python、Computer Vision、Deep Learning、TensorRT、ONNX\n项目经验：CV 模型部署，TensorRT 优化\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "Computer Vision",
+      "Deep Learning",
+      "TensorRT",
+      "ONNX"
+    ],
+    "years": 3
+  },
+  {
+    "resume_id": "resume-11",
+    "text": "姓名：候选人11\n工作年限：3 年\n技能：Python、Knowledge Graph、NLP、SQL、LLM\n项目经验：知识图谱工程师，结合 LLM 做知识抽取\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "Knowledge Graph",
+      "NLP",
+      "SQL",
+      "LLM"
+    ],
+    "years": 3
+  },
+  {
+    "resume_id": "resume-12",
+    "text": "姓名：候选人12\n工作年限：4 年\n技能：Python、Spark、Flink、Kafka、Data Warehouse\n项目经验：实时数仓开发，Flink 流计算\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "Spark",
+      "Flink",
+      "Kafka",
+      "Data Warehouse"
+    ],
+    "years": 4
+  },
+  {
+    "resume_id": "resume-13",
+    "text": "姓名：候选人13\n工作年限：3 年\n技能：ROS、C++、Python、Linux、Computer Vision\n项目经验：机器人算法，SLAM 导航\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "ROS",
+      "C++",
+      "Python",
+      "Linux",
+      "Computer Vision"
+    ],
+    "years": 3
+  },
+  {
+    "resume_id": "resume-14",
+    "text": "姓名：候选人14\n工作年限：4 年\n技能：Python、MLOps、Docker、Kubernetes、CI/CD、Model Serving\n项目经验：MLOps 平台建设，模型服务部署\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "MLOps",
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Model Serving"
+    ],
+    "years": 4
+  },
+  {
+    "resume_id": "resume-15",
+    "text": "姓名：候选人15\n工作年限：5 年\n技能：Python、Machine Learning、Feature Engineering、A/B Testing、Spark\n项目经验：推荐算法，特征工程与 A/B 实验\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "Machine Learning",
+      "Feature Engineering",
+      "A/B Testing",
+      "Spark"
+    ],
+    "years": 5
+  },
+  {
+    "resume_id": "resume-16",
+    "text": "姓名：候选人16\n工作年限：3 年\n技能：Python、LLM、Fine-tuning、PyTorch、Distributed Training\n项目经验：大模型分布式训练\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "LLM",
+      "Fine-tuning",
+      "PyTorch",
+      "Distributed Training"
+    ],
+    "years": 3
+  },
+  {
+    "resume_id": "resume-17",
+    "text": "姓名：候选人17\n工作年限：2 年\n技能：C++、Linux、Embedded Systems、IoT、Edge Computing\n项目经验：物联网设备开发\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "C++",
+      "Linux",
+      "Embedded Systems",
+      "IoT",
+      "Edge Computing"
+    ],
+    "years": 2
+  },
+  {
+    "resume_id": "resume-18",
+    "text": "姓名：候选人18\n工作年限：3 年\n技能：Python、Deep Learning、PyTorch、强化学习、ROS\n项目经验：机器人强化学习\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "Deep Learning",
+      "PyTorch",
+      "强化学习",
+      "ROS"
+    ],
+    "years": 3
+  },
+  {
+    "resume_id": "resume-19",
+    "text": "姓名：候选人19\n工作年限：4 年\n技能：Python、NLP、Deep Learning、Machine Learning、Embedding、Vector Database\n项目经验：NLP 与向量检索\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Python",
+      "NLP",
+      "Deep Learning",
+      "Machine Learning",
+      "Embedding",
+      "Vector Database"
+    ],
+    "years": 4
+  },
+  {
+    "resume_id": "resume-20",
+    "text": "姓名：候选人20\n工作年限：1 年\n技能：Java、SQL、Linux、Git\n项目经验：初级 Java 开发\n证书：无\n学历：本科\n",
+    "gold_skills": [
+      "Java",
+      "SQL",
+      "Linux",
+      "Git"
+    ],
+    "years": 1
+  }
+]
