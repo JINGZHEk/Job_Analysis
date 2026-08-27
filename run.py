@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -16,7 +17,10 @@ ROOT = Path(__file__).resolve().parent
 
 def run(cmd: list[str]) -> None:
     print(">>", " ".join(cmd))
-    subprocess.check_call(cmd, cwd=str(ROOT))
+    # 关键：把项目根目录加入 PYTHONPATH，这样子进程能找到 app 模块
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(ROOT) + os.pathsep + env.get("PYTHONPATH", "")
+    subprocess.check_call(cmd, cwd=str(ROOT), env=env)
 
 
 def main() -> None:

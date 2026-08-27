@@ -8,6 +8,7 @@ from typing import Optional
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
+# StaticFiles removed: replaced by FileResponse route to fix Windows content-length bug
 from pydantic import BaseModel, Field
 
 from .config import ROOT_DIR, load_config
@@ -124,6 +125,23 @@ app.add_middleware(
 
 
 app.add_middleware(AsciiSafeJSONMiddleware)
+
+# 静态文件：用 FileResponse 手动路由，绕过 Starlette StaticFiles 在 Windows 上
+# content-length: 0 的 bug。FileResponse 直接读文件并设置正确的 content-length。
+@app.get("/static/{file_path:path}")
+def serve_static(file_path: str):
+    web_dir = ROOT_DIR / "web"
+    full_path = web_dir / file_path
+    # 安全检查：防止路径穿越
+    try:
+        full_path = full_path.resolve()
+        if not str(full_path).startswith(str(web_dir.resolve())):
+            raise HTTPException(status_code=403, detail="Forbidden")
+    except (OSError, ValueError):
+        raise HTTPException(status_code=400, detail="Invalid path")
+    if full_path.exists() and full_path.is_file():
+        return FileResponse(str(full_path))
+    raise HTTPException(status_code=404, detail="File not found")
 
 
 def get_pipeline() -> Pipeline:

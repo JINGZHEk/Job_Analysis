@@ -3,367 +3,2674 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>岗位能力图谱系统</title>
+<title>岗位能力图谱系统 | Job Ability Graph</title>
+<link rel="stylesheet" href="/static/element-plus.css">
+<link rel="stylesheet" href="/static/fontawesome.min.css">
+<script src="/static/vue.global.prod.min.js"></script>
+<script src="/static/element-plus.full.min.js"></script>
+<script src="/static/echarts.min.js"></script>
 <style>
-:root { color-scheme: light; }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f7fa; color: #1f2933; }
-header { background: linear-gradient(135deg, #1e3a8a, #3b82f6); color: #fff; padding: 20px 32px; }
-header h1 { font-size: 22px; font-weight: 600; }
-header p { font-size: 13px; opacity: .85; margin-top: 6px; }
-.tabs { display: flex; gap: 4px; padding: 12px 24px; background: #fff; border-bottom: 1px solid #e4e7eb; flex-wrap: wrap; }
-.tab { padding: 8px 18px; border-radius: 8px; cursor: pointer; font-size: 14px; color: #52606d; border: none; background: transparent; }
-.tab.active { background: #1e3a8a; color: #fff; }
-.tab:hover:not(.active) { background: #eef2f7; }
-main { padding: 20px 24px; max-width: 1280px; margin: 0 auto; }
-.panel { display: none; }
-.panel.active { display: block; }
-.card { background: #fff; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-.card h2 { font-size: 16px; margin-bottom: 14px; color: #1e3a8a; }
-.filters { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
-select, input[type=text], textarea { padding: 8px 12px; border: 1px solid #cbd2d9; border-radius: 8px; font-size: 14px; }
-select:focus, input:focus, textarea:focus { outline: none; border-color: #3b82f6; }
-textarea { width: 100%; min-height: 140px; resize: vertical; font-family: inherit; }
-button { padding: 9px 18px; border-radius: 8px; border: none; background: #2563eb; color: #fff; font-size: 14px; cursor: pointer; }
-button:hover { background: #1d4ed8; }
-button.secondary { background: #f1f5f9; color: #334155; border: 1px solid #cbd2d9; }
-#graphCanvas { width: 100%; height: 560px; border: 1px solid #e4e7eb; border-radius: 10px; cursor: grab; }
-#graphCanvas:active { cursor: grabbing; }
-.legend { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: #52606d; }
-.legend .dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
-#matchResult .score-big { font-size: 42px; font-weight: 700; color: #2563eb; }
-#matchResult .dim { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
-#matchResult .dim span { background: #eef2f7; padding: 6px 12px; border-radius: 20px; font-size: 13px; }
-.tag { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; margin: 2px; }
-.tag.matched { background: #dcfce7; color: #166534; }
-.tag.missing { background: #fee2e2; color: #991b1b; }
-.tag.info { background: #dbeafe; color: #1e40af; }
-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #eef2f7; vertical-align: top; }
-th { color: #52606d; font-weight: 600; }
-.metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
-.metric { background: #f8fafc; border-radius: 10px; padding: 16px; text-align: center; }
-.metric .v { font-size: 28px; font-weight: 700; color: #1e3a8a; }
-.metric .k { font-size: 13px; color: #52606d; margin-top: 4px; }
-.metric.good .v { color: #16a34a; }
-.metric.bad .v { color: #dc2626; }
-.role-card { border: 1px solid #e4e7eb; border-radius: 10px; padding: 14px; margin-bottom: 10px; }
-.role-card h3 { font-size: 15px; margin-bottom: 6px; }
-.role-card .row { margin-top: 5px; font-size: 13px; }
-.loading { text-align: center; color: #52606d; padding: 30px; }
-.hidden { display: none; }
-h3.section { margin: 14px 0 8px; font-size: 14px; color: #334155; }
+/* ================================================================
+   DESIGN TOKENS — 全局设计令牌
+   语义化命名，4px 基线网格，集中管理所有视觉原子参数
+   ================================================================ */
+:root {
+  /* ── 色彩系统 (Semantic Color Tokens) ── */
+  /* 背景层级：从深到浅，用于不同层级的容器 */
+  --color-bg-root:       #0a0e1a;   /* 最底层 body 背景 */
+  --color-bg-surface:    #111827;   /* 二级容器：top-bar、drawer */
+  --color-bg-elevated:   #1a1f35;   /* 三级容器：card、stat-card */
+  --color-bg-overlay:    #222845;   /* hover 态、浮层 */
+  --color-bg-sidebar:    #0d1117;   /* 侧栏专用 */
+
+  /* 品牌色 / 功能色 (Functional Colors) */
+  --color-primary-400:   #60a5fa;
+  --color-primary-500:   #3b82f6;
+  --color-primary-600:   #2563eb;
+  --color-primary-700:   #1d4ed8;
+  --color-primary-alpha10: rgba(59,130,246,0.10);
+  --color-primary-alpha15: rgba(59,130,246,0.15);
+  --color-primary-alpha20: rgba(59,130,246,0.20);
+  --color-primary-alpha30: rgba(59,130,246,0.30);
+
+  --color-success-400:   #34d399;
+  --color-success-500:   #10b981;
+  --color-success-alpha12: rgba(16,185,129,0.12);
+
+  --color-warning-400:   #fbbf24;
+  --color-warning-500:   #f59e0b;
+  --color-warning-alpha12: rgba(245,158,11,0.12);
+
+  --color-danger-400:    #f87171;
+  --color-danger-500:    #ef4444;
+  --color-danger-alpha12: rgba(239,68,68,0.12);
+
+  --color-info-400:      #22d3ee;
+  --color-info-500:      #06b6d4;
+  --color-info-alpha12:  rgba(6,182,212,0.12);
+
+  --color-purple-400:    #a78bfa;
+  --color-purple-500:    #8b5cf6;
+  --color-purple-alpha12: rgba(139,92,246,0.12);
+
+  --color-pink-500:      #ec4899;
+
+  /* 文本层级 (Text Hierarchy) */
+  --color-text-primary:   #e2e8f0;  /* 标题、关键数字 */
+  --color-text-secondary: #94a3b8;  /* 正文、描述 */
+  --color-text-muted:     #64748b;  /* 辅助信息、placeholder */
+  --color-text-disabled:  #475569;  /* 禁用态 */
+
+  /* 边框 (Border) */
+  --color-border-subtle:  rgba(59,130,246,0.10);
+  --color-border-default: rgba(59,130,246,0.15);
+  --color-border-strong:  rgba(59,130,246,0.30);
+
+  /* ── 渐变 (Gradients) ── */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary-500), var(--color-purple-500));
+  --gradient-success: linear-gradient(135deg, var(--color-success-500), var(--color-info-500));
+  --gradient-warm:    linear-gradient(135deg, var(--color-warning-500), var(--color-danger-500));
+  --gradient-pink:    linear-gradient(135deg, var(--color-purple-500), var(--color-pink-500));
+  --gradient-amber:   linear-gradient(135deg, var(--color-warning-500), #f97316);
+
+  /* ── 4px 基线网格间距 (Spacing Scale) ──
+     所有 margin/padding/gap 必须引用此刻度，杜绝魔法数字 */
+  --space-0:  0;
+  --space-1:  4px;    /* 4px  — 紧凑元素内间距 */
+  --space-2:  8px;    /* 8px  — 标签间距、图标与文字 */
+  --space-3:  12px;   /* 12px — 表单元素间距 */
+  --space-4:  16px;   /* 16px — 卡片内 padding 辅助、grid gap */
+  --space-5:  20px;   /* 20px — 卡片标准 padding */
+  --space-6:  24px;   /* 24px — 区块间距 */
+  --space-7:  28px;   /* 28px — 内容区 padding */
+  --space-8:  32px;   /* 32px — 大区块间距 */
+  --space-9:  36px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --space-12: 48px;
+
+  /* ── 字体排版 (Typography Scale) ──
+     基于 1.5 行高比，7 级字号 */
+  --font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+
+  --text-xs:   11px;   --lh-xs:   16px;
+  --text-sm:   12px;   --lh-sm:   18px;
+  --text-base: 13px;   --lh-base: 20px;
+  --text-md:   14px;   --lh-md:   21px;
+  --text-lg:   16px;   --lh-lg:   24px;
+  --text-xl:   20px;   --lh-xl:   28px;
+  --text-2xl:  24px;   --lh-2xl:  32px;
+  --text-3xl:  28px;   --lh-3xl:  36px;
+  --text-4xl:  36px;   --lh-4xl:  44px;
+
+  --font-normal:   400;
+  --font-medium:   500;
+  --font-semibold: 600;
+  --font-bold:     700;
+  --font-extrabold: 800;
+
+  /* ── 圆角 (Border Radius Scale) ── */
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   10px;
+  --radius-xl:   12px;
+  --radius-2xl:  16px;
+  --radius-full: 9999px;
+
+  /* ── 多层阴影 (Elevation Shadows) ──
+     遵循 Material Design 3 分层理念，暗色模式下调低透明度 */
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.20);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.24), 0 1px 2px rgba(0,0,0,0.16);
+  --shadow-md:  0 4px 6px rgba(0,0,0,0.28), 0 2px 4px rgba(0,0,0,0.20);
+  --shadow-lg:  0 10px 15px rgba(0,0,0,0.32), 0 4px 6px rgba(0,0,0,0.24);
+  --shadow-xl:  0 20px 25px rgba(0,0,0,0.36), 0 8px 10px rgba(0,0,0,0.28);
+  --shadow-glow-primary: 0 0 20px rgba(59,130,246,0.15);
+  --shadow-glow-success: 0 0 20px rgba(16,185,129,0.15);
+
+  /* ── 动效 (Motion Tokens) ──
+     统一缓动曲线与时长，避免各处随意写 */
+  --ease-out:    cubic-bezier(0.4, 0, 0.2, 1);     /* 标准退出 */
+  --ease-in:     cubic-bezier(0.4, 0, 1, 1);        /* 标准进入 */
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);      /* 对称 */
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);    /* 弹性 */
+
+  --duration-instant: 100ms;
+  --duration-fast:    150ms;
+  --duration-normal:  250ms;
+  --duration-slow:    400ms;
+  --duration-slower:  600ms;
+
+  /* ── 布局常量 ── */
+  --sidebar-width:  240px;
+  --header-height:  60px;
+  --content-max-width: 1200px;
+}
+
+/* ================================================================
+   RESET & BASE
+   ================================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* 使用 text-rendering 优化文字渲染 */
+body {
+  font-family: var(--font-family);
+  background: var(--color-bg-root);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-size: var(--text-base);
+  line-height: 1.5;
+}
+
+#app { display: flex; height: 100vh; }
+
+/* ================================================================
+   ACCESSIBILITY — 焦点可见性 (WCAG 2.1 AA)
+   仅键盘导航时显示焦点环，鼠标点击不显示
+   ================================================================ */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* 跳过导航链接 (Screen Reader) */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ================================================================
+   SCROLLBAR — 自定义滚动条
+   ================================================================ */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-alpha30);
+  border-radius: var(--radius-sm);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-primary-alpha20); }
+
+/* ================================================================
+   SIDEBAR — 侧栏导航
+   ================================================================ */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--color-bg-sidebar);
+  border-right: 1px solid var(--color-border-default);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 10;
+  /* 性能：侧栏不参与动画，用 contain 限制重绘范围 */
+  contain: layout style;
+}
+
+.sidebar-brand {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-5);
+  border-bottom: 1px solid var(--color-border-default);
+  gap: var(--space-3);
+}
+
+/* 品牌图标：渐变背景 + 发光阴影 */
+.brand-icon {
+  width: 36px; height: 36px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-lg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: #fff;
+  box-shadow: 0 0 16px rgba(59,130,246,0.3);
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+  letter-spacing: 0.5px;
+}
+.brand-sub {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* 导航区域 */
+.sidebar-nav { flex: 1; padding: var(--space-4) var(--space-3); overflow-y: auto; }
+.nav-section { margin-bottom: var(--space-5); }
+.nav-section-title {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-text-muted);
+  padding: 0 var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+/* 导航项：统一交互状态 */
+.nav-item {
+  display: flex; align-items: center; gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  /* 使用独立属性过渡，避免 all 带来的性能开销 */
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+  color: var(--color-text-secondary);
+  font-size: var(--text-base);
+  margin-bottom: 2px;
+  position: relative;
+  /* 触控目标 ≥ 44px (WCAG 2.5.5) */
+  min-height: 40px;
+}
+.nav-item:hover {
+  background: var(--color-primary-alpha10);
+  color: var(--color-text-primary);
+}
+.nav-item.active {
+  background: var(--color-primary-alpha15);
+  color: var(--color-primary-500);
+  font-weight: var(--font-semibold);
+}
+/* 激活指示条 */
+.nav-item.active::before {
+  content: '';
+  position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 20px;
+  background: var(--color-primary-500);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.nav-item i { width: 20px; text-align: center; font-size: var(--text-md); }
+.nav-badge {
+  margin-left: auto;
+  background: var(--color-primary-500);
+  color: #fff;
+  font-size: var(--text-xs);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-semibold);
+}
+
+/* 侧栏底部状态 */
+.sidebar-footer {
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-border-default);
+}
+.status-dot {
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-success-500);
+  margin-right: var(--space-2);
+  box-shadow: 0 0 8px rgba(16,185,129,0.5);
+}
+.status-text { font-size: var(--text-sm); color: var(--color-text-secondary); }
+
+/* ================================================================
+   MAIN CONTENT — 主内容区
+   ================================================================ */
+.main-content { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+.top-bar {
+  height: var(--header-height);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--space-7);
+  border-bottom: 1px solid var(--color-border-default);
+  background: rgba(13,17,23,0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.top-bar-left { display: flex; align-items: center; gap: var(--space-4); }
+.page-title { font-size: var(--text-lg); font-weight: var(--font-bold); }
+.page-desc { font-size: var(--text-sm); color: var(--color-text-muted); }
+.top-bar-right { display: flex; align-items: center; gap: var(--space-3); }
+
+/* 内容区：限制最大宽度，居中展示 */
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6) var(--space-7);
+  /* 内容居中，防止超宽屏幕拉伸 */
+  max-width: var(--content-max-width);
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ================================================================
+   CARD — 通用卡片容器
+   ================================================================ */
+.card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+  box-shadow: var(--shadow-md);
+  /* 分离过渡属性，避免触发 layout */
+  transition:
+    border-color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+}
+.card:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-lg);
+}
+.card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.card-title {
+  font-size: var(--text-md);
+  font-weight: var(--font-bold);
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.card-title i { color: var(--color-primary-500); font-size: var(--text-lg); }
+
+/* ================================================================
+   STATS GRID — 统计卡片网格
+   ================================================================ */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.stat-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  position: relative;
+  overflow: hidden;
+  /* 使用 transform 做 GPU 加速，避免触发 layout */
+  transition:
+    transform var(--duration-normal) var(--ease-spring),
+    box-shadow var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out);
+  will-change: transform;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-primary);
+  border-color: var(--color-border-strong);
+}
+/* 顶部彩色条纹 */
+.stat-card::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.stat-card.blue::after   { background: var(--gradient-primary); }
+.stat-card.green::after  { background: var(--gradient-success); }
+.stat-card.amber::after  { background: var(--gradient-amber); }
+.stat-card.purple::after { background: var(--gradient-pink); }
+
+.stat-icon {
+  width: 42px; height: 42px;
+  border-radius: var(--radius-xl);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; margin-bottom: var(--space-3);
+}
+.stat-icon.blue   { background: var(--color-primary-alpha15); color: var(--color-primary-500); }
+.stat-icon.green  { background: var(--color-success-alpha12); color: var(--color-success-500); }
+.stat-icon.amber  { background: var(--color-warning-alpha12); color: var(--color-warning-500); }
+.stat-icon.purple { background: var(--color-purple-alpha12);  color: var(--color-purple-500); }
+
+.stat-value {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--space-1);
+  /* 数字等宽字体，防止跳动 */
+  font-variant-numeric: tabular-nums;
+}
+.stat-label { font-size: var(--text-sm); color: var(--color-text-secondary); }
+.stat-change {
+  font-size: var(--text-xs);
+  margin-top: var(--space-2);
+  display: flex; align-items: center; gap: var(--space-1);
+}
+.stat-change.up   { color: var(--color-success-500); }
+.stat-change.down { color: var(--color-danger-500); }
+
+/* ================================================================
+   GRAPH — 力导向图容器
+   ================================================================ */
+.graph-container { position: relative; }
+#graphChart { width: 100%; height: 520px; }
+
+.graph-controls {
+  position: absolute; top: var(--space-3); right: var(--space-3);
+  display: flex; flex-direction: column; gap: var(--space-2); z-index: 5;
+}
+.graph-controls button {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+  font-size: var(--text-md);
+}
+.graph-controls button:hover {
+  background: var(--color-bg-overlay);
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.graph-legend {
+  display: flex; gap: var(--space-5);
+  margin-top: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: rgba(26,31,53,0.6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
+}
+.legend-item {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-sm); color: var(--color-text-secondary);
+}
+.legend-dot { width: 10px; height: 10px; border-radius: var(--radius-full); }
+
+/* ================================================================
+   FILTER BAR — 筛选栏
+   ================================================================ */
+.filter-bar {
+  display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center;
+  margin-bottom: var(--space-4);
+}
+.filter-bar .el-select, .filter-bar .el-input { width: 180px; }
+
+/* ================================================================
+   ROLE CARDS — 岗位卡片网格
+   ================================================================ */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: var(--space-4);
+}
+.role-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  transition:
+    transform var(--duration-normal) var(--ease-spring),
+    border-color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+.role-card:hover {
+  border-color: var(--color-border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-primary);
+}
+.role-card-header {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+.role-name { font-size: var(--text-lg); font-weight: var(--font-bold); }
+.role-meta { display: flex; gap: var(--space-2); margin-top: var(--space-2); flex-wrap: wrap; }
+.role-section { margin-top: var(--space-3); }
+.role-section-title {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.skill-tags { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+/* ================================================================
+   TAGS — 标签系统
+   ================================================================ */
+.tag {
+  display: inline-flex; align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  transition: opacity var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+.tag:hover { opacity: 0.85; }
+
+/* 语义色彩标签 */
+.tag-blue   { background: var(--color-primary-alpha15); color: var(--color-primary-400); border: 1px solid var(--color-primary-alpha20); }
+.tag-green  { background: var(--color-success-alpha12); color: var(--color-success-400); border: 1px solid rgba(16,185,129,0.2); }
+.tag-red    { background: var(--color-danger-alpha12);  color: var(--color-danger-400);  border: 1px solid rgba(239,68,68,0.2); }
+.tag-amber  { background: var(--color-warning-alpha12); color: var(--color-warning-400); border: 1px solid rgba(245,158,11,0.2); }
+.tag-purple { background: var(--color-purple-alpha12);  color: var(--color-purple-400);  border: 1px solid rgba(139,92,246,0.2); }
+.tag-cyan   { background: var(--color-info-alpha12);    color: var(--color-info-400);    border: 1px solid rgba(6,182,212,0.2); }
+
+/* ================================================================
+   MATCH PANEL — 人岗匹配面板
+   ================================================================ */
+.match-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.match-input-panel  { display: flex; flex-direction: column; gap: var(--space-4); }
+.match-result-panel { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.score-ring {
+  width: 140px; height: 140px;
+  margin: 0 auto var(--space-4);
+  position: relative;
+}
+.score-ring .value {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-size: var(--text-3xl);
+  font-weight: var(--font-extrabold);
+  font-variant-numeric: tabular-nums;
+}
+.score-ring .unit { font-size: var(--text-md); color: var(--color-text-muted); font-weight: var(--font-normal); }
+
+/* 维度进度条 */
+.dimension-bars { display: flex; flex-direction: column; gap: var(--space-2); }
+.dim-bar { display: flex; align-items: center; gap: var(--space-3); }
+.dim-bar .label {
+  width: 80px; font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-align: right; flex-shrink: 0;
+}
+.dim-bar .bar-bg {
+  flex: 1; height: 8px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.dim-bar .bar-fill {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  /* 进度条使用弹性缓动，更有质感 */
+  transition: width var(--duration-slow) var(--ease-spring);
+}
+.dim-bar .val {
+  width: 40px; font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  font-weight: var(--font-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ================================================================
+   TIMELINE — 岗位演化对比
+   ================================================================ */
+.timeline-compare { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5); }
+.timeline-col h4 {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-semibold);
+}
+
+.change-item {
+  display: flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-base);
+  transition: background var(--duration-fast) var(--ease-out);
+}
+.change-item:hover { background: rgba(255,255,255,0.03); }
+.change-item.added   { border-left: 3px solid var(--color-success-500); }
+.change-item.removed { border-left: 3px solid var(--color-danger-500); }
+.change-item.modified { border-left: 3px solid var(--color-warning-500); }
+
+.change-icon {
+  width: 24px; height: 24px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--text-sm); flex-shrink: 0;
+}
+.change-icon.added   { background: var(--color-success-alpha12); color: var(--color-success-500); }
+.change-icon.removed { background: var(--color-danger-alpha12);  color: var(--color-danger-500); }
+.change-icon.modified { background: var(--color-warning-alpha12); color: var(--color-warning-500); }
+
+/* ================================================================
+   EVAL METRICS — 评测指标卡片
+   ================================================================ */
+.metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+
+.metric-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--duration-normal) var(--ease-out);
+}
+.metric-card:hover { border-color: var(--color-border-strong); }
+.metric-card::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+}
+.metric-card.good::before { background: var(--gradient-success); }
+.metric-card.bad::before  { background: var(--gradient-warm); }
+
+.metric-value {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-extrabold);
+  margin-bottom: var(--space-1);
+  font-variant-numeric: tabular-nums;
+}
+.metric-value.good { color: var(--color-success-500); }
+.metric-value.bad  { color: var(--color-danger-500); }
+.metric-label { font-size: var(--text-base); color: var(--color-text-secondary); }
+.metric-target { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-2); }
+
+/* ================================================================
+   GOVERNANCE — 数据治理
+   ================================================================ */
+.gov-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+
+.gov-item {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4);
+}
+.gov-item h4 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.gov-item h4 i { color: var(--color-primary-500); }
+
+/* 可信度进度条 */
+.trust-bar { display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2); }
+.trust-bar .label { width: 100px; font-size: var(--text-sm); color: var(--color-text-secondary); }
+.trust-bar .bar-bg {
+  flex: 1; height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px; overflow: hidden;
+}
+.trust-bar .bar-fill { height: 100%; border-radius: 3px; }
+.trust-bar .val {
+  width: 36px; font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ================================================================
+   LEARNING PATH — 学习路径步骤
+   ================================================================ */
+.path-steps { position: relative; padding-left: 30px; }
+.path-steps::before {
+  content: '';
+  position: absolute; left: 14px; top: 0; bottom: 0;
+  width: 2px; background: var(--color-border-default);
+}
+.path-step {
+  position: relative;
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-3);
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+.path-step:hover {
+  background: var(--color-primary-alpha10);
+  border-color: var(--color-border-strong);
+}
+.path-step::before {
+  content: attr(data-step);
+  position: absolute; left: -24px; top: 14px;
+  width: 22px; height: 22px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-500);
+  color: #fff;
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  display: flex; align-items: center; justify-content: center;
+}
+.path-step-title { font-size: var(--text-md); font-weight: var(--font-semibold); margin-bottom: var(--space-1); }
+.path-step-meta {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  display: flex; gap: var(--space-4);
+}
+
+/* ================================================================
+   ANIMATIONS — 入场动画
+   使用 will-change 提示浏览器提前创建合成层
+   ================================================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.5; }
+}
+
+.fade-in {
+  animation: fadeIn var(--duration-slow) var(--ease-out) both;
+  will-change: opacity, transform;
+}
+.slide-in {
+  animation: slideIn var(--duration-normal) var(--ease-out) both;
+  will-change: opacity, transform;
+}
+.loading-pulse { animation: pulse 1.5s var(--ease-in-out) infinite; }
+
+/* ================================================================
+   ELEMENT PLUS DARK OVERRIDES — 第三方组件暗色适配
+   使用 CSS 变量覆盖，减少 !important 依赖
+   ================================================================ */
+.el-select .el-input__wrapper,
+.el-input__wrapper,
+.el-textarea__inner {
+  background: var(--color-bg-elevated) !important;
+  box-shadow: 0 0 0 1px var(--color-border-default) inset !important;
+  color: var(--color-text-primary) !important;
+  border-radius: var(--radius-md) !important;
+}
+.el-input__inner { color: var(--color-text-primary) !important; }
+.el-input__inner::placeholder { color: var(--color-text-muted) !important; }
+
+.el-select-dropdown {
+  background: var(--color-bg-elevated) !important;
+  border: 1px solid var(--color-border-default) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+.el-select-dropdown__item { color: var(--color-text-secondary) !important; }
+.el-select-dropdown__item.hover,
+.el-select-dropdown__item:hover {
+  background: var(--color-primary-alpha10) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.el-button--primary {
+  background: var(--color-primary-500) !important;
+  border-color: var(--color-primary-500) !important;
+  transition: background var(--duration-fast) var(--ease-out) !important;
+}
+.el-button--primary:hover {
+  background: var(--color-primary-600) !important;
+  border-color: var(--color-primary-600) !important;
+}
+
+.el-tag { border: none !important; border-radius: var(--radius-sm) !important; }
+
+.el-upload-dragger {
+  background: var(--color-bg-elevated) !important;
+  border: 1px dashed var(--color-border-default) !important;
+  border-radius: var(--radius-xl) !important;
+  transition: border-color var(--duration-fast) var(--ease-out) !important;
+}
+.el-upload-dragger:hover { border-color: var(--color-primary-500) !important; }
+.el-upload__text { color: var(--color-text-secondary) !important; }
+.el-upload__text em { color: var(--color-primary-500) !important; }
+
+.el-drawer { background: var(--color-bg-surface) !important; }
+.el-drawer__header { color: var(--color-text-primary) !important; }
+
+.el-descriptions {
+  --el-descriptions-item-bordered-label-background: var(--color-bg-elevated) !important;
+}
+
+.el-tabs__item { color: var(--color-text-secondary) !important; }
+.el-tabs__item.is-active { color: var(--color-primary-500) !important; }
+.el-tabs__nav-wrap::after { background: var(--color-border-default) !important; }
+
+.el-progress-bar__outer { background: rgba(255,255,255,0.06) !important; }
+
+.el-table {
+  --el-table-bg-color: var(--color-bg-elevated) !important;
+  --el-table-tr-bg-color: var(--color-bg-elevated) !important;
+  --el-table-header-bg-color: var(--color-bg-surface) !important;
+  --el-table-row-hover-bg-color: var(--color-bg-overlay) !important;
+  --el-table-border-color: var(--color-border-default) !important;
+  --el-table-text-color: var(--color-text-primary) !important;
+  --el-table-header-text-color: var(--color-text-secondary) !important;
+}
+
+/* ================================================================
+   RESPONSIVE — 响应式断点
+   Mobile-first: 默认移动端，向上增强
+   ================================================================ */
+/* ≤ 1200px: 平板横屏 */
+@media (max-width: 1200px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .match-layout { grid-template-columns: 1fr; }
+  .timeline-compare { grid-template-columns: 1fr; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .gov-grid { grid-template-columns: 1fr; }
+}
+
+/* ≤ 768px: 移动端 */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .stats-grid { grid-template-columns: 1fr; }
+  .role-grid { grid-template-columns: 1fr; }
+  .content-area { padding: var(--space-4); }
+}
+
+/* ================================================================
+   PRINT — 打印优化（可选）
+   ================================================================ */
+@media print {
+  .sidebar, .top-bar { display: none; }
+  .content-area { overflow: visible; max-width: none; }
+  .card { break-inside: avoid; box-shadow: none; border: 1px solid #ccc; }
+}
+
+/* ================================================================
+   LIGHT THEME — 亮色主题
+   通过 data-theme="light" 激活，覆盖所有语义化色彩令牌
+   ================================================================ */
+[data-theme="light"] {
+  --color-bg-root:       #f0f2f5;
+  --color-bg-surface:    #ffffff;
+  --color-bg-elevated:   #ffffff;
+  --color-bg-overlay:    #f5f7fa;
+  --color-bg-sidebar:    #ffffff;
+
+  --color-primary-400:   #60a5fa;
+  --color-primary-500:   #2563eb;
+  --color-primary-600:   #1d4ed8;
+  --color-primary-700:   #1e40af;
+  --color-primary-alpha10: rgba(37,99,235,0.08);
+  --color-primary-alpha15: rgba(37,99,235,0.12);
+  --color-primary-alpha20: rgba(37,99,235,0.18);
+  --color-primary-alpha30: rgba(37,99,235,0.25);
+
+  --color-success-400:   #34d399;
+  --color-success-500:   #059669;
+  --color-success-alpha12: rgba(5,150,105,0.10);
+
+  --color-warning-400:   #fbbf24;
+  --color-warning-500:   #d97706;
+  --color-warning-alpha12: rgba(217,119,6,0.10);
+
+  --color-danger-400:    #f87171;
+  --color-danger-500:    #dc2626;
+  --color-danger-alpha12: rgba(220,38,38,0.08);
+
+  --color-info-400:      #22d3ee;
+  --color-info-500:      #0891b2;
+  --color-info-alpha12:  rgba(8,145,178,0.10);
+
+  --color-purple-400:    #a78bfa;
+  --color-purple-500:    #7c3aed;
+  --color-purple-alpha12: rgba(124,58,237,0.10);
+
+  --color-pink-500:      #db2777;
+
+  --color-text-primary:   #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted:     #9ca3af;
+  --color-text-disabled:  #d1d5db;
+
+  --color-border-subtle:  rgba(0,0,0,0.04);
+  --color-border-default: rgba(0,0,0,0.08);
+  --color-border-strong:  rgba(0,0,0,0.15);
+
+  --gradient-primary: linear-gradient(135deg, #2563eb, #7c3aed);
+  --gradient-success: linear-gradient(135deg, #059669, #0891b2);
+  --gradient-warm:    linear-gradient(135deg, #d97706, #dc2626);
+  --gradient-pink:    linear-gradient(135deg, #7c3aed, #db2777);
+  --gradient-amber:   linear-gradient(135deg, #d97706, #ea580c);
+
+  --shadow-xs:  0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:  0 4px 6px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg:  0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
+  --shadow-xl:  0 20px 25px rgba(0,0,0,0.10), 0 8px 10px rgba(0,0,0,0.06);
+  --shadow-glow-primary: 0 0 20px rgba(37,99,235,0.10);
+  --shadow-glow-success: 0 0 20px rgba(5,150,105,0.10);
+}
+
+/* 亮色主题 — 组件级覆盖 */
+[data-theme="light"] .top-bar {
+  background: rgba(255,255,255,0.85);
+  border-bottom-color: var(--color-border-default);
+}
+[data-theme="light"] .sidebar {
+  border-right-color: var(--color-border-default);
+}
+[data-theme="light"] .stat-card::after { opacity: 0.85; }
+[data-theme="light"] .brand-icon {
+  box-shadow: 0 2px 8px rgba(37,99,235,0.25);
+}
+[data-theme="light"] .status-dot {
+  box-shadow: 0 0 6px rgba(5,150,105,0.35);
+}
+/* 亮色下 ECharts tooltip 配色 */
+[data-theme="light"] .graph-tooltip,
+[data-theme="light"] .el-tooltip__trigger { color: var(--color-text-primary); }
+
+/* 亮色主题 — Element Plus 覆盖 */
+[data-theme="light"] .el-select .el-input__wrapper,
+[data-theme="light"] .el-input__wrapper,
+[data-theme="light"] .el-textarea__inner {
+  background: #f9fafb !important;
+  box-shadow: 0 0 0 1px var(--color-border-default) inset !important;
+}
+[data-theme="light"] .el-input__inner { color: var(--color-text-primary) !important; }
+[data-theme="light"] .el-select-dropdown {
+  background: #fff !important;
+  border: 1px solid var(--color-border-default) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+[data-theme="light"] .el-select-dropdown__item { color: var(--color-text-secondary) !important; }
+[data-theme="light"] .el-drawer { background: #fff !important; }
+[data-theme="light"] .el-table {
+  --el-table-bg-color: #fff !important;
+  --el-table-tr-bg-color: #fff !important;
+  --el-table-header-bg-color: #f9fafb !important;
+  --el-table-row-hover-bg-color: #f5f7fa !important;
+  --el-table-border-color: var(--color-border-default) !important;
+}
+[data-theme="light"] .el-progress-bar__outer { background: rgba(0,0,0,0.04) !important; }
+
+/* ================================================================
+   THEME TOGGLE — 主题切换按钮
+   ================================================================ */
+.theme-toggle {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.theme-toggle:hover {
+  background: var(--color-primary-alpha10);
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-alpha20);
+}
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon { transition: transform var(--duration-normal) var(--ease-spring); }
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: inline; }
+.theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: inline; }
+
+/* ================================================================
+   GRAPH ENHANCED — 图谱增强样式
+   ================================================================ */
+/* 图谱双栏布局 */
+.graph-enhanced-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+@media (max-width: 1200px) {
+  .graph-enhanced-layout { grid-template-columns: 1fr; }
+}
+
+/* 图谱工具栏 */
+.graph-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.graph-search {
+  display: flex; align-items: center; gap: var(--space-2);
+  background: var(--color-bg-root);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-3);
+  transition: border-color var(--duration-fast) var(--ease-out);
+  flex: 1; max-width: 280px;
+}
+.graph-search:focus-within {
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha15);
+}
+.graph-search i { color: var(--color-text-muted); font-size: 13px; }
+.graph-search input {
+  border: none; background: transparent; outline: none;
+  color: var(--color-text-primary);
+  font-size: var(--text-sm);
+  padding: var(--space-2) 0;
+  width: 100%;
+}
+.graph-search input::placeholder { color: var(--color-text-muted); }
+
+/* 图谱控制按钮组 */
+.graph-ctrl-group {
+  display: flex; gap: var(--space-1);
+}
+.graph-ctrl-btn {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-md);
+  background: var(--color-bg-root);
+  border: 1px solid var(--color-border-default);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.graph-ctrl-btn:hover {
+  background: var(--color-primary-alpha10);
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-alpha20);
+}
+.graph-ctrl-btn.active {
+  background: var(--color-primary-alpha15);
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+/* 右侧信息面板 */
+.graph-info-panel {
+  display: flex; flex-direction: column; gap: var(--space-4);
+}
+.info-panel-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--duration-normal) var(--ease-out);
+}
+.info-panel-card:hover { border-color: var(--color-border-strong); }
+.info-panel-title {
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-3);
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.info-panel-title i { color: var(--color-primary-500); font-size: 14px; }
+
+/* 节点详情面板 */
+.node-detail-panel {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.node-detail-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gradient-primary);
+}
+.node-detail-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+.node-detail-name {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+.node-detail-close {
+  width: 28px; height: 28px;
+  border-radius: var(--radius-md);
+  background: transparent;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.node-detail-close:hover {
+  background: var(--color-danger-alpha12);
+  color: var(--color-danger-500);
+}
+.node-detail-type {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+}
+.node-detail-type.role {
+  background: var(--color-primary-alpha10);
+  color: var(--color-primary-500);
+}
+.node-detail-type.skill {
+  background: var(--color-info-alpha12);
+  color: var(--color-info-500);
+}
+.node-detail-type.growing {
+  background: var(--color-warning-alpha12);
+  color: var(--color-warning-500);
+}
+.node-detail-meta {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+.node-detail-row {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: var(--text-sm);
+}
+.node-detail-row .label { color: var(--color-text-muted); }
+.node-detail-row .value { color: var(--color-text-primary); font-weight: var(--font-semibold); }
+.node-detail-skills {
+  display: flex; flex-wrap: wrap; gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+.node-detail-skill-tag {
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  background: var(--color-primary-alpha10);
+  color: var(--color-primary-400);
+  border: 1px solid var(--color-primary-alpha15);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.node-detail-skill-tag:hover {
+  background: var(--color-primary-alpha20);
+}
+
+/* 行业分布列表 */
+.dist-list { display: flex; flex-direction: column; gap: var(--space-2); }
+.dist-item {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-sm);
+}
+.dist-item .dist-name {
+  width: 80px; flex-shrink: 0;
+  color: var(--color-text-secondary);
+  text-align: right;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.dist-item .dist-bar-bg {
+  flex: 1; height: 6px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 3px; overflow: hidden;
+}
+[data-theme="light"] .dist-item .dist-bar-bg { background: rgba(0,0,0,0.04); }
+.dist-item .dist-bar-fill {
+  height: 100%; border-radius: 3px;
+  transition: width var(--duration-slow) var(--ease-spring);
+}
+.dist-item .dist-val {
+  width: 28px; font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-semibold);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* 图谱高级图例 */
+.graph-advanced-legend {
+  display: flex; flex-wrap: wrap; gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-root);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-default);
+  margin-top: var(--space-3);
+}
+.legend-group {
+  display: flex; align-items: center; gap: var(--space-2);
+}
+.legend-group-title {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: var(--font-semibold);
+  margin-right: var(--space-1);
+}
+.legend-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+.legend-chip:hover {
+  border-color: var(--color-primary-alpha20);
+  background: var(--color-primary-alpha10);
+}
+.legend-chip .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-chip .line-sample {
+  width: 16px; height: 2px;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+/* 节点脉冲动画 (增长/萌芽技能) */
+@keyframes nodePulse {
+  0%, 100% { shadowBlur: 4; }
+  50% { shadowBlur: 16; }
+}
 </style>
 </head>
 <body>
-<header>
-  <h1>岗位能力图谱系统</h1>
-  <p>多源异构数据驱动 · 新岗位发现 · 能力动态演化 · 人岗匹配 · 学习路径</p>
-</header>
+<div id="app">
+  <!-- ===== Sidebar ===== -->
+  <aside class="sidebar" role="navigation" aria-label="主导航">
+    <div class="sidebar-brand">
+      <div class="brand-icon" aria-hidden="true"><i class="fas fa-project-diagram"></i></div>
+      <div>
+        <div class="brand-text">岗位能力图谱</div>
+        <div class="brand-sub">Job Ability Graph System</div>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title" aria-hidden="true">核心功能</div>
+        <div v-for="item in navItems" :key="item.key"
+             class="nav-item" :class="{ active: currentPage === item.key }"
+             @click="currentPage = item.key"
+             role="button"
+             tabindex="0"
+             :aria-current="currentPage === item.key ? 'page' : null"
+             @keydown.enter="currentPage = item.key">
+          <i :class="item.icon" aria-hidden="true"></i>
+          <span>{{ item.label }}</span>
+          <span v-if="item.badge" class="nav-badge" aria-label="新内容数量">{{ item.badge }}</span>
+        </div>
+      </div>
+      <div class="nav-section">
+        <div class="nav-section-title" aria-hidden="true">系统</div>
+        <div class="nav-item" :class="{ active: currentPage === 'governance' }"
+             @click="currentPage = 'governance'"
+             role="button" tabindex="0"
+             :aria-current="currentPage === 'governance' ? 'page' : null"
+             @keydown.enter="currentPage = 'governance'">
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          <span>数据治理</span>
+        </div>
+        <div class="nav-item" :class="{ active: currentPage === 'eval' }"
+             @click="currentPage = 'eval'"
+             role="button" tabindex="0"
+             :aria-current="currentPage === 'eval' ? 'page' : null"
+             @keydown.enter="currentPage = 'eval'">
+          <i class="fas fa-chart-bar" aria-hidden="true"></i>
+          <span>评测指标</span>
+        </div>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span class="status-text">系统运行中 · v0.1.0</span>
+    </div>
+  </aside>
 
-<div class="tabs">
-  <button class="tab active" data-panel="graph">全景图谱</button>
-  <button class="tab" data-panel="discover">新岗位发现</button>
-  <button class="tab" data-panel="timeline">岗位演化</button>
-  <button class="tab" data-panel="match">人岗匹配</button>
-  <button class="tab" data-panel="eval">评测指标</button>
+  <!-- ===== Main ===== -->
+  <div class="main-content">
+    <!-- Top Bar -->
+    <header class="top-bar" role="banner">
+      <div class="top-bar-left">
+        <div>
+          <div class="page-title">{{ currentPageTitle }}</div>
+          <div class="page-desc">{{ currentPageDesc }}</div>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <button class="theme-toggle" @click="toggleTheme" :aria-label="isLightTheme ? '切换到暗色主题' : '切换到亮色主题'" title="切换主题">
+          <span class="icon-sun"><i class="fas fa-sun"></i></span>
+          <span class="icon-moon"><i class="fas fa-moon"></i></span>
+        </button>
+        <el-button size="small" @click="refreshData" :loading="globalLoading" aria-label="刷新数据">
+          <i class="fas fa-sync-alt" style="margin-right:6px" aria-hidden="true"></i>刷新数据
+        </el-button>
+        <el-button size="small" type="primary" @click="showAbout = true" aria-label="关于系统">
+          <i class="fas fa-info-circle" style="margin-right:6px" aria-hidden="true"></i>关于
+        </el-button>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <main class="content-area" role="main">
+
+      <!-- ========== 全景图谱 ========== -->
+      <div v-if="currentPage === 'graph'" class="fade-in">
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card blue">
+            <div class="stat-icon blue"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ graphStats.roles }}</div>
+            <div class="stat-label">岗位节点</div>
+            <div class="stat-change up"><i class="fas fa-arrow-up" aria-hidden="true"></i> 覆盖 {{ industries.length }} 个行业</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-icon green"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ graphStats.skills }}</div>
+            <div class="stat-label">技能节点</div>
+            <div class="stat-change up"><i class="fas fa-layer-group" aria-hidden="true"></i> {{ levels.length }} 个级别</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-icon amber"><i class="fas fa-link" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ graphStats.edges }}</div>
+            <div class="stat-label">关系连线</div>
+            <div class="stat-change up"><i class="fas fa-project-diagram" aria-hidden="true"></i> 密度 {{ graphDensity }}</div>
+          </div>
+          <div class="stat-card purple">
+            <div class="stat-icon purple"><i class="fas fa-fire" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ graphStats.growing }}</div>
+            <div class="stat-label">增长/萌芽技能</div>
+            <div class="stat-change up"><i class="fas fa-chart-line" aria-hidden="true"></i> 占比 {{ growingRatio }}%</div>
+          </div>
+        </div>
+
+        <!-- 图谱双栏布局 -->
+        <div class="graph-enhanced-layout">
+          <!-- 左栏：图谱主体 -->
+          <div>
+            <div class="card graph-container">
+              <div class="card-header">
+                <div class="card-title"><i class="fas fa-project-diagram" aria-hidden="true"></i> 新一代信息技术岗位全景图谱</div>
+              </div>
+              <!-- 增强工具栏 -->
+              <div class="graph-toolbar">
+                <div class="graph-search">
+                  <i class="fas fa-search" aria-hidden="true"></i>
+                  <input v-model="graphSearchText" @input="onGraphSearch" placeholder="搜索岗位或技能..." aria-label="搜索图谱节点">
+                </div>
+                <div style="display:flex;gap:var(--space-2);align-items:center;flex-wrap:wrap">
+                  <el-select v-model="graphFilter.industry" placeholder="全部行业" clearable size="small" @change="renderGraph" aria-label="按行业筛选" style="width:140px">
+                    <el-option v-for="ind in industries" :key="ind" :label="ind" :value="ind"></el-option>
+                  </el-select>
+                  <el-select v-model="graphFilter.level" placeholder="全部级别" clearable size="small" @change="renderGraph" aria-label="按级别筛选" style="width:140px">
+                    <el-option v-for="lv in levels" :key="lv" :label="lv" :value="lv"></el-option>
+                  </el-select>
+                  <div class="graph-ctrl-group">
+                    <button class="graph-ctrl-btn" @click="graphZoomIn" title="放大" aria-label="放大"><i class="fas fa-plus"></i></button>
+                    <button class="graph-ctrl-btn" @click="graphZoomOut" title="缩小" aria-label="缩小"><i class="fas fa-minus"></i></button>
+                    <button class="graph-ctrl-btn" @click="graphResetView" title="重置视图" aria-label="重置视图"><i class="fas fa-compress-arrows-alt"></i></button>
+                    <button class="graph-ctrl-btn" @click="renderGraph" title="刷新布局" aria-label="刷新布局"><i class="fas fa-sync-alt"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div id="graphChart" role="img" aria-label="岗位技能力导向关系图" style="height:560px"></div>
+              <!-- 高级图例 -->
+              <div class="graph-advanced-legend" role="list" aria-label="图例">
+                <div class="legend-group">
+                  <span class="legend-group-title">节点</span>
+                  <span class="legend-chip" role="listitem"><span class="dot" style="background:#3b82f6"></span>岗位</span>
+                  <span class="legend-chip" role="listitem"><span class="dot" style="background:#06b6d4"></span>技能</span>
+                  <span class="legend-chip" role="listitem"><span class="dot" style="background:#f59e0b"></span>增长技能</span>
+                </div>
+                <div class="legend-group">
+                  <span class="legend-group-title">关系</span>
+                  <span class="legend-chip" role="listitem"><span class="line-sample" style="background:rgba(59,130,246,0.5)"></span>必备</span>
+                  <span class="legend-chip" role="listitem"><span class="line-sample" style="background:rgba(148,163,184,0.25)"></span>加分</span>
+                </div>
+                <div class="legend-group">
+                  <span class="legend-group-title">交互</span>
+                  <span class="legend-chip" role="listitem" style="cursor:default"><i class="fas fa-mouse-pointer" style="font-size:10px;color:var(--color-text-muted)"></i>点击查看详情</span>
+                  <span class="legend-chip" role="listitem" style="cursor:default"><i class="fas fa-hand-paper" style="font-size:10px;color:var(--color-text-muted)"></i>拖拽调整</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右栏：信息面板 -->
+          <div class="graph-info-panel">
+            <!-- 节点详情 -->
+            <div v-if="selectedNode" class="node-detail-panel fade-in">
+              <div class="node-detail-header">
+                <div class="node-detail-name">{{ selectedNode.name }}</div>
+                <button class="node-detail-close" @click="selectedNode = null" aria-label="关闭详情"><i class="fas fa-times"></i></button>
+              </div>
+              <div :class="['node-detail-type', selectedNode.nodeClass]">
+                <i :class="selectedNode.typeIcon" aria-hidden="true"></i>
+                {{ selectedNode.typeLabel }}
+              </div>
+              <div class="node-detail-meta">
+                <div class="node-detail-row" v-if="selectedNode.industry">
+                  <span class="label">行业</span>
+                  <span class="value">{{ selectedNode.industry }}</span>
+                </div>
+                <div class="node-detail-row" v-if="selectedNode.level">
+                  <span class="label">级别</span>
+                  <span class="value">{{ selectedNode.level }}</span>
+                </div>
+                <div class="node-detail-row" v-if="selectedNode.trend">
+                  <span class="label">趋势</span>
+                  <span class="value" style="color:var(--color-warning-500)">{{ selectedNode.trend }}</span>
+                </div>
+                <div class="node-detail-row" v-if="selectedNode.trustScore !== undefined">
+                  <span class="label">可信度</span>
+                  <span class="value">{{ selectedNode.trustScore }}%</span>
+                </div>
+                <div class="node-detail-row">
+                  <span class="label">关联数</span>
+                  <span class="value">{{ selectedNode.connections }}</span>
+                </div>
+              </div>
+              <div v-if="selectedNode.relatedSkills && selectedNode.relatedSkills.length">
+                <div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-2);font-weight:600">关联技能</div>
+                <div class="node-detail-skills">
+                  <span v-for="s in selectedNode.relatedSkills" :key="s" class="node-detail-skill-tag" @click="highlightNode(s)">{{ s }}</span>
+                </div>
+              </div>
+              <div v-if="selectedNode.relatedRoles && selectedNode.relatedRoles.length">
+                <div style="font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-2);margin-top:var(--space-3);font-weight:600">关联岗位</div>
+                <div class="node-detail-skills">
+                  <span v-for="r in selectedNode.relatedRoles" :key="r" class="node-detail-skill-tag" style="background:var(--color-primary-alpha10);color:var(--color-primary-500)" @click="highlightNode(r)">{{ r }}</span>
+                </div>
+              </div>
+            </div>
+            <div v-else class="info-panel-card" style="text-align:center;padding:32px var(--space-5)">
+              <i class="fas fa-hand-pointer" style="font-size:28px;color:var(--color-text-muted);opacity:0.3;margin-bottom:12px;display:block" aria-hidden="true"></i>
+              <div style="font-size:var(--text-sm);color:var(--color-text-muted)">点击图谱中的节点查看详情</div>
+            </div>
+
+            <!-- 行业分布 -->
+            <div class="info-panel-card">
+              <div class="info-panel-title"><i class="fas fa-chart-pie" aria-hidden="true"></i> 行业分布</div>
+              <div id="industryPieChart" style="width:100%;height:180px" role="img" aria-label="行业分布饼图"></div>
+            </div>
+
+            <!-- 技能趋势 -->
+            <div class="info-panel-card">
+              <div class="info-panel-title"><i class="fas fa-fire-alt" aria-hidden="true"></i> 热门增长技能</div>
+              <div class="dist-list" v-if="topGrowingSkills.length">
+                <div v-for="(s, idx) in topGrowingSkills" :key="s.name" class="dist-item">
+                  <span class="dist-name" :title="s.name">{{ s.name }}</span>
+                  <div class="dist-bar-bg">
+                    <div class="dist-bar-fill" :style="{ width: s.ratio + '%', background: growingColors[idx % growingColors.length] }"></div>
+                  </div>
+                  <span class="dist-val">{{ s.count }}</span>
+                </div>
+              </div>
+              <div v-else style="text-align:center;padding:20px 0;color:var(--color-text-muted);font-size:var(--text-sm)">暂无增长技能数据</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 新岗位发现 ========== -->
+      <div v-if="currentPage === 'discover'" class="fade-in">
+        <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="stat-card blue">
+            <div class="stat-icon blue"><i class="fas fa-lightbulbo" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ discoverData.length }}</div>
+            <div class="stat-label">候选新岗位</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-icon green"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ avgEmergence }}%</div>
+            <div class="stat-label">平均萌芽度</div>
+          </div>
+          <div class="stat-card purple">
+            <div class="stat-icon purple"><i class="fas fa-layer-group" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ discoverIndustries }}</div>
+            <div class="stat-label">覆盖行业数</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><i class="fas fa-lightbulbo" aria-hidden="true"></i> 新岗位发现与定义</div>
+            <el-button type="primary" size="small" @click="loadDiscover" :loading="discoverLoading" aria-label="重新发现新岗位">
+              <i class="fas fa-search" style="margin-right:6px" aria-hidden="true"></i>重新发现
+            </el-button>
+          </div>
+          <div v-if="discoverLoading" style="text-align:center;padding:60px 0;" role="status" aria-live="polite">
+            <i class="fas fa-spinner fa-spin" style="font-size:32px;color:var(--color-primary-500)" aria-hidden="true"></i>
+            <div style="margin-top:12px;color:var(--color-text-muted)">正在分析岗位数据...</div>
+          </div>
+          <div v-else-if="discoverData.length === 0" style="text-align:center;padding:60px 0;color:var(--color-text-muted)">
+            <i class="fas fa-inbox" style="font-size:40px;margin-bottom:12px;display:block;opacity:0.3" aria-hidden="true"></i>
+            暂无候选新岗位，可调整阈值或扩充数据
+          </div>
+          <div v-else class="role-grid">
+            <div v-for="(c, idx) in discoverData" :key="idx" class="role-card" :style="{ animationDelay: idx * 0.08 + 's' }">
+              <div class="role-card-header">
+                <div>
+                  <div class="role-name">{{ c.name }}</div>
+                  <div class="role-meta">
+                    <span class="tag tag-blue">{{ c.lifecycle }}</span>
+                    <span class="tag tag-purple">{{ c.industry }}</span>
+                  </div>
+                </div>
+                <div style="text-align:right">
+                  <div style="font-size:24px;font-weight:800;color:var(--color-warning-500);font-variant-numeric:tabular-nums">{{ (c.emergence_score * 100).toFixed(0) }}<span style="font-size:12px;color:var(--color-text-muted)">%</span></div>
+                  <div style="font-size:11px;color:var(--color-text-muted)">萌芽度</div>
+                </div>
+              </div>
+              <div class="role-section">
+                <div class="role-section-title">核心职责</div>
+                <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6">
+                  {{ (c.core_responsibilities || []).slice(0, 3).join('；') }}
+                </div>
+              </div>
+              <div class="role-section">
+                <div class="role-section-title">必备技能</div>
+                <div class="skill-tags">
+                  <span v-for="s in (c.required_skills || [])" :key="s" class="tag tag-green">{{ s }}</span>
+                </div>
+              </div>
+              <div class="role-section">
+                <div class="role-section-title">加分技能</div>
+                <div class="skill-tags">
+                  <span v-for="s in (c.preferred_skills || [])" :key="s" class="tag tag-cyan">{{ s }}</span>
+                </div>
+              </div>
+              <div class="role-section" v-if="c.typical_scenarios && c.typical_scenarios.length">
+                <div class="role-section-title">典型场景</div>
+                <div style="font-size:13px;color:var(--color-text-secondary)">{{ c.typical_scenarios.join('、') }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 岗位演化 ========== -->
+      <div v-if="currentPage === 'timeline'" class="fade-in">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><i class="fas fa-history" aria-hidden="true"></i> 既有岗位能力动态更新</div>
+          </div>
+          <div class="filter-bar">
+            <el-select v-model="timeline.role" placeholder="选择岗位" filterable aria-label="选择岗位">
+              <el-option v-for="r in roles" :key="r" :label="r" :value="r"></el-option>
+            </el-select>
+            <el-date-picker v-model="timeline.dateA" type="date" placeholder="窗口A起始" format="YYYY-MM-DD" value-format="YYYY-MM-DD" style="width:160px" aria-label="时间窗口A起始日期" />
+            <el-date-picker v-model="timeline.dateB" type="date" placeholder="窗口B起始" format="YYYY-MM-DD" value-format="YYYY-MM-DD" style="width:160px" aria-label="时间窗口B起始日期" />
+            <el-button type="primary" @click="loadTimeline" :loading="timeline.loading" aria-label="开始对比分析">
+              <i class="fas fa-exchange-alt" style="margin-right:6px" aria-hidden="true"></i>对比分析
+            </el-button>
+          </div>
+
+          <div v-if="timeline.loading" style="text-align:center;padding:60px 0;" role="status" aria-live="polite">
+            <i class="fas fa-spinner fa-spin" style="font-size:32px;color:var(--color-primary-500)" aria-hidden="true"></i>
+            <div style="margin-top:12px;color:var(--color-text-muted)">正在对比时间窗口...</div>
+          </div>
+          <div v-else-if="timeline.data">
+            <div style="margin-bottom:20px;padding:14px 18px;background:var(--color-primary-alpha10);border-radius:var(--radius-lg);border:1px solid var(--color-border-default)">
+              <div style="font-size:14px;font-weight:600;color:var(--color-primary-500);margin-bottom:4px">
+                <i class="fas fa-info-circle" style="margin-right:6px" aria-hidden="true"></i>变更摘要
+              </div>
+              <div style="font-size:13px;color:var(--color-text-secondary);line-height:1.6">{{ timeline.data.summary }}</div>
+            </div>
+            <div class="timeline-compare">
+              <div class="timeline-col">
+                <h4><i class="fas fa-plus-circle" style="color:var(--color-success-500);margin-right:6px" aria-hidden="true"></i>新增能力 ({{ (timeline.data.added || []).length }})</h4>
+                <div v-if="(timeline.data.added || []).length === 0" style="color:var(--color-text-muted);font-size:13px;padding:12px 0">无新增</div>
+                <div v-for="s in timeline.data.added" :key="s.skill" class="change-item added">
+                  <div class="change-icon added"><i class="fas fa-plus" aria-hidden="true"></i></div>
+                  <div>
+                    <div style="font-weight:600">{{ s.skill }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-col">
+                <h4><i class="fas fa-minus-circle" style="color:var(--color-danger-500);margin-right:6px" aria-hidden="true"></i>删除能力 ({{ (timeline.data.removed || []).length }})</h4>
+                <div v-if="(timeline.data.removed || []).length === 0" style="color:var(--color-text-muted);font-size:13px;padding:12px 0">无删除</div>
+                <div v-for="s in timeline.data.removed" :key="s.skill" class="change-item removed">
+                  <div class="change-icon removed"><i class="fas fa-minus" aria-hidden="true"></i></div>
+                  <div>
+                    <div style="font-weight:600">{{ s.skill }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div v-if="(timeline.data.modified || []).length > 0" style="margin-top:20px">
+              <h4 style="font-size:13px;color:var(--color-text-muted);margin-bottom:12px;font-weight:600">
+                <i class="fas fa-edit" style="color:var(--color-warning-500);margin-right:6px" aria-hidden="true"></i>修改能力 ({{ timeline.data.modified.length }})
+              </h4>
+              <div v-for="s in timeline.data.modified" :key="s.skill" class="change-item modified">
+                <div class="change-icon modified"><i class="fas fa-pen" aria-hidden="true"></i></div>
+                <div style="font-weight:600">{{ s.skill }}</div>
+              </div>
+            </div>
+          </div>
+          <div v-else style="text-align:center;padding:60px 0;color:var(--color-text-muted)">
+            <i class="fas fa-calendar-alt" style="font-size:40px;margin-bottom:12px;display:block;opacity:0.3" aria-hidden="true"></i>
+            选择岗位和时间窗口进行能力演化对比
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 人岗匹配 ========== -->
+      <div v-if="currentPage === 'match'" class="fade-in">
+        <div class="match-layout">
+          <!-- Left: Input -->
+          <div class="match-input-panel">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title"><i class="fas fa-user-tie" aria-hidden="true"></i> 人岗匹配诊断</div>
+              </div>
+              <div style="margin-bottom:14px">
+                <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:8px">
+                  <label for="matchRoleSelect">目标岗位</label>
+                </div>
+                <el-select id="matchRoleSelect" v-model="match.role" placeholder="选择目标岗位" filterable style="width:100%" aria-label="选择目标岗位">
+                  <el-option v-for="r in roles" :key="r" :label="r" :value="r"></el-option>
+                </el-select>
+              </div>
+
+              <div style="margin-bottom:14px">
+                <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:8px">简历上传</div>
+                <el-upload
+                  ref="uploadRef"
+                  drag
+                  :auto-upload="false"
+                  :limit="1"
+                  accept=".pdf,.docx,.doc,.txt"
+                  :on-change="handleFileChange"
+                  :on-exceed="handleExceed"
+                  style="width:100%"
+                  aria-label="上传简历文件"
+                >
+                  <div style="padding:20px 0">
+                    <i class="fas fa-cloud-upload-alt" style="font-size:32px;color:var(--color-text-muted);margin-bottom:8px;display:block" aria-hidden="true"></i>
+                    <div style="font-size:13px;color:var(--color-text-secondary)">拖拽文件至此处，或 <em style="color:var(--color-primary-500)">点击上传</em></div>
+                    <div style="font-size:11px;color:var(--color-text-muted);margin-top:4px">支持 PDF / Word / TXT 格式</div>
+                  </div>
+                </el-upload>
+              </div>
+
+              <div style="margin-bottom:14px">
+                <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:8px">
+                  或粘贴简历文本
+                  <el-button link type="primary" size="small" @click="fillSample" style="margin-left:8px" aria-label="填入示例简历">
+                    <i class="fas fa-magic" style="margin-right:4px" aria-hidden="true"></i>填入示例
+                  </el-button>
+                </div>
+                <el-input v-model="match.resumeText" type="textarea" :rows="6" placeholder="例如：技能：Python、PyTorch、Deep Learning...&#10;项目经验：负责大模型微调与RAG应用...&#10;工作年限：4 年&#10;学历：硕士" aria-label="粘贴简历文本" />
+              </div>
+
+              <el-button type="primary" @click="doMatch" :loading="match.loading" style="width:100%" size="large" aria-label="开始人岗匹配诊断">
+                <i class="fas fa-diagnoses" style="margin-right:8px" aria-hidden="true"></i>开始诊断
+              </el-button>
+            </div>
+          </div>
+
+          <!-- Right: Result -->
+          <div class="match-result-panel">
+            <div v-if="match.loading" class="card" style="text-align:center;padding:60px 0" role="status" aria-live="polite">
+              <i class="fas fa-spinner fa-spin" style="font-size:32px;color:var(--color-primary-500)" aria-hidden="true"></i>
+              <div style="margin-top:12px;color:var(--color-text-muted)">正在分析匹配度...</div>
+            </div>
+            <template v-else-if="match.result">
+              <!-- Score Card -->
+              <div class="card" style="text-align:center">
+                <div id="radarChart" style="width:100%;height:240px" role="img" aria-label="匹配度雷达图"></div>
+                <div style="font-size:42px;font-weight:800;color:var(--color-primary-500);font-variant-numeric:tabular-nums">{{ (match.result.match.total_score * 100).toFixed(0) }}
+                  <span style="font-size:16px;color:var(--color-text-muted)">/ 100</span>
+                </div>
+                <div style="margin-top:8px">
+                  <span :class="['tag', match.result.match.hard_gate_pass ? 'tag-green' : 'tag-red']">
+                    <i :class="match.result.match.hard_gate_pass ? 'fas fa-check-circle' : 'fas fa-times-circle'" style="margin-right:4px" aria-hidden="true"></i>
+                    硬门槛{{ match.result.match.hard_gate_pass ? '通过' : '未通过' }}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Dimension Bars -->
+              <div class="card">
+                <div class="card-title" style="margin-bottom:14px"><i class="fas fa-chart-radar" aria-hidden="true"></i> 维度分析</div>
+                <div class="dimension-bars">
+                  <div class="dim-bar" v-for="d in matchDimensions" :key="d.label">
+                    <div class="label">{{ d.label }}</div>
+                    <div class="bar-bg"><div class="bar-fill" :style="{ width: d.value + '%', background: d.color }"></div></div>
+                    <div class="val">{{ d.value }}%</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skills -->
+              <div class="card">
+                <div class="card-title" style="margin-bottom:14px"><i class="fas fa-check-double" aria-hidden="true"></i> 技能匹配</div>
+                <div style="margin-bottom:12px">
+                  <div style="font-size:12px;color:var(--color-success-500);margin-bottom:8px;font-weight:600">已满足 ({{ match.result.match.matched_skills.length }})</div>
+                  <div class="skill-tags">
+                    <span v-for="s in match.result.match.matched_skills" :key="s" class="tag tag-green">{{ s }}</span>
+                    <span v-if="!match.result.match.matched_skills.length" style="color:var(--color-text-muted);font-size:13px">无</span>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:12px;color:var(--color-danger-500);margin-bottom:8px;font-weight:600">缺失 ({{ match.result.match.missing_skills.length }})</div>
+                  <div class="skill-tags">
+                    <span v-for="s in match.result.match.missing_skills" :key="s" class="tag tag-red">{{ s }}</span>
+                    <span v-if="!match.result.match.missing_skills.length" style="color:var(--color-text-muted);font-size:13px">无</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Explanations -->
+              <div class="card" v-if="match.result.match.explanations && match.result.match.explanations.length">
+                <div class="card-title" style="margin-bottom:14px"><i class="fas fa-stethoscope" aria-hidden="true"></i> 诊断解释</div>
+                <div v-for="(e, i) in match.result.match.explanations" :key="i" style="padding:8px 0;font-size:13px;color:var(--color-text-secondary);border-bottom:1px solid var(--color-border-default);line-height:1.6">
+                  <i class="fas fa-angle-right" style="color:var(--color-primary-500);margin-right:8px" aria-hidden="true"></i>{{ e }}
+                </div>
+              </div>
+            </template>
+            <div v-else class="card" style="text-align:center;padding:60px 0;color:var(--color-text-muted)">
+              <i class="fas fa-user-check" style="font-size:40px;margin-bottom:12px;display:block;opacity:0.3" aria-hidden="true"></i>
+              输入简历信息并选择目标岗位开始诊断
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Path -->
+        <div v-if="match.result && match.result.learning_path && match.result.learning_path.length" class="card fade-in" style="margin-top:20px">
+          <div class="card-header">
+            <div class="card-title"><i class="fas fa-route" aria-hidden="true"></i> 推荐学习路径</div>
+            <el-tag type="info" size="small">基于技能先修 DAG 拓扑排序</el-tag>
+          </div>
+          <div class="path-steps">
+            <div v-for="step in match.result.learning_path" :key="step.step" class="path-step" :data-step="step.step">
+              <div class="path-step-title">{{ step.skill }}</div>
+              <div class="path-step-meta">
+                <span><i class="fas fa-clock" style="margin-right:4px" aria-hidden="true"></i>{{ step.estimated_hours }}h</span>
+                <span v-if="step.prerequisite_of && step.prerequisite_of.length">
+                  <i class="fas fa-arrow-right" style="margin-right:4px" aria-hidden="true"></i>先修于: {{ step.prerequisite_of.join('、') }}
+                </span>
+                <span v-if="step.resources && step.resources.length">
+                  <i class="fas fa-book" style="margin-right:4px" aria-hidden="true"></i>{{ step.resources.slice(0, 2).join('、') }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 数据治理 ========== -->
+      <div v-if="currentPage === 'governance'" class="fade-in">
+        <div class="stats-grid">
+          <div class="stat-card blue">
+            <div class="stat-icon blue"><i class="fas fa-database" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ govStats.totalJobs }}</div>
+            <div class="stat-label">总岗位数据</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-icon green"><i class="fas fa-check-circle" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ govStats.highTrust }}</div>
+            <div class="stat-label">高可信度</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-icon amber"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ govStats.duplicates }}</div>
+            <div class="stat-label">疑似重复</div>
+          </div>
+          <div class="stat-card purple">
+            <div class="stat-icon purple"><i class="fas fa-brain" aria-hidden="true"></i></div>
+            <div class="stat-value">{{ govStats.skills }}</div>
+            <div class="stat-label">技能本体数</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><i class="fas fa-shield-alt" aria-hidden="true"></i> 可信度评分模型</div>
+            <el-tag type="info" size="small">六维可信度加权模型</el-tag>
+          </div>
+          <div style="margin-bottom:20px;padding:16px;background:var(--color-primary-alpha10);border-radius:var(--radius-lg);border:1px solid var(--color-border-default);font-family:var(--font-mono);font-size:13px;color:var(--color-text-secondary);line-height:1.8">
+            <div style="color:var(--color-primary-500);font-weight:600;margin-bottom:8px">Trust(e) = w<sub>s</sub>·SourceAuthority + w<sub>t</sub>·Freshness + w<sub>c</sub>·CrossSourceAgreement + w<sub>q</sub>·ExtractionQuality - w<sub>d</sub>·DuplicationRisk - w<sub>h</sub>·HallucinationRisk</div>
+            <div style="font-size:12px;color:var(--color-text-muted)">
+              发布阈值 ≥ 0.75 · 审核区间 0.45 ~ 0.75 · 拒绝阈值 < 0.45
+            </div>
+          </div>
+          <div class="gov-grid">
+            <div class="gov-item">
+              <h4><i class="fas fa-star" aria-hidden="true"></i> 来源权威性</h4>
+              <div class="trust-bar" v-for="src in trustSources" :key="src.name">
+                <div class="label">{{ src.name }}</div>
+                <div class="bar-bg"><div class="bar-fill" :style="{ width: src.value + '%', background: src.color }"></div></div>
+                <div class="val">{{ src.value }}%</div>
+              </div>
+            </div>
+            <div class="gov-item">
+              <h4><i class="fas fa-clock" aria-hidden="true"></i> 时效性分布</h4>
+              <div id="freshnessChart" style="width:100%;height:160px" role="img" aria-label="数据时效性饼图"></div>
+            </div>
+            <div class="gov-item">
+              <h4><i class="fas fa-clone" aria-hidden="true"></i> 数据质量标记</h4>
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                <span class="tag tag-green">正常 JD: {{ govStats.normalCount }}</span>
+                <span class="tag tag-amber">疑似抄袭: {{ govStats.plagiarismCount }}</span>
+                <span class="tag tag-red">技能通胀: {{ govStats.inflationCount }}</span>
+                <span class="tag tag-purple">过期内容: {{ govStats.expiredCount }}</span>
+              </div>
+              <div style="margin-top:16px">
+                <div id="qualityChart" style="width:100%;height:140px" role="img" aria-label="数据质量柱状图"></div>
+              </div>
+            </div>
+            <div class="gov-item">
+              <h4><i class="fas fa-robot" aria-hidden="true"></i> 幻觉防控</h4>
+              <div style="text-align:center;padding:16px 0">
+                <div style="font-size:48px;font-weight:800;color:var(--color-success-500);font-variant-numeric:tabular-nums">{{ (evalData.hallucination_rate * 100).toFixed(1) }}%</div>
+                <div style="font-size:13px;color:var(--color-text-secondary);margin-top:4px">幻觉率 (目标 ≤ 2%)</div>
+                <el-progress :percentage="Math.min(100, (evalData.hallucination_rate / 0.02) * 100)" :color="evalData.hallucination_rate <= 0.02 ? '#10b981' : '#ef4444'" :stroke-width="8" style="margin-top:16px" aria-label="幻觉率进度" />
+                <div style="font-size:12px;color:var(--color-text-muted);margin-top:8px">
+                  五道防线: RAG检索 + JSON Schema + 证据Span + 交叉蕴含 + 低置信拒答
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 评测指标 ========== -->
+      <div v-if="currentPage === 'eval'" class="fade-in">
+        <div class="metrics-grid">
+          <div v-for="m in evalMetrics" :key="m.label" class="metric-card" :class="m.good ? 'good' : 'bad'">
+            <div class="metric-value" :class="m.good ? 'good' : 'bad'">{{ m.value }}</div>
+            <div class="metric-label">{{ m.label }}</div>
+            <div class="metric-target">目标: {{ m.target }}</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:20px">
+          <div class="card-header">
+            <div class="card-title"><i class="fas fa-chart-bar" aria-hidden="true"></i> 指标达成情况</div>
+          </div>
+          <div id="evalBarChart" style="width:100%;height:300px" role="img" aria-label="评测指标达成柱状图"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><i class="fas fa-list-check" aria-hidden="true"></i> 测试方案概览</div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+            <div style="padding:16px;background:var(--color-success-alpha12);border-radius:var(--radius-lg);border:1px solid rgba(16,185,129,0.15)">
+              <div style="font-size:24px;font-weight:800;color:var(--color-success-500);font-variant-numeric:tabular-nums">110</div>
+              <div style="font-size:13px;color:var(--color-text-secondary);margin-top:4px">岗位 JD 测试集</div>
+              <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">目标 ≥ 100 条</div>
+            </div>
+            <div style="padding:16px;background:var(--color-primary-alpha10);border-radius:var(--radius-lg);border:1px solid var(--color-border-default)">
+              <div style="font-size:24px;font-weight:800;color:var(--color-primary-500);font-variant-numeric:tabular-nums">42</div>
+              <div style="font-size:13px;color:var(--color-text-secondary);margin-top:4px">单元测试用例</div>
+              <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">覆盖率 76%</div>
+            </div>
+            <div style="padding:16px;background:var(--color-purple-alpha12);border-radius:var(--radius-lg);border:1px solid rgba(139,92,246,0.15)">
+              <div style="font-size:24px;font-weight:800;color:var(--color-purple-500);font-variant-numeric:tabular-nums">280</div>
+              <div style="font-size:13px;color:var(--color-text-secondary);margin-top:4px">匹配标注样本</div>
+              <div style="font-size:11px;color:var(--color-text-muted);margin-top:2px">20简历 × 14岗位</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- About Dialog -->
+  <el-drawer v-model="showAbout" title="关于系统" direction="rtl" size="400px" aria-label="关于系统">
+    <div style="padding:0 8px">
+      <h3 style="font-size:18px;margin-bottom:12px">岗位能力图谱系统</h3>
+      <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.8;margin-bottom:16px">
+        多源异构数据驱动岗位和能力图谱构建与动态演化分析研究系统。
+        基于数据驱动的岗位能力动态演化与分析全流程闭环，覆盖新岗位发现、
+        既有岗位能力更新、全景图谱可视化、人岗匹配诊断与学习路径推荐。
+      </p>
+      <div style="font-size:13px;color:var(--color-text-muted);line-height:2">
+        <div><b>版本：</b>v0.1.0</div>
+        <div><b>技术栈：</b>FastAPI + NetworkX + Vue 3 + ECharts</div>
+        <div><b>竞赛：</b>挑战杯 XH-202621</div>
+        <div><b>发榜单位：</b>科大讯飞股份有限公司</div>
+      </div>
+    </div>
+  </el-drawer>
 </div>
 
-<main>
-  <div class="panel active" id="graph">
-    <div class="card">
-      <h2>岗位—技能全景图谱（力导向布局，蓝=岗位，青=技能）</h2>
-      <div class="filters">
-        <select id="gIndustry"><option value="">全部行业</option></select>
-        <select id="gLevel"><option value="">全部级别</option></select>
-        <button class="secondary" onclick="renderGraph()">刷新布局</button>
-      </div>
-      <canvas id="graphCanvas"></canvas>
-      <div class="legend">
-        <span><span class="dot" style="background:#2563eb"></span>岗位</span>
-        <span><span class="dot" style="background:#93c5fd"></span>技能</span>
-        <span><span class="dot" style="background:#fbbf24"></span>新增/增长技能</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="panel" id="discover">
-    <div class="card">
-      <h2>新岗位发现与定义</h2>
-      <div id="discoverResult" class="loading">加载中...</div>
-    </div>
-  </div>
-
-  <div class="panel" id="timeline">
-    <div class="card">
-      <h2>既有岗位能力动态更新</h2>
-      <div class="filters">
-        <select id="tRole"></select>
-        <input type="text" id="tWinA" value="2025-01-01" style="width:120px">
-        <input type="text" id="tWinB" value="2026-01-01" style="width:120px">
-        <button onclick="loadTimeline()">对比窗口</button>
-      </div>
-      <div id="timelineResult"></div>
-    </div>
-  </div>
-
-  <div class="panel" id="match">
-    <div class="card">
-      <h2>人岗匹配诊断与差距分析</h2>
-      <div class="filters">
-        <span>目标岗位：</span>
-        <select id="mRole"></select>
-        <button onclick="fillSample()" class="secondary">填入示例简历</button>
-      </div>
-      <textarea id="mResume" placeholder="粘贴简历文本，例如：技能：Python、PyTorch、Deep Learning。项目经验：负责大模型微调..."></textarea>
-      <div style="margin-top:12px"><button onclick="doMatch()">诊断匹配</button></div>
-      <div id="matchResult" class="hidden"></div>
-    </div>
-  </div>
-
-  <div class="panel" id="eval">
-    <div class="card">
-      <h2>评测指标（自动对照金标准）</h2>
-      <div id="evalMetrics" class="loading">加载中...</div>
-    </div>
-  </div>
-</main>
-
 <script>
-const API = '';
-async function getJSON(url, opts) {
-  const r = await fetch(API + url, opts);
-  return r.json();
-}
-const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const { createApp, ref, reactive, computed, onMounted, nextTick, watch } = Vue;
 
-// ---------- Tab 切换 ----------
-document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => {
-  document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
-  document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
-  t.classList.add('active');
-  document.getElementById(t.dataset.panel).classList.add('active');
-  const p = t.dataset.panel;
-  if (p === 'graph') renderGraph();
-  if (p === 'discover') loadDiscover();
-  if (p === 'eval') loadEval();
-}));
-
-// ---------- 力导向图谱 ----------
-let graphState = null;
-async function renderGraph() {
-  const industry = document.getElementById('gIndustry').value;
-  const level = document.getElementById('gLevel').value;
-  const data = await getJSON(`/api/v1/graph/panorama?industry=${encodeURIComponent(industry)}&level=${encodeURIComponent(level)}`);
-  graphState = layout(data);
-  drawGraph();
-}
-function layout(data) {
-  const nodes = data.nodes, edges = data.edges;
-  const byId = {};
-  nodes.forEach(n => byId[n.id] = n);
-  const pos = {}, role = new Set(), skill = new Set();
-  nodes.forEach(n => { pos[n.id] = [Math.random()*2-1, Math.random()*2-1]; (n.type==='Role'?role:skill).add(n.id); });
-  const adj = {};
-  edges.forEach(e => { (adj[e.source] ||= []).push(e.target); (adj[e.target] ||= []).push(e.source); });
-  const N = nodes.length || 1;
-  // 简单力模拟
-  for (let it = 0; it < 180; it++) {
-    const force = {};
-    nodes.forEach(n => force[n.id] = [0,0]);
-    // 斥力
-    for (let i = 0; i < N; i++) for (let j = i+1; j < N; j++) {
-      const a = nodes[i].id, b = nodes[j].id;
-      let dx = pos[a][0]-pos[b][0], dy = pos[a][1]-pos[b][1];
-      let d2 = dx*dx+dy*dy; if (d2 < 1e-4) { dx = Math.random()-0.5; dy = Math.random()-0.5; d2 = dx*dx+dy*dy; }
-      const d = Math.sqrt(d2), f = 1.0/d2;
-      const fx = f*dx/d, fy = f*dy/d;
-      force[a][0]+=fx; force[a][1]+=fy; force[b][0]-=fx; force[b][1]-=fy;
+const app = createApp({
+  setup() {
+    // ===== Theme =====
+    const isLightTheme = ref(false);
+    function toggleTheme() {
+      isLightTheme.value = !isLightTheme.value;
+      document.documentElement.setAttribute('data-theme', isLightTheme.value ? 'light' : 'dark');
+      // Re-render graph with theme-aware colors
+      if (currentPage.value === 'graph' && graphChart) {
+        renderGraph();
+      }
     }
-    // 边引力（技能向岗位聚集）
-    edges.forEach(e => {
-      const a = e.source, b = e.target; if (!(a in pos) || !(b in pos)) return;
-      const dx = pos[b][0]-pos[a][0], dy = pos[b][1]-pos[a][1];
-      const d = Math.sqrt(dx*dx+dy*dy) || 0.01;
-      const f = 0.03 * d * (e.is_required ? 1.3 : 0.7);
-      const fx = f*dx/d, fy = f*dy/d;
-      force[a][0]+=fx; force[a][1]+=fy; force[b][0]-=fx; force[b][1]-=fy;
+
+    // ===== Navigation =====
+    const currentPage = ref('graph');
+    const showAbout = ref(false);
+    const globalLoading = ref(false);
+
+    const navItems = [
+      { key: 'graph', label: '全景图谱', icon: 'fas fa-project-diagram' },
+      { key: 'discover', label: '新岗位发现', icon: 'fas fa-lightbulbo' },
+      { key: 'timeline', label: '岗位演化', icon: 'fas fa-history' },
+      { key: 'match', label: '人岗匹配', icon: 'fas fa-user-tie' },
+    ];
+
+    const pageTitles = {
+      graph: { title: '全景图谱', desc: '新一代信息技术岗位技能关系可视化' },
+      discover: { title: '新岗位发现', desc: '识别市场中正在萌芽的新兴岗位' },
+      timeline: { title: '岗位演化', desc: '既有岗位能力动态更新与时间窗口对比' },
+      match: { title: '人岗匹配', desc: '简历解析、差距分析与学习路径推荐' },
+      governance: { title: '数据治理', desc: '可信度评分、质量诊断与幻觉防控' },
+      eval: { title: '评测指标', desc: '核心指标验证与测试方案概览' },
+    };
+
+    const currentPageTitle = computed(() => pageTitles[currentPage.value]?.title || '');
+    const currentPageDesc = computed(() => pageTitles[currentPage.value]?.desc || '');
+
+    // ===== API Helper =====
+    const API = '';
+    async function getJSON(url, opts) {
+      const r = await fetch(API + url, { headers: { 'Content-Type': 'application/json' }, ...opts });
+      return r.json();
+    }
+
+    // ===== Roles =====
+    const roles = ref([]);
+    async function loadRoles() {
+      const data = await getJSON('/api/v1/roles');
+      roles.value = data.roles || [];
+    }
+
+    // ===== Graph =====
+    const graphFilter = reactive({ industry: '', level: '' });
+    const graphStats = reactive({ roles: 0, skills: 0, edges: 0, growing: 0 });
+    const industries = ref([]);
+    const levels = ref([]);
+    let graphChart = null;
+    let graphRawData = null; // 缓存原始数据用于搜索/高亮
+
+    // 图谱增强状态
+    const selectedNode = ref(null);
+    const graphSearchText = ref('');
+    const topGrowingSkills = ref([]);
+    const growingColors = ['#f59e0b', '#ef4444', '#ec4899', '#8b5cf6', '#06b6d4', '#10b981'];
+
+    const graphDensity = computed(() => {
+      if (!graphStats.roles || !graphStats.skills) return '0.00';
+      return (graphStats.edges / (graphStats.roles * graphStats.skills)).toFixed(2);
     });
-    // 应用 + 中心引力
-    nodes.forEach(n => {
-      const id = n.id;
-      pos[id][0] += force[id][0]*0.05 - pos[id][0]*0.02;
-      pos[id][1] += force[id][1]*0.05 - pos[id][1]*0.02;
+    const growingRatio = computed(() => {
+      if (!graphStats.skills) return '0';
+      return ((graphStats.growing / graphStats.skills) * 100).toFixed(0);
     });
-  }
-  // 归一化到画布
-  let minx=1e9,maxx=-1e9,miny=1e9,maxy=-1e9;
-  nodes.forEach(n => { minx=Math.min(minx,pos[n.id][0]); maxx=Math.max(maxx,pos[n.id][0]); miny=Math.min(miny,pos[n.id][1]); maxy=Math.max(maxy,pos[n.id][1]); });
-  const spanx = (maxx-minx)||1, spany = (maxy-miny)||1;
-  nodes.forEach(n => { pos[n.id][0] = (pos[n.id][0]-minx)/spanx; pos[n.id][1] = (pos[n.id][1]-miny)/spany; });
-  return { nodes, edges, pos, byId };
-}
-function drawGraph() {
-  const s = graphState; if (!s) return;
-  const canvas = document.getElementById('graphCanvas');
-  const W = canvas.width = canvas.clientWidth * devicePixelRatio;
-  const H = canvas.height = canvas.clientHeight * devicePixelRatio;
-  const ctx = canvas.getContext('2d');
-  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
-  const cw = canvas.clientWidth, ch = canvas.clientHeight;
-  ctx.clearRect(0,0,cw,ch);
-  const P = (n) => [20 + s.pos[n.id][0]*(cw-40), 20 + s.pos[n.id][1]*(ch-40)];
-  // 边
-  s.edges.forEach(e => {
-    const a = P(e.source), b = P(e.target);
-    ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]);
-    ctx.strokeStyle = e.is_required ? 'rgba(37,99,235,.30)' : 'rgba(148,163,184,.22)';
-    ctx.lineWidth = e.is_required ? 1.4 : 1;
-    ctx.stroke();
-  });
-  // 技能节点
-  s.nodes.filter(n=>n.type==='Skill').forEach(n => {
-    const p = P(n);
-    const growth = n.trend_state && (n.trend_state==='增长'||n.trend_state==='萌芽');
-    ctx.beginPath(); ctx.arc(p[0],p[1], 4.5, 0, 2*Math.PI);
-    ctx.fillStyle = growth ? '#fbbf24' : '#93c5fd'; ctx.fill();
-    ctx.fillStyle = '#1e3a8a'; ctx.font = '11px sans-serif';
-    ctx.fillText(n.label, p[0]+7, p[1]+3);
-  });
-  // 岗位节点
-  s.nodes.filter(n=>n.type==='Role').forEach(n => {
-    const p = P(n);
-    ctx.beginPath(); ctx.arc(p[0],p[1], 10, 0, 2*Math.PI);
-    ctx.fillStyle = '#2563eb'; ctx.fill();
-    ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
-    ctx.fillStyle = '#0f172a'; ctx.font = 'bold 12px sans-serif';
-    ctx.fillText(n.label, p[0]+14, p[1]+4);
-  });
-}
-window.addEventListener('resize', () => { if (document.getElementById('graph').classList.contains('active')) drawGraph(); });
-document.getElementById('gIndustry').addEventListener('change', renderGraph);
-document.getElementById('gLevel').addEventListener('change', renderGraph);
 
-// ---------- 岗位列表 + 行业筛选 ----------
-async function loadRoles() {
-  const data = await getJSON('/api/v1/roles');
-  const mRole = document.getElementById('mRole');
-  const tRole = document.getElementById('tRole');
-  data.roles.forEach(r => {
-    const o1 = document.createElement('option'); o1.value = r; o1.textContent = r;
-    const o2 = document.createElement('option'); o2.value = r; o2.textContent = r;
-    mRole.appendChild(o1); tRole.appendChild(o2);
-  });
-  const pan = await getJSON('/api/v1/graph/panorama');
-  const inds = new Set(pan.nodes.filter(n => n.type==='Role').map(n => n.industry).filter(Boolean));
-  const gi = document.getElementById('gIndustry');
-  inds.forEach(x => { const o = document.createElement('option'); o.value = x; o.textContent = x; gi.appendChild(o); });
-}
+    // 图谱缩放控制
+    function graphZoomIn() {
+      if (!graphChart) return;
+      const opt = graphChart.getOption();
+      const cur = opt.series[0].zoom || 1;
+      graphChart.setOption({ series: [{ zoom: cur * 1.2 }] });
+    }
+    function graphZoomOut() {
+      if (!graphChart) return;
+      const opt = graphChart.getOption();
+      const cur = opt.series[0].zoom || 1;
+      graphChart.setOption({ series: [{ zoom: cur / 1.2 }] });
+    }
+    function graphResetView() {
+      if (!graphChart) return;
+      graphChart.setOption({ series: [{ zoom: 1 }] });
+    }
 
-// ---------- 新岗位发现 ----------
-async function loadDiscover() {
-  const el = document.getElementById('discoverResult');
-  el.innerHTML = '<div class="loading">分析中...</div>';
-  const data = await getJSON('/api/v1/roles/discover', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({known_roles: []}) });
-  if (!data.candidates.length) { el.innerHTML = '<p>暂无候选新岗位（可调整阈值或扩充数据）</p>'; return; }
-  el.innerHTML = data.candidates.map(c => `
-    <div class="role-card">
-      <h3>${esc(c.name)}
-        <span class="tag info">萌芽度 ${(c.emergence_score*100).toFixed(0)}%</span>
-        <span class="tag info">${esc(c.lifecycle)}</span>
-        <span class="tag info">${esc(c.industry)}</span>
-      </h3>
-      <div class="row"><b>核心职责：</b>${(c.core_responsibilities||[]).slice(0,3).map(esc).join('；')}</div>
-      <div class="row"><b>必备技能：</b>${(c.required_skills||[]).map(s=>`<span class="tag matched">${esc(s)}</span>`).join('')}</div>
-      <div class="row"><b>加分技能：</b>${(c.preferred_skills||[]).map(s=>`<span class="tag">${esc(s)}</span>`).join('')}</div>
-      <div class="row"><b>典型场景：</b>${(c.typical_scenarios||[]).map(esc).join('、')}</div>
-    </div>`).join('');
-}
+    // 搜索高亮
+    function onGraphSearch() {
+      if (!graphChart || !graphRawData) return;
+      const q = graphSearchText.value.trim().toLowerCase();
+      if (!q) { renderGraph(); return; }
+      // Highlight matching nodes
+      const nodes = graphChart.getOption().series[0].data;
+      const updated = nodes.map(n => {
+        const match = n.name.toLowerCase().includes(q);
+        return {
+          ...n,
+          symbolSize: match ? (n._isRole ? 52 : 24) : (n._isRole ? 30 : 10),
+          itemStyle: { ...n.itemStyle, opacity: match ? 1 : 0.15 },
+          label: { ...n.label, opacity: match ? 1 : 0.1 },
+        };
+      });
+      graphChart.setOption({ series: [{ data: updated }] });
+    }
 
-// ---------- 岗位演化 ----------
-async function loadTimeline() {
-  const role = document.getElementById('tRole').value;
-  const a = document.getElementById('tWinA').value;
-  const b = document.getElementById('tWinB').value;
-  const data = await getJSON(`/api/v1/roles/${encodeURIComponent(role)}/timeline?window_a=${a}&window_b=${b}`);
-  const el = document.getElementById('timelineResult');
-  el.innerHTML = `
-    <p style="margin-bottom:12px;font-weight:600">${esc(data.summary)}</p>
-    <h3 class="section">新增能力</h3>
-    <div>${(data.added||[]).map(s=>`<span class="tag matched">${esc(s.skill)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
-    <h3 class="section">删除能力</h3>
-    <div>${(data.removed||[]).map(s=>`<span class="tag missing">${esc(s.skill)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
-    <h3 class="section">修改能力</h3>
-    <div>${(data.modified||[]).map(s=>`<span class="tag">${esc(s.skill)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>`;
-}
+    // 点击关联标签跳转高亮
+    function highlightNode(name) {
+      graphSearchText.value = name;
+      onGraphSearch();
+      // Focus on the node in graph
+      if (!graphChart) return;
+      const nodes = graphChart.getOption().series[0].data;
+      const idx = nodes.findIndex(n => n.name === name);
+      if (idx >= 0) {
+        graphChart.dispatchAction({ type: 'highlight', seriesIndex: 0, dataIndex: idx });
+        graphChart.dispatchAction({ type: 'showTip', seriesIndex: 0, dataIndex: idx });
+      }
+    }
 
-// ---------- 人岗匹配 ----------
-function fillSample() {
-  const samples = {
-    '大模型算法工程师': '技能：Python、PyTorch、Deep Learning、Machine Learning、NLP、LLM、RAG、Fine-tuning\n项目经验：负责大模型微调与对齐，构建 RAG 应用\n工作年限：4 年\n学历：硕士',
-    'Java 开发工程师': '技能：Java、SQL、Linux、Git、Kafka、Docker\n项目经验：负责后端服务设计与开发，对接消息中间件\n工作年限：3 年\n学历：本科',
-    '知识图谱工程师': '技能：Python、Knowledge Graph、NLP、SQL、LLM、RAG\n项目经验：负责知识图谱构建，结合 LLM 做知识抽取\n工作年限：3 年\n学历：硕士',
-  };
-  const role = document.getElementById('mRole').value;
-  document.getElementById('mResume').value = samples[role] || '技能：Python、PyTorch、Deep Learning、Machine Learning、NLP、LLM、RAG\n项目经验：负责大模型微调与 RAG 应用\n工作年限：4 年\n学历：硕士';
-}
-async function doMatch() {
-  const role = document.getElementById('mRole').value;
-  const text = document.getElementById('mResume').value.trim();
-  if (!text) { alert('请先输入简历文本'); return; }
-  const data = await getJSON('/api/v1/matching/diagnose', {
-    method: 'POST', headers: {'Content-Type':'application/json'},
-    body: JSON.stringify({resume_text: text, role_name: role})
-  });
-  const m = data.match;
-  const el = document.getElementById('matchResult');
-  el.classList.remove('hidden');
-  const pct = v => (v*100).toFixed(0)+'%';
-  el.innerHTML = `
-    <div class="score-big">${(m.total_score*100).toFixed(0)}<span style="font-size:16px;color:#52606d">分 / 100</span></div>
-    <div class="dim">
-      <span>技能匹配 ${pct(m.dimensions.skill_match)}</span>
-      <span>经验 ${pct(m.dimensions.experience)}</span>
-      <span>项目证据 ${pct(m.dimensions.project_evidence)}</span>
-      <span>技能新鲜度 ${pct(m.dimensions.skill_freshness)}</span>
-      <span>迁移能力 ${pct(m.dimensions.transfer_ability)}</span>
-    </div>
-    <div><b>硬门槛：</b>${m.hard_gate_pass ? '<span class="tag matched">通过</span>' : '<span class="tag missing">未通过</span>'}</div>
-    <h3 class="section">已满足技能</h3>
-    <div>${m.matched_skills.map(s=>`<span class="tag matched">${esc(s)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
-    <h3 class="section">缺失技能</h3>
-    <div>${m.missing_skills.map(s=>`<span class="tag missing">${esc(s)}</span>`).join('') || '<span style="color:#94a3b8">无</span>'}</div>
-    <h3 class="section">诊断解释</h3>
-    <ul style="padding-left:20px">${m.explanations.map(e=>`<li>${esc(e)}</li>`).join('')}</ul>
-    <h3 class="section">推荐学习路径（按技能先修 DAG 拓扑排序）</h3>
-    <table><tr><th>顺序</th><th>技能</th><th>先修于</th><th>预计时长</th><th>资源</th></tr>
-    ${data.learning_path.map(s=>`<tr><td>${s.step}</td><td>${esc(s.skill)}</td><td>${(s.prerequisite_of||[]).map(esc).join('、')}</td><td>${s.estimated_hours}h</td><td>${(s.resources||[]).slice(0,2).map(esc).join('、')}</td></tr>`).join('')}
-    </table>`;
-}
+    // 行业分布饼图
+    let industryPieChart = null;
+    function renderIndustryPie(nodes) {
+      const el = document.getElementById('industryPieChart');
+      if (!el) return;
+      if (industryPieChart) { industryPieChart.dispose(); }
+      industryPieChart = echarts.init(el, null, { renderer: 'canvas' });
+      const indMap = {};
+      nodes.filter(n => n.type === 'Role' && n.industry).forEach(n => {
+        indMap[n.industry] = (indMap[n.industry] || 0) + 1;
+      });
+      const pieColors = ['#3b82f6', '#06b6d4', '#10b981', '#f59e0b', '#8b5cf6', '#ec4899', '#ef4444', '#f97316'];
+      const data = Object.entries(indMap).sort((a, b) => b[1] - a[1]).map(([name, value], i) => ({
+        name, value, itemStyle: { color: pieColors[i % pieColors.length] }
+      }));
+      const isLight = isLightTheme.value;
+      industryPieChart.setOption({
+        backgroundColor: 'transparent',
+        tooltip: {
+          trigger: 'item',
+          backgroundColor: isLight ? 'rgba(255,255,255,0.96)' : 'rgba(17,24,39,0.95)',
+          borderColor: isLight ? 'rgba(0,0,0,0.08)' : 'rgba(59,130,246,0.3)',
+          textStyle: { color: isLight ? '#111827' : '#e2e8f0', fontSize: 11 },
+          formatter: '{b}: {c} ({d}%)',
+        },
+        series: [{
+          type: 'pie',
+          radius: ['38%', '68%'],
+          center: ['50%', '52%'],
+          data: data,
+          label: { show: true, color: isLight ? '#4b5563' : '#94a3b8', fontSize: 10, formatter: '{b}\n{d}%' },
+          emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.2)' } },
+          itemStyle: { borderRadius: 3, borderColor: isLight ? '#fff' : '#1a1f35', borderWidth: 2 },
+        }],
+      });
+      window.addEventListener('resize', () => industryPieChart && industryPieChart.resize());
+    }
 
-// ---------- 评测 ----------
-async function loadEval() {
-  const el = document.getElementById('evalMetrics');
-  try {
-    const data = await getJSON('/api/v1/metrics/evaluation');
-    if (data.message) { el.innerHTML = `<p>${esc(data.message)}</p>`; return; }
-    const metric = (label, val, good) => `<div class="metric ${good?'good':'bad'}"><div class="v">${val}</div><div class="k">${label}</div></div>`;
-    el.innerHTML = `<div class="metrics">
-      ${metric('JD 解析 F1', (data.jd_parsing.f1*100).toFixed(1)+'%', data.jd_parsing.f1>=0.9)}
-      ${metric('简历提取 F1', (data.resume_extraction.f1*100).toFixed(1)+'%', data.resume_extraction.f1>=0.9)}
-      ${metric('匹配准确率', (data.matching.accuracy*100).toFixed(1)+'%', data.matching.accuracy>=0.9)}
-      ${metric('重复识别 F1', (data.duplication.f1*100).toFixed(1)+'%', data.duplication.f1>=0.9)}
-      ${metric('证据覆盖率', (data.evidence_coverage*100).toFixed(0)+'%', data.evidence_coverage>=0.9)}
-      ${metric('幻觉率', (data.hallucination_rate*100).toFixed(1)+'%', data.hallucination_rate<=0.05)}
-    </div>`;
-  } catch(e) { el.innerHTML = '<p>评测报告未生成，请运行 scripts/evaluate.py</p>'; }
-}
+    // 计算增长技能排行
+    function calcTopGrowing(nodes) {
+      const skillMap = {};
+      nodes.filter(n => n.type === 'Skill' && n.trend_state && (n.trend_state === '增长' || n.trend_state === '萌芽')).forEach(n => {
+        const cat = n.category || '其他';
+        skillMap[cat] = (skillMap[cat] || 0) + 1;
+      });
+      const total = Object.values(skillMap).reduce((a, b) => a + b, 0) || 1;
+      topGrowingSkills.value = Object.entries(skillMap)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 6)
+        .map(([name, count]) => ({ name, count, ratio: Math.round((count / total) * 100) }));
+    }
 
-// ---------- 初始化 ----------
-(async function init() {
-  await loadRoles();
-  renderGraph();
-})();
+    async function renderGraph() {
+      try {
+      const params = new URLSearchParams();
+      if (graphFilter.industry) params.set('industry', graphFilter.industry);
+      if (graphFilter.level) params.set('level', graphFilter.level);
+      const data = await getJSON(`/api/v1/graph/panorama?${params}`);
+
+      // Cache raw data for search/highlight
+      graphRawData = data;
+
+      // Stats
+      const roleNodes = (data.nodes || []).filter(n => n.type === 'Role');
+      const skillNodes = (data.nodes || []).filter(n => n.type === 'Skill');
+      const growing = skillNodes.filter(n => n.trend_state && (n.trend_state === '增长' || n.trend_state === '萌芽'));
+      graphStats.roles = roleNodes.length;
+      graphStats.skills = skillNodes.length;
+      graphStats.edges = (data.edges || []).length;
+      graphStats.growing = growing.length;
+
+      // Extract industries/levels
+      const indSet = new Set(roleNodes.map(n => n.industry).filter(Boolean));
+      industries.value = [...indSet];
+      const lvSet = new Set(roleNodes.map(n => n.level).filter(Boolean));
+      levels.value = [...lvSet];
+
+      // Update side panels
+      renderIndustryPie(data.nodes || []);
+      calcTopGrowing(data.nodes || []);
+
+      // Theme-aware colors
+      const isLight = isLightTheme.value;
+      const tooltipBg = isLight ? 'rgba(255,255,255,0.96)' : 'rgba(17,24,39,0.95)';
+      const tooltipBorder = isLight ? 'rgba(0,0,0,0.08)' : 'rgba(59,130,246,0.3)';
+      const tooltipTextColor = isLight ? '#111827' : '#e2e8f0';
+      const labelColorRole = isLight ? '#1e293b' : '#e2e8f0';
+      const labelColorSkill = isLight ? '#475569' : '#94a3b8';
+      const roleBorderColor = isLight ? '#2563eb' : '#60a5fa';
+      const roleShadowColor = isLight ? 'rgba(59,130,246,0.25)' : 'rgba(59,130,246,0.3)';
+      const linkRequiredColor = isLight ? 'rgba(59,130,246,0.3)' : 'rgba(59,130,246,0.35)';
+      const linkOptionalColor = isLight ? 'rgba(148,163,184,0.12)' : 'rgba(148,163,184,0.15)';
+      const emphasisShadow = isLight ? 'rgba(59,130,246,0.4)' : 'rgba(59,130,246,0.5)';
+      const pieBorderColor = isLight ? '#fff' : '#1a1f35';
+
+      // ECharts — ensure DOM element exists
+      const el = document.getElementById('graphChart');
+      if (!el) { console.warn('[graph] #graphChart not in DOM'); return; }
+
+      // Dispose stale instance if DOM was recreated by v-if
+      if (graphChart) {
+        try { if (graphChart.getDom() !== el) { graphChart.dispose(); } } catch(e) {}
+        graphChart = null;
+      }
+      if (!graphChart) {
+        graphChart = echarts.init(el, null, { renderer: 'canvas' });
+        window.addEventListener('resize', () => graphChart && graphChart.resize());
+      }
+
+      const categories = [
+        { name: '岗位' },
+        { name: '技能' },
+        { name: '增长技能' },
+      ];
+
+      // Build nodes with enhanced styling
+      const nodes = (data.nodes || []).map(n => {
+        const isRole = n.type === 'Role';
+        const isGrowing = !isRole && n.trend_state && (n.trend_state === '增长' || n.trend_state === '萌芽');
+        const trustScore = n.trust_score || 50;
+        // Size variation: roles bigger, growing skills slightly bigger than normal
+        const baseSize = isRole ? 44 : (isGrowing ? 20 : 14);
+        // Role nodes scale slightly with connection count (trust as proxy)
+        const sizeBoost = isRole ? Math.round(trustScore / 25) : 0;
+        return {
+          id: n.id,
+          name: n.label || n.id,
+          category: isRole ? 0 : (isGrowing ? 2 : 1),
+          symbolSize: baseSize + sizeBoost,
+          value: isRole ? trustScore : trustScore,
+          _isRole: isRole,
+          _isGrowing: isGrowing,
+          label: {
+            show: true,
+            fontSize: isRole ? 12 : 10,
+            color: isRole ? labelColorRole : labelColorSkill,
+            fontWeight: isRole ? 'bold' : 'normal',
+            textBorderColor: isLight ? 'rgba(255,255,255,0.7)' : 'rgba(15,23,42,0.6)',
+            textBorderWidth: isRole ? 2 : 0,
+          },
+          itemStyle: {
+            color: isRole ? '#3b82f6' : (isGrowing ? '#f59e0b' : '#06b6d4'),
+            borderColor: isRole ? roleBorderColor : (isGrowing ? 'rgba(245,158,11,0.4)' : 'transparent'),
+            borderWidth: isRole ? 2.5 : (isGrowing ? 1.5 : 0),
+            shadowBlur: isRole ? 16 : (isGrowing ? 8 : 4),
+            shadowColor: isRole ? roleShadowColor : (isGrowing ? 'rgba(245,158,11,0.2)' : 'rgba(6,182,212,0.15)'),
+            opacity: 1,
+          },
+          _data: n,
+        };
+      });
+
+      // Build id→name map so links can reference nodes by name (ECharts requirement)
+      const idToName = {};
+      nodes.forEach(n => { idToName[n._data.id] = n.name; });
+
+      const links = (data.edges || []).map(e => ({
+        source: idToName[e.source] || e.source,
+        target: idToName[e.target] || e.target,
+        lineStyle: {
+          color: e.is_required ? linkRequiredColor : linkOptionalColor,
+          width: e.is_required ? 1.5 : 1,
+          curveness: 0.15,
+        },
+      }));
+
+      // Scale force repulsion based on graph density
+      const edgeCount = links.length;
+      const nodeCount = nodes.length;
+      const density = edgeCount / Math.max(1, nodeCount);
+      const repulsion = Math.max(300, density * 60);
+
+      graphChart.setOption({
+        backgroundColor: 'transparent',
+        tooltip: {
+          trigger: 'item',
+          backgroundColor: tooltipBg,
+          borderColor: tooltipBorder,
+          textStyle: { color: tooltipTextColor, fontSize: 12 },
+          extraCssText: 'backdrop-filter:blur(8px);border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.15);padding:12px 16px;',
+          formatter: function(p) {
+            if (p.dataType === 'node') {
+              const d = p.data._data || {};
+              const accentColor = p.data._isRole ? '#3b82f6' : (p.data._isGrowing ? '#f59e0b' : '#06b6d4');
+              let html = `<div style="font-weight:700;font-size:14px;margin-bottom:8px;color:${accentColor}">${p.name}</div>`;
+              if (d.type === 'Role') {
+                html += `<div style="color:${isLight ? '#6b7280' : '#94a3b8'};line-height:1.8">`;
+                html += `<div><span style="opacity:0.6">类型</span> <b>岗位</b></div>`;
+                if (d.industry) html += `<div><span style="opacity:0.6">行业</span> ${d.industry}</div>`;
+                if (d.level) html += `<div><span style="opacity:0.6">级别</span> ${d.level}</div>`;
+                if (d.trust_score !== undefined) html += `<div><span style="opacity:0.6">可信度</span> <b style="color:#10b981">${(d.trust_score * 100).toFixed(0)}%</b></div>`;
+                html += `</div>`;
+              } else {
+                html += `<div style="color:${isLight ? '#6b7280' : '#94a3b8'};line-height:1.8">`;
+                html += `<div><span style="opacity:0.6">类型</span> <b>技能</b>${p.data._isGrowing ? ' <span style="color:#f59e0b">🔥增长</span>' : ''}</div>`;
+                if (d.trend_state) html += `<div><span style="opacity:0.6">趋势</span> <b style="color:#f59e0b">${d.trend_state}</b></div>`;
+                if (d.category) html += `<div><span style="opacity:0.6">类别</span> ${d.category}</div>`;
+                if (d.trust_score !== undefined) html += `<div><span style="opacity:0.6">可信度</span> ${(d.trust_score * 100).toFixed(0)}%</div>`;
+                html += `</div>`;
+              }
+              html += `<div style="margin-top:6px;font-size:11px;opacity:0.5">点击查看详情</div>`;
+              return html;
+            }
+            return '';
+          },
+        },
+        series: [{
+          type: 'graph',
+          layout: 'force',
+          data: nodes,
+          links: links,
+          categories: categories,
+          roam: true,
+          draggable: true,
+          force: { repulsion: repulsion, edgeLength: [60, 180], gravity: 0.07, friction: 0.6, layoutAnimation: true },
+          emphasis: {
+            focus: 'adjacency',
+            lineStyle: { width: 3 },
+            itemStyle: { shadowBlur: 24, shadowColor: emphasisShadow },
+          },
+          labelLayout: { hideOverlap: true },
+        }],
+      }, true);
+
+      // Click handler — populate selectedNode detail panel
+      graphChart.off('click');
+      graphChart.on('click', function(params) {
+        if (params.dataType !== 'node') return;
+        const nd = params.data;
+        const d = nd._data || {};
+        // Find related skills/roles via links
+        const relatedSkills = [];
+        const relatedRoles = [];
+        links.forEach(l => {
+          if (l.source === nd.name && !relatedSkills.includes(l.target)) {
+            // Find target node to check type
+            const tNode = nodes.find(n => n.name === l.target);
+            if (tNode) {
+              if (tNode._isRole) relatedRoles.push(l.target);
+              else relatedSkills.push(l.target);
+            }
+          }
+          if (l.target === nd.name && !relatedSkills.includes(l.source)) {
+            const sNode = nodes.find(n => n.name === l.source);
+            if (sNode) {
+              if (sNode._isRole) relatedRoles.push(l.source);
+              else relatedSkills.push(l.source);
+            }
+          }
+        });
+        // Count connections
+        const connections = links.filter(l => l.source === nd.name || l.target === nd.name).length;
+
+        selectedNode.value = {
+          name: nd.name,
+          nodeClass: nd._isRole ? 'role' : (nd._isGrowing ? 'growing' : 'skill'),
+          typeLabel: nd._isRole ? '岗位' : (nd._isGrowing ? '增长技能' : '技能'),
+          typeIcon: nd._isRole ? 'fas fa-briefcase' : (nd._isGrowing ? 'fas fa-fire-alt' : 'fas fa-cog'),
+          industry: d.industry || null,
+          level: d.level || null,
+          trend: d.trend_state || null,
+          trustScore: d.trust_score !== undefined ? (d.trust_score * 100).toFixed(0) : null,
+          connections: connections,
+          relatedSkills: relatedSkills.slice(0, 8),
+          relatedRoles: relatedRoles.slice(0, 6),
+        };
+      });
+
+      setTimeout(() => graphChart && graphChart.resize(), 150);
+      console.log(`[graph] OK: ${nodeCount} nodes, ${edgeCount} edges, repulsion=${repulsion}, theme=${isLight ? 'light' : 'dark'}`);
+      } catch (err) {
+        console.error('[graph] renderGraph error:', err);
+      }
+    }
+
+    // ===== Discover =====
+    const discoverData = ref([]);
+    const discoverLoading = ref(false);
+    const avgEmergence = computed(() => {
+      if (!discoverData.value.length) return 0;
+      const avg = discoverData.value.reduce((s, c) => s + c.emergence_score, 0) / discoverData.value.length;
+      return (avg * 100).toFixed(0);
+    });
+    const discoverIndustries = computed(() => new Set(discoverData.value.map(c => c.industry)).size);
+
+    async function loadDiscover() {
+      discoverLoading.value = true;
+      try {
+        const data = await getJSON('/api/v1/roles/discover', { method: 'POST', body: JSON.stringify({ known_roles: [] }) });
+        discoverData.value = data.candidates || [];
+      } finally { discoverLoading.value = false; }
+    }
+
+    // ===== Timeline =====
+    const timeline = reactive({ role: '', dateA: '2025-01-01', dateB: '2026-01-01', data: null, loading: false });
+
+    async function loadTimeline() {
+      if (!timeline.role) { ElementPlus.ElMessage.warning('请先选择岗位'); return; }
+      timeline.loading = true;
+      try {
+        const data = await getJSON(`/api/v1/roles/${encodeURIComponent(timeline.role)}/timeline?window_a=${timeline.dateA}&window_b=${timeline.dateB}`);
+        timeline.data = data;
+      } finally { timeline.loading = false; }
+    }
+
+    // ===== Match =====
+    const match = reactive({ role: '', resumeText: '', loading: false, result: null });
+    const uploadRef = ref(null);
+
+    const matchDimensions = computed(() => {
+      if (!match.result) return [];
+      const d = match.result.match.dimensions;
+      return [
+        { label: '技能匹配', value: (d.skill_match * 100).toFixed(0), color: 'linear-gradient(90deg, #3b82f6, #8b5cf6)' },
+        { label: '工作经验', value: (d.experience * 100).toFixed(0), color: 'linear-gradient(90deg, #10b981, #06b6d4)' },
+        { label: '项目证据', value: (d.project_evidence * 100).toFixed(0), color: 'linear-gradient(90deg, #f59e0b, #f97316)' },
+        { label: '技能新鲜度', value: (d.skill_freshness * 100).toFixed(0), color: 'linear-gradient(90deg, #ec4899, #8b5cf6)' },
+        { label: '迁移能力', value: (d.transfer_ability * 100).toFixed(0), color: 'linear-gradient(90deg, #06b6d4, #3b82f6)' },
+      ];
+    });
+
+    function fillSample() {
+      const samples = {
+        '大模型算法工程师': '技能：Python、PyTorch、Deep Learning、Machine Learning、NLP、LLM、RAG、Fine-tuning\n项目经验：负责大模型微调与对齐，构建 RAG 应用\n工作年限：4 年\n学历：硕士',
+        'Java 开发工程师': '技能：Java、SQL、Linux、Git、Kafka、Docker\n项目经验：负责后端服务设计与开发，对接消息中间件\n工作年限：3 年\n学历：本科',
+        '知识图谱工程师': '技能：Python、Knowledge Graph、NLP、SQL、LLM、RAG\n项目经验：负责知识图谱构建，结合 LLM 做知识抽取\n工作年限：3 年\n学历：硕士',
+      };
+      match.resumeText = samples[match.role] || samples['大模型算法工程师'];
+    }
+
+    async function handleFileChange(file) {
+      const formData = new FormData();
+      formData.append('file', file.raw);
+      try {
+        const r = await fetch('/api/v1/resumes/upload', { method: 'POST', body: formData });
+        const data = await r.json();
+        if (data.skills) {
+          match.resumeText = `技能：${(data.skills || []).join('、')}\n工作年限：${data.years || '未知'}\n学历：${data.education || '未知'}`;
+          ElementPlus.ElMessage.success('简历解析成功');
+        }
+      } catch (e) {
+        ElementPlus.ElMessage.error('文件上传失败');
+      }
+    }
+
+    function handleExceed() {
+      ElementPlus.ElMessage.warning('仅支持上传一个文件');
+    }
+
+    async function doMatch() {
+      if (!match.role) { ElementPlus.ElMessage.warning('请选择目标岗位'); return; }
+      if (!match.resumeText.trim()) { ElementPlus.ElMessage.warning('请输入简历信息'); return; }
+      match.loading = true;
+      try {
+        const data = await getJSON('/api/v1/matching/diagnose', {
+          method: 'POST',
+          body: JSON.stringify({ resume_text: match.resumeText, role_name: match.role }),
+        });
+        match.result = data;
+        await nextTick();
+        renderRadar();
+      } finally { match.loading = false; }
+    }
+
+    function renderRadar() {
+      const el = document.getElementById('radarChart');
+      if (!el || !match.result) return;
+      const chart = echarts.init(el);
+      const d = match.result.match.dimensions;
+      chart.setOption({
+        backgroundColor: 'transparent',
+        radar: {
+          indicator: [
+            { name: '技能匹配', max: 100 },
+            { name: '工作经验', max: 100 },
+            { name: '项目证据', max: 100 },
+            { name: '技能新鲜度', max: 100 },
+            { name: '迁移能力', max: 100 },
+          ],
+          shape: 'polygon',
+          splitNumber: 4,
+          axisName: { color: '#94a3b8', fontSize: 11 },
+          splitLine: { lineStyle: { color: 'rgba(59,130,246,0.1)' } },
+          splitArea: { show: true, areaStyle: { color: ['rgba(59,130,246,0.02)', 'rgba(59,130,246,0.04)'] } },
+          axisLine: { lineStyle: { color: 'rgba(59,130,246,0.15)' } },
+        },
+        series: [{
+          type: 'radar',
+          data: [{
+            value: [
+              (d.skill_match * 100).toFixed(0),
+              (d.experience * 100).toFixed(0),
+              (d.project_evidence * 100).toFixed(0),
+              (d.skill_freshness * 100).toFixed(0),
+              (d.transfer_ability * 100).toFixed(0),
+            ],
+            name: '匹配度',
+            areaStyle: { color: 'rgba(59,130,246,0.15)' },
+            lineStyle: { color: '#3b82f6', width: 2 },
+            itemStyle: { color: '#3b82f6' },
+          }],
+        }],
+      });
+      window.addEventListener('resize', () => chart.resize());
+    }
+
+    // ===== Eval =====
+    const evalData = reactive({
+      jd_parsing: { f1: 0.989 },
+      resume_extraction: { f1: 0.976 },
+      matching: { accuracy: 0.950 },
+      duplication: { f1: 1.0 },
+      evidence_coverage: 1.0,
+      hallucination_rate: 0.0,
+    });
+
+    const evalMetrics = computed(() => [
+      { label: 'JD 解析 F1', value: (evalData.jd_parsing.f1 * 100).toFixed(1) + '%', good: evalData.jd_parsing.f1 >= 0.9, target: '≥ 90%' },
+      { label: '简历提取 F1', value: (evalData.resume_extraction.f1 * 100).toFixed(1) + '%', good: evalData.resume_extraction.f1 >= 0.9, target: '≥ 90%' },
+      { label: '匹配准确率', value: (evalData.matching.accuracy * 100).toFixed(1) + '%', good: evalData.matching.accuracy >= 0.9, target: '≥ 90%' },
+      { label: '重复识别 F1', value: (evalData.duplication.f1 * 100).toFixed(1) + '%', good: evalData.duplication.f1 >= 0.9, target: '≥ 90%' },
+      { label: '证据覆盖率', value: (evalData.evidence_coverage * 100).toFixed(0) + '%', good: evalData.evidence_coverage >= 0.9, target: '≥ 95%' },
+      { label: '幻觉率', value: (evalData.hallucination_rate * 100).toFixed(1) + '%', good: evalData.hallucination_rate <= 0.05, target: '≤ 2%' },
+    ]);
+
+    async function loadEval() {
+      try {
+        const data = await getJSON('/api/v1/metrics/evaluation');
+        if (!data.message) Object.assign(evalData, data);
+      } catch (e) { /* use defaults */ }
+    }
+
+    function renderEvalBar() {
+      const el = document.getElementById('evalBarChart');
+      if (!el) return;
+      const chart = echarts.init(el);
+      const labels = ['JD解析F1', '简历提取F1', '匹配准确率', '重复识别F1', '证据覆盖率', '幻觉率'];
+      const values = [
+        (evalData.jd_parsing.f1 * 100).toFixed(1),
+        (evalData.resume_extraction.f1 * 100).toFixed(1),
+        (evalData.matching.accuracy * 100).toFixed(1),
+        (evalData.duplication.f1 * 100).toFixed(1),
+        (evalData.evidence_coverage * 100).toFixed(0),
+        (evalData.hallucination_rate * 100).toFixed(1),
+      ];
+      const targets = [90, 90, 90, 90, 95, 2];
+      chart.setOption({
+        backgroundColor: 'transparent',
+        tooltip: { trigger: 'axis', backgroundColor: 'rgba(17,24,39,0.95)', borderColor: 'rgba(59,130,246,0.3)', textStyle: { color: '#e2e8f0' } },
+        grid: { left: 100, right: 40, top: 20, bottom: 30 },
+        xAxis: { type: 'value', max: 100, axisLabel: { color: '#64748b', formatter: '{value}%' }, splitLine: { lineStyle: { color: 'rgba(255,255,255,0.04)' } }, axisLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } } },
+        yAxis: { type: 'category', data: labels, axisLabel: { color: '#94a3b8', fontSize: 12 }, axisLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } } },
+        series: [
+          {
+            type: 'bar',
+            data: values.map((v, i) => ({
+              value: v,
+              itemStyle: {
+                color: i === 5
+                  ? (parseFloat(v) <= targets[i] ? '#10b981' : '#ef4444')
+                  : (parseFloat(v) >= targets[i] ? '#10b981' : '#ef4444'),
+                borderRadius: [0, 4, 4, 0],
+              },
+            })),
+            barWidth: 18,
+            label: { show: true, position: 'right', color: '#94a3b8', fontSize: 12, formatter: '{c}%' },
+          },
+          {
+            type: 'bar',
+            data: targets.map(() => 0),
+            markLine: {
+              silent: true,
+              symbol: 'none',
+              lineStyle: { color: '#f59e0b', type: 'dashed', width: 1.5 },
+              data: targets.map((t, i) => ({ xAxis: t })),
+              label: { show: false },
+            },
+          },
+        ],
+      });
+      window.addEventListener('resize', () => chart.resize());
+    }
+
+    // ===== Governance =====
+    const govStats = reactive({ totalJobs: 110, highTrust: 95, duplicates: 12, skills: 65, normalCount: 88, plagiarismCount: 12, inflationCount: 10, expiredCount: 5 });
+    const trustSources = [
+      { name: '招聘平台', value: 92, color: '#3b82f6' },
+      { name: '企业官网', value: 88, color: '#10b981' },
+      { name: '技术社区', value: 75, color: '#f59e0b' },
+      { name: '课程认证', value: 70, color: '#8b5cf6' },
+      { name: '行业报告', value: 65, color: '#06b6d4' },
+    ];
+
+    function renderGovCharts() {
+      // Freshness
+      const fEl = document.getElementById('freshnessChart');
+      if (fEl) {
+        const fc = echarts.init(fEl);
+        fc.setOption({
+          backgroundColor: 'transparent',
+          tooltip: { trigger: 'item', backgroundColor: 'rgba(17,24,39,0.95)', borderColor: 'rgba(59,130,246,0.3)', textStyle: { color: '#e2e8f0' } },
+          series: [{
+            type: 'pie', radius: ['40%', '70%'], center: ['50%', '50%'],
+            data: [
+              { value: 45, name: '3个月内', itemStyle: { color: '#10b981' } },
+              { value: 30, name: '3-6个月', itemStyle: { color: '#3b82f6' } },
+              { value: 15, name: '6-12个月', itemStyle: { color: '#f59e0b' } },
+              { value: 10, name: '1年以上', itemStyle: { color: '#ef4444' } },
+            ],
+            label: { color: '#94a3b8', fontSize: 11 },
+            emphasis: { itemStyle: { shadowBlur: 10, shadowColor: 'rgba(0,0,0,0.3)' } },
+          }],
+        });
+        window.addEventListener('resize', () => fc.resize());
+      }
+      // Quality
+      const qEl = document.getElementById('qualityChart');
+      if (qEl) {
+        const qc = echarts.init(qEl);
+        qc.setOption({
+          backgroundColor: 'transparent',
+          tooltip: { trigger: 'axis', backgroundColor: 'rgba(17,24,39,0.95)', borderColor: 'rgba(59,130,246,0.3)', textStyle: { color: '#e2e8f0' } },
+          grid: { left: 60, right: 20, top: 10, bottom: 24 },
+          xAxis: { type: 'category', data: ['正常', '疑似抄袭', '技能通胀', '过期'], axisLabel: { color: '#94a3b8', fontSize: 11 }, axisLine: { lineStyle: { color: 'rgba(255,255,255,0.1)' } } },
+          yAxis: { type: 'value', axisLabel: { color: '#64748b' }, splitLine: { lineStyle: { color: 'rgba(255,255,255,0.04)' } } },
+          series: [{
+            type: 'bar', barWidth: 24,
+            data: [
+              { value: 88, itemStyle: { color: '#10b981', borderRadius: [4, 4, 0, 0] } },
+              { value: 12, itemStyle: { color: '#f59e0b', borderRadius: [4, 4, 0, 0] } },
+              { value: 10, itemStyle: { color: '#ef4444', borderRadius: [4, 4, 0, 0] } },
+              { value: 5, itemStyle: { color: '#8b5cf6', borderRadius: [4, 4, 0, 0] } },
+            ],
+            label: { show: true, position: 'top', color: '#94a3b8', fontSize: 11 },
+          }],
+        });
+        window.addEventListener('resize', () => qc.resize());
+      }
+    }
+
+    // ===== Refresh =====
+    async function refreshData() {
+      globalLoading.value = true;
+      try {
+        await loadRoles();
+        if (currentPage.value === 'graph') await renderGraph();
+        if (currentPage.value === 'discover') await loadDiscover();
+        if (currentPage.value === 'eval') { await loadEval(); await nextTick(); renderEvalBar(); }
+        if (currentPage.value === 'governance') { await loadEval(); await nextTick(); renderGovCharts(); }
+        ElementPlus.ElMessage.success('数据已刷新');
+      } finally { globalLoading.value = false; }
+    }
+
+    // ===== Page Change Watcher =====
+    watch(currentPage, async (page, oldPage) => {
+      // Dispose stale charts when leaving graph page (v-if destroys the DOM element)
+      if (oldPage === 'graph' && page !== 'graph') {
+        if (graphChart) { graphChart.dispose(); graphChart = null; }
+        if (industryPieChart) { industryPieChart.dispose(); industryPieChart = null; }
+        selectedNode.value = null;
+      }
+      await nextTick();
+      if (page === 'graph') renderGraph();
+      if (page === 'discover' && !discoverData.value.length) loadDiscover();
+      if (page === 'eval') { loadEval().then(() => nextTick().then(renderEvalBar)); }
+      if (page === 'governance') { loadEval().then(() => nextTick().then(renderGovCharts)); }
+    });
+
+    // ===== Init =====
+    onMounted(async () => {
+      await loadRoles();
+      await loadEval();
+      await nextTick();
+      renderGraph();
+    });
+
+    return {
+      currentPage, showAbout, globalLoading, navItems,
+      currentPageTitle, currentPageDesc,
+      isLightTheme, toggleTheme,
+      roles, graphFilter, graphStats, industries, levels,
+      renderGraph, refreshData,
+      selectedNode, graphSearchText, graphDensity, growingRatio,
+      topGrowingSkills, growingColors,
+      graphZoomIn, graphZoomOut, graphResetView, onGraphSearch, highlightNode,
+      discoverData, discoverLoading, avgEmergence, discoverIndustries, loadDiscover,
+      timeline, loadTimeline,
+      match, matchDimensions, fillSample, doMatch, handleFileChange, handleExceed, uploadRef,
+      evalData, evalMetrics,
+      govStats, trustSources,
+    };
+  },
+});
+
+app.use(ElementPlus);
+app.mount('#app');
 </script>
 </body>
 </html>

@@ -80,7 +80,9 @@ bash scripts/run_eval.sh
 │   ├── evaluate.py          # 一键评测
 │   └── run_eval.sh          # 数据 + 评测 + 测试覆盖率
 ├── tests/                   # 42 个测试（35 单元 + 7 API）
-├── web/index.html           # 前端（全景图谱/新岗位/演化/匹配/评测）
+├── web/
+│   ├── index.html           # 前端单文件应用（Vue 3.5 + Element Plus 2.14 + ECharts 5.5.1）
+│   └── webfonts/            # FontAwesome 图标字体
 ├── run.py                   # 一键启动
 ├── Dockerfile / docker-compose.yml
 ├── requirements.txt
@@ -144,7 +146,45 @@ Trust(e) = w_s·SourceAuthority + w_t·Freshness + w_c·CrossSourceAgreement
 
 ---
 
-## 七、API 一览
+## 七、前端界面
+
+前端为**单 HTML 文件应用**（`web/index.html`，~2700 行），基于 Vue 3.5 + Element Plus 2.14 + ECharts 5.5.1，无需构建工具，由 FastAPI 直接托管静态文件。
+
+### 主题系统
+
+支持**暗色 / 亮色双主题**实时切换。通过 `[data-theme="light"]` CSS 选择器覆盖全部语义色 Token（`--color-bg-*`、`--color-text-*`、`--color-border-*`、`--color-primary-*` 等），Element Plus 组件同步适配。所有 ECharts 图表（力导向图、饼图、柱状图、雷达图）的 tooltip、标签、连线颜色均跟随主题动态切换。
+
+### 全景图谱（增强版）
+
+采用**双栏布局**：左侧力导向图 + 右侧信息面板，提供丰富的交互能力：
+
+- **搜索高亮**：实时搜索框，匹配节点放大高亮，未匹配节点淡化至 opacity 0.15
+- **筛选控制**：行业、级别下拉筛选，联动图谱重新渲染
+- **缩放与重置**：放大 / 缩小 / 重置视图 / 刷新布局四个快捷按钮
+- **节点点击详情**：点击任意节点，右侧面板展示类型、行业、级别、趋势、可信度、关联数、关联技能（可点击跳转高亮）、关联岗位
+- **行业分布饼图**：ECharts 环形图，按岗位数量统计行业分布
+- **热门增长技能**：水平条形图，按技能类别统计增长 / 萌芽技能占比
+- **高级图例**：节点类型（岗位 / 技能 / 增长技能）+ 关系类型（必备 / 加分）+ 交互提示（点击 / 拖拽）
+- **节点视觉增强**：角色节点按可信度缩放尺寸，增长技能带橙色发光边框，tooltip 毛玻璃效果
+
+### 其他页面
+
+- **新岗位发现**：候选岗位卡片，展示萌芽度、核心职责、必备 / 加分技能、典型场景
+- **岗位演化**：时间窗对比，展示能力新增 / 删除 / 修改
+- **人岗匹配**：简历上传 / 粘贴 → 雷达图 + 五维条形图 + 技能匹配 / 缺失 + 诊断解释 + 学习路径
+- **数据治理**：可信度评分模型、来源权威性、时效性饼图、数据质量柱状图、幻觉率监控
+- **评测指标**：六大指标达成情况柱状图 + 测试方案概览
+
+### 设计与工程
+
+- **Design Tokens**：4px 基线网格、7 级字号、6 级圆角、5 级阴影、4 条动效曲线
+- **无障碍（A11y）**：`:focus-visible` 焦点环、`aria-label` / `role`、`.sr-only` 类、触控目标 ≥ 40px、打印媒体查询
+- **性能优化**：`contain: layout style` 限制重绘、`will-change` 合成层提示、`font-variant-numeric: tabular-nums` 防数字跳动
+- **响应式**：≤ 1200px 平板横屏适配、≤ 768px 移动端适配（隐藏侧栏、单栏布局）
+
+---
+
+## 八、API 一览
 
 | 方法 | 路径 | 说明 |
 |------|------|------|
@@ -164,7 +204,7 @@ Trust(e) = w_s·SourceAuthority + w_t·Freshness + w_c·CrossSourceAgreement
 
 ---
 
-## 八、可插拔 LLM 抽取
+## 九、可插拔 LLM 抽取
 
 系统默认使用 `MockExtractor`（规则 + 技能词典，无需 API 即可跑通全流程）。切换真实大模型（讯飞星火）：
 
@@ -177,7 +217,7 @@ export JOB_GRAPH_LLM_PROVIDER=spark
 
 ---
 
-## 九、Docker 部署
+## 十、Docker 部署
 
 ```bash
 # 构建并启动（首次启动自动生成数据 + 评测）
@@ -192,7 +232,7 @@ docker run -p 8000:8000 -v $(pwd)/data:/app/data job-ability-graph
 
 ---
 
-## 十、配置说明
+## 十一、配置说明
 
 默认配置 `config/default.json`，可用环境变量 `JOB_GRAPH_CONFIG` 指向自定义 JSON 做深合并覆盖。主要配置项：
 
@@ -205,7 +245,7 @@ docker run -p 8000:8000 -v $(pwd)/data:/app/data job-ability-graph
 
 ---
 
-## 十一、测试
+## 十二、测试
 
 ```bash
 python -m pytest tests/ -q                # 42 个测试
@@ -214,7 +254,7 @@ python -m pytest tests/ --cov=app         # 含覆盖率报告（76%）
 
 ---
 
-## 十二、设计说明与已知限制
+## 十三、设计说明与已知限制
 
 - **Mock 抽取**为规则化近似，用于端到端验证；接真实 LLM 后抽取质量依赖提示词与 schema 约束。
 - **图谱存储**为轻量嵌入式（NetworkX + JSON），适合竞赛演示；生产可平滑替换为 Neo4j。
